@@ -7,31 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01ca9d46-f089-4273-9775-93347b94350b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/fuentes/Raleway-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/servlets/RolClienteServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/estilo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/rol_cliente.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/rol_individual.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/ProbandoServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/probando.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/ProbandoServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/servlets/ProbandoServlet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/probando.jsp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/DBConnetion.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/DBConnetion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/UserDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/UserDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/ApplicationListener.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/ApplicationListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/IndexServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/IndexServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/DBConnetion.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/DBConnetion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/UserDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/UserDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/ApplicationListener.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/ApplicationListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/IndexServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/IndexServlet.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dao/DBConnectionGuardias.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dao/RolClienteDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/Cliente.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/RolCliente.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/RolIndividual.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/Usuario.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utilidad/Numeros.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/dao/DBConnetion.java" afterPath="$PROJECT_DIR$/src/dao/DBConnection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/DBConnetion.java" afterPath="$PROJECT_DIR$/src/dao/DBConnetion.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/dao/UserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/ApplicationListener.java" afterPath="$PROJECT_DIR$/src/servlets/ApplicationListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/IndexServlet.java" afterPath="$PROJECT_DIR$/src/servlets/IndexServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,72 +39,30 @@
     <expand>
       <path>
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="dbcontrol_web@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="dbcontrol@localhost" type="e3449647:DbNodeDescriptor" />
       </path>
       <path>
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="dbcontrol_web@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="dbcontrol_web" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="dbcontrol_web@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="dbcontrol_web" type="e3449647:DbNodeDescriptor" />
-        <item name="user" type="e3449647:DbNodeDescriptor" />
+        <item name="dbcontrol@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="dbcontrol" type="e3449647:DbNodeDescriptor" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rol_cliente.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/rol_cliente.jsp">
+      <file leaf-file-name="RolClienteDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dao/RolClienteDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="estilo.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/estilo.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="60" column="10" lean-forward="false" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RolClienteServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlets/RolClienteServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="447">
+              <caret line="45" column="64" lean-forward="false" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1519844854483" expanded="true" signature="450:768" ph="SELECT * FRO... rol_cliente" />
+                <marker date="1519844854483" expanded="true" signature="450:825" ph="SELECT * FRO... rol_cliente" />
+                <marker date="1519844854483" expanded="true" signature="450:826" ph="SELECT * FRO... rol_cliente" />
+                <marker date="1519844854483" expanded="true" signature="450:827" ph="SELECT * FRO... rol_cliente" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlets/IndexServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="18" column="93" lean-forward="false" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -149,7 +94,6 @@
         <option value="$PROJECT_DIR$/src/dao/LoginDAO.java" />
         <option value="$PROJECT_DIR$/src/servlets/UserServlet.java" />
         <option value="$PROJECT_DIR$/src/models/User.java" />
-        <option value="$PROJECT_DIR$/src/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/lib/mysql-connector-java-5.1.45-bin.jar/com/mysql/jdbc/jmx/ReplicationGroupManager.class" />
         <option value="$PROJECT_DIR$/web/WEB-INF/partials-static/header_list.html" />
         <option value="$PROJECT_DIR$/src/servlets/ApplicationListener.java" />
@@ -162,6 +106,14 @@
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/estilo.css" />
         <option value="$PROJECT_DIR$/web/rol_cliente.jsp" />
+        <option value="$PROJECT_DIR$/src/dao/DBConnection.java" />
+        <option value="$PROJECT_DIR$/src/dao/DBConnectionGuardias.java" />
+        <option value="$PROJECT_DIR$/src/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/utilidad/Numeros.java" />
+        <option value="$PROJECT_DIR$/src/models/Cliente.java" />
+        <option value="$PROJECT_DIR$/src/models/RolCliente.java" />
+        <option value="$PROJECT_DIR$/src/models/RolIndividual.java" />
+        <option value="$PROJECT_DIR$/src/dao/RolClienteDAO.java" />
       </list>
     </option>
   </component>
@@ -235,12 +187,6 @@
               <item name="Roles Web" type="b2602c69:ProjectViewProjectNode" />
               <item name="Roles Web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Roles Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Roles Web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="servlets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -253,6 +199,12 @@
               <item name="Roles Web" type="b2602c69:ProjectViewProjectNode" />
               <item name="Roles Web" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Roles Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Roles Web" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -271,7 +223,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\IntelliJ\Roles Web\src\models" />
+      <recent name="C:\Projects\IntelliJ\Roles Web\src\utilidad" />
       <recent name="C:\Projects\IntelliJ\Roles Web\web\fuentes" />
       <recent name="C:\Users\Yornel\IdeaProjects\Roles Web\lib" />
     </key>
@@ -505,12 +462,20 @@
       <workItem from="1519744128580" duration="8262000" />
       <workItem from="1519754488124" duration="3039000" />
       <workItem from="1519825527822" duration="41000" />
-      <workItem from="1519825598584" duration="7690000" />
+      <workItem from="1519825598584" duration="10363000" />
     </task>
+    <task id="LOCAL-00001" summary="commit 1">
+      <created>1519834778591</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519834778591</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22248000" />
+    <option name="totallyTimeSpent" value="24921000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -535,7 +500,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -594,6 +559,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -686,47 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="22" />
-          <folding>
-            <element signature="e#284#285#0" expanded="false" />
-            <element signature="e#309#310#0" expanded="false" />
-            <element signature="e#346#347#0" expanded="false" />
-            <element signature="e#374#375#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-            <element signature="e#436#437#0" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#516#517#0" expanded="false" />
-            <element signature="e#551#552#0" expanded="false" />
-            <element signature="e#582#583#0" expanded="false" />
-            <element signature="e#630#631#0" expanded="false" />
-            <element signature="e#670#671#0" expanded="false" />
-            <element signature="e#703#704#0" expanded="false" />
-            <element signature="e#732#733#0" expanded="false" />
-            <element signature="e#776#777#0" expanded="false" />
-            <element signature="e#812#813#0" expanded="false" />
-            <element signature="e#847#848#0" expanded="false" />
-            <element signature="e#878#879#0" expanded="false" />
-            <element signature="e#926#927#0" expanded="false" />
-            <element signature="e#966#967#0" expanded="false" />
-            <element signature="e#1001#1002#0" expanded="false" />
-            <element signature="e#1032#1033#0" expanded="false" />
-            <element signature="e#1080#1081#0" expanded="false" />
-            <element signature="e#1120#1121#0" expanded="false" />
-            <element signature="e#1151#1152#0" expanded="false" />
-            <element signature="e#1178#1179#0" expanded="false" />
-            <element signature="e#1218#1219#0" expanded="false" />
-            <element signature="e#1250#1251#0" expanded="false" />
-            <element signature="e#1284#1285#0" expanded="false" />
-            <element signature="e#1313#1314#0" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1394#1395#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/servlet-api.jar!/javax/servlet/http/HttpServlet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -740,14 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -774,25 +694,6 @@
         <state relative-caret-position="272">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/DBConnetion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="67" lean-forward="false" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1519825706367" expanded="true" signature="407:425" ph="SELECT * FRO... user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -849,14 +750,14 @@
         <state relative-caret-position="255">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/estilo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
+        <state relative-caret-position="736">
           <caret line="60" column="10" lean-forward="false" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
           <folding />
         </state>
@@ -864,9 +765,116 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/rol_cliente.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        <state relative-caret-position="612">
+          <caret line="36" column="32" lean-forward="false" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Roles Web.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/DBConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="67" lean-forward="false" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cd427a85-85f0-444e-9bed-7fbb65e2a9b1/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/DBConnectionGuardias.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1519835286403" expanded="true" signature="407:425" ph="SELECT * FRO... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utilidad/Numeros.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/RolCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/RolIndividual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2181">
+          <caret line="311" column="5" lean-forward="false" selection-start-line="311" selection-start-column="5" selection-end-line="311" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/RolClienteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="45" column="64" lean-forward="false" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1519844854483" expanded="true" signature="450:768" ph="SELECT * FRO... rol_cliente" />
+            <marker date="1519844854483" expanded="true" signature="450:825" ph="SELECT * FRO... rol_cliente" />
+            <marker date="1519844854483" expanded="true" signature="450:826" ph="SELECT * FRO... rol_cliente" />
+            <marker date="1519844854483" expanded="true" signature="450:827" ph="SELECT * FRO... rol_cliente" />
+          </folding>
         </state>
       </provider>
     </entry>

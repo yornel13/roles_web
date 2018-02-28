@@ -22,7 +22,7 @@ public class UserDAO {
 
         try {
 
-            conn = new DBConnetion().conectar();
+            conn = new DBConnection().conectar();
             stat = conn.createStatement();
             rs = stat.executeQuery(q);
 
@@ -52,11 +52,5 @@ public class UserDAO {
         }
         return list;
     }
-
-  /*  public static void main(String[] args) {
-        UserDAO userDAO = new UserDAO();
-        List<User> users = userDAO.getUsers();
-        System.out.println("tamano: "+users.size());
-    }*/
 
 }

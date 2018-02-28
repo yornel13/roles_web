@@ -16,7 +16,7 @@ import java.util.List;
 public class IndexServlet extends HttpServlet {
 
     private void processRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       Utilidad.getIntancia().irAPagina(request, response, getServletContext(), "/probando.jsp");
+       Utilidad.getIntancia().irAPagina(request, response, getServletContext(), "/rol_cliente.jsp");
     }
 
     @Override

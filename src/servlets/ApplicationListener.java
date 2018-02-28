@@ -20,11 +20,11 @@ public class ApplicationListener implements ServletContextListener {
         String pass = sce.getServletContext().getInitParameter("password");
 
         Properties propiedadesBaseDatos = new Properties();
-        propiedadesBaseDatos.getProperty("servidor", servidor);
-        propiedadesBaseDatos.getProperty("puerto", puerto);
-        propiedadesBaseDatos.getProperty("basededatos", baseDatos);
-        propiedadesBaseDatos.getProperty("user", user);
-        propiedadesBaseDatos.getProperty("password", pass);
+        propiedadesBaseDatos.setProperty("servidor", servidor);
+        propiedadesBaseDatos.setProperty("puerto", puerto);
+        propiedadesBaseDatos.setProperty("basededatos", baseDatos);
+        propiedadesBaseDatos.setProperty("user", user);
+        propiedadesBaseDatos.setProperty("password", pass);
 
         Utilidad.getIntancia().setPropidadesBaseDatos(propiedadesBaseDatos);
 

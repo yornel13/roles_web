@@ -1,7 +1,6 @@
 package dao;
 
 import models.User;
-import utilidad.Utilidad;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

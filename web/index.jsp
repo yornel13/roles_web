@@ -10,20 +10,26 @@
   <head>
     <title>Login Control</title>
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
+    <link rel="stylesheet" href="css/login.css" type="text/css">
   </head>
   <body>
     <h1>Probando page</h1>
 
-    <div class="container">
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please login</h2>
-        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-      </form>
+    <div class="login-page">
+      <div class="form">
+        <form class="register-form">
+          <input type="text" placeholder="name"/>
+          <input type="password" placeholder="password"/>
+          <input type="text" placeholder="email address"/>
+          <button>create</button>
+          <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form>
+        <form class="login-form">
+          <input type="text" placeholder="username"/>
+          <input type="password" placeholder="password"/>
+          <button>login</button>
+        </form>
+      </div>
     </div>
 
     <form  action="/roles_web/probando">

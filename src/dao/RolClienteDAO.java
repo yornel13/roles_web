@@ -18,7 +18,7 @@ public class RolClienteDAO {
 
     public List<RolCliente> findAllByFechaAndClienteId(String fecha, Integer clienteId) {
 
-        String q = "SELECT * FROM rol_cliente "
+        String q = "SELECT * FROM rol_cliente, usuario, cliente "
                         + "JOIN usuario "
                         + "ON usuario.id = rol_cliente.usuario_id "
                         + "JOIN detalles_empleado "

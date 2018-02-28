@@ -2,7 +2,6 @@ package servlets;
 
 import dao.UserDAO;
 import models.User;
-import utilidad.Utilidad;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ProbandoServlet", urlPatterns = "/probando")
-public class ProbandoServlet extends HttpServlet {
+@WebServlet(name = "RolClienteServlet", urlPatterns = "/rol_cliente")
+public class RolClienteServlet extends HttpServlet {
 
     private void processRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDAO userDAO = new UserDAO();

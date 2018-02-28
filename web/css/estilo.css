@@ -56,8 +56,8 @@ nav ul li a:hover{
 }
 @font-face {
     font-family: rale;
-    src: url(fuentes/Raleway-Regular.ttf);
+    src: url(../fuentes/Raleway-Regular.ttf);
 }
-body table{
+.container {
     padding-top: 70px;
 }

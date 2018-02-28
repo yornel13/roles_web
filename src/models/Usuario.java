@@ -13,8 +13,8 @@ public class Usuario implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private EstadoCivil estadoCivil;
-	private DetallesEmpleado detallesEmpleado;
+	private Character estadoCivil;
+	//private DetallesEmpleado detallesEmpleado;
 	private String nombre;
 	private String apellido;
 	private String cedula;
@@ -71,22 +71,6 @@ public class Usuario implements java.io.Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public EstadoCivil getEstadoCivil() {
-		return this.estadoCivil;
-	}
-
-	public void setEstadoCivil(EstadoCivil estadoCivil) {
-		this.estadoCivil = estadoCivil;
-	}
-
-	public DetallesEmpleado getDetallesEmpleado() {
-		return this.detallesEmpleado;
-	}
-
-	public void setDetallesEmpleado(DetallesEmpleado detallesEmpleado) {
-		this.detallesEmpleado = detallesEmpleado;
 	}
 
 	public String getNombre() {

@@ -26,7 +26,7 @@
       </form>
     </div>
 
-    <form  action="/roles_web/probando">
+    <form  action="/roles_web/rol_cliente">
       <button>
         Ir a probando
       </button>

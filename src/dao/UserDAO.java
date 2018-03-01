@@ -2,10 +2,8 @@ package dao;
 
 import models.User;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.jws.soap.SOAPBinding;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +11,7 @@ public class UserDAO {
 
     private Connection conn;
     private Statement stat;
+    private PreparedStatement preparedStatement;
     private ResultSet rs;
 
     public List<User> getUsers(){
@@ -42,15 +41,48 @@ public class UserDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
-            try {
-                rs.close();
-                stat.close();
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+          cerrarRecursos();
         }
         return list;
     }
 
-}
+    public User getRegisteredUser(String username, String password){
+        String userRegistered = "SELECT tipo FROM user WHERE username= ? AND password= ?";
+
+        User user = new User();
+        try {
+            conn = new DBConnection().conectar();
+            preparedStatement = conn.prepareStatement(userRegistered);
+            preparedStatement.setString(1, "username");
+            preparedStatement.setString(2, "password");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            user.setUsername(resultSet.getString("username"));
+            user.setPassword(resultSet.getString("password"));
+            user.setTipo(resultSet.getString("tipo"));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return user;
+    }
+
+
+    private void cerrarRecursos() {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stat != null) {
+                stat.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    }

@@ -5,6 +5,10 @@
     padding: 8% 0 0;
     margin: auto;
 }
+
+.login-text{
+    color: #6f9cc2;
+}
 .form {
     position: relative;
     z-index: 1;
@@ -39,7 +43,7 @@
     cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-    background: #43A047;
+    background: #5d7ec2;
 }
 .form .message {
     margin: 15px 0 0;
@@ -50,7 +54,7 @@
     color: #4CAF50;
     text-decoration: none;
 }
-.form .register-form {
+.form #register-form {
     display: none;
 }
 .container {

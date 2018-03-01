@@ -1,6 +1,8 @@
 package servlets;
 
+import dao.RolClienteDAO;
 import dao.UserDAO;
+import models.RolCliente;
 import models.User;
 
 import javax.servlet.RequestDispatcher;
@@ -16,9 +18,10 @@ import java.util.List;
 public class RolClienteServlet extends HttpServlet {
 
     private void processRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserDAO userDAO = new UserDAO();
-        List<User> users = userDAO.getUsers();
-        request.setAttribute("dameLista", users);
+
+        RolClienteDAO rolClienteDAO = new RolClienteDAO();
+        List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId("20170201", 6);
+        request.setAttribute("dameLista", rolClientes);
 
         RequestDispatcher dispatcher = getServletContext().getNamedDispatcher("IndexServlet");
         dispatcher.include(request, response);
@@ -27,11 +30,15 @@ public class RolClienteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequests(req, resp);
+        String str1 = req.getParameter("next");
+        System.out.println("You clicked " + str1 + " submit button<br>");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequests(req, resp);
+        String str1 = req.getParameter("next");
+        System.out.println("You clicked " + str1 + " submit button<br>");
     }
 
 }

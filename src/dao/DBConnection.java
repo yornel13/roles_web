@@ -17,7 +17,8 @@ public class DBConnection {
         String url = "jdbc:mysql://" +
                 propiedadesBaseDatos.getProperty("servidor")+":"+
                 propiedadesBaseDatos.getProperty("puerto")+"/"+
-                propiedadesBaseDatos.getProperty("basededatos");
+                propiedadesBaseDatos.getProperty("basededatos")+
+                "?autoReconnect=true&useSSL=false";
 
         String user = propiedadesBaseDatos.getProperty("user");
         String pass = propiedadesBaseDatos.getProperty("password");

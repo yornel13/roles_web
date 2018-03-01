@@ -38,7 +38,6 @@ public class UserDAO {
                 user.setActivo(rs.getBoolean("activo"));
                 list.add(user);
             }
-            rs.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {

@@ -15,6 +15,8 @@ public class RolCliente implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
+	private Integer clienteId;
+	private Integer usuarioId;
 	private String detalles;
 	private String inicio;
 	private String finalizo;
@@ -319,4 +321,19 @@ public class RolCliente implements java.io.Serializable {
 		this.montoHorasExtras = montoHorasExtras;
 	}
 
+	public Integer getClienteId() {
+		return clienteId;
+	}
+
+	public void setClienteId(Integer clienteId) {
+		this.clienteId = clienteId;
+	}
+
+	public Integer getUsuarioId() {
+		return usuarioId;
+	}
+
+	public void setUsuarioId(Integer usuarioId) {
+		this.usuarioId = usuarioId;
+	}
 }

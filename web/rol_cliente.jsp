@@ -1,8 +1,14 @@
 <%@ page import="java.util.List" %>
-<%@ page import="models.User" %>
+<%@ page import="models.RolCliente" %>
 
 <%
-    List<User> listaUsuarios = (List<User>) request.getAttribute("dameLista");
+    List<RolCliente> listaRoles = (List<RolCliente>) request.getAttribute("dameLista");
+%>
+<%
+    String a = request.getParameter("next");
+    if(a != null){
+        System.out.println("click next");
+    }
 %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
@@ -12,59 +18,61 @@
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
 </head>
 <body>
-
-    <header>
-        <div class="ancho">
-            <div class="logo">
-                <p><a href="index.jsp">Control Guardias</a></p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Salir</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <h1>Listado de usuarios</h1>
+    <%@include file="WEB-INF/partials-static/header_principal.html" %>
 
     <div class="container">
+
+        <div class="container-range">
+            <a href="#" class="previous">&#8249;</a>
+            <strong>Enero 2017</strong>
+            <a href="#" type="submit" class="next" name="next">&#8250;</a>
+        </div>
+
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover" >
-                <tr class="table-info">
-                    <%@include file="WEB-INF/partials-static/header_list.html" %>
-                </tr>
-                <%
-                    for (User user :
-                            listaUsuarios) {
-                %>
-                <tr>
-                    <td><%=user.getUsername()%></td>
-                    <td><%=user.getApellido()%></td>
-                    <td><%=user.getCedula()%></td>
+                <thead>
+                    <tr class="table-info">
+                        <%@include file="WEB-INF/partials-static/header_list.html" %>
+                    </tr>
+                </thead>
+                <tbody>
                     <%
-                        if (user.getTipo().equals("A")) {
+                        for (RolCliente rolCliente :
+                                listaRoles) {
                     %>
-                    <td>Administrador</td>
-                    <%
-                    } else if (user.getTipo().equals("E")) {
-                    %>
-                    <td>Empleado</td>
-                    <%
-                    } else if (user.getTipo().equals("C")) {
-                    %>
-                    <td>Cliente</td>
+                    <tr>
+                        <td><%=rolCliente.getCedula()%></td>
+                        <td><%=rolCliente.getEmpleado()%></td>
+                        <td><%=rolCliente.getEmpresa()%></td>
+                        <td><%=rolCliente.getDias()%></td>
+                        <td><%=rolCliente.getHorasNormales()%></td>
+                        <td><%=rolCliente.getHorasSobreTiempo()%></td>
+                        <td><%=rolCliente.getHorasSuplementarias()%></td>
+                        <td><%=rolCliente.getTotalHorasExtras()%></td>
+                        <td><%=rolCliente.getSalario()%></td>
+                        <td><%=rolCliente.getMontoHorasSobreTiempo()%></td>
+                        <td><%=rolCliente.getMontoHorasSuplementarias()%></td>
+                        <td><%=rolCliente.getBono()%></td>
+                        <td><%=rolCliente.getTransporte()%></td>
+                        <td><%=rolCliente.getTotalBonos()%></td>
+                        <td><%=rolCliente.getSubtotal()%></td>
+                        <td><%=rolCliente.getVacaciones()%></td>
+                        <td><%=rolCliente.getDecimoTercero()%></td>
+                        <td><%=rolCliente.getDecimoCuarto()%></td>
+                        <td><%=rolCliente.getDecimoTercero()%></td>
+                        <td><%=rolCliente.getJubilacionPatronal()%></td>
+                        <td><%=rolCliente.getAportePatronal()%></td>
+                        <td><%=rolCliente.getSeguros()%></td>
+                        <td><%=rolCliente.getUniformes()%></td>
+                        <td><%=rolCliente.getTotalIngreso()%></td>
+                    </tr>
                     <%
                         }
                     %>
-                </tr>
-                <%
-                    }
-                %>
+                </tbody
             </table>
         </div>
     </div>
-    <%@include file="WEB-INF/partials-static/scripts-bootstrap.html"%>
 </body>
 </html>
 

@@ -1,23 +1,19 @@
 package dao;
 
-import utilidad.Utilidad;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class DBConnectionGuardias {
 
 
     Connection conectar(){
         Connection connection = null;
-        Properties propiedadesBaseDatos = Utilidad.getIntancia().getPropidadesBaseDatos();
 
-        String url = "jdbc:mysql://localhost:3306/dbcontrol";
+        String url = "jdbc:mysql://localhost:3306/dbcontrol?autoReconnect=true&useSSL=false";
 
-        String user = propiedadesBaseDatos.getProperty("user");
-        String pass = propiedadesBaseDatos.getProperty("password");
+        String user = "root";
+        String pass = "1234";
 
         try{
             Class.forName("com.mysql.jdbc.Driver");

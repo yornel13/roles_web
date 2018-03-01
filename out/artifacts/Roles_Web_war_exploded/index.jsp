@@ -18,7 +18,7 @@
     <div class="login-page">
       <div class="form">
         <h1 class="login-text">Login</h1>
-        <form method="get" action="indexLogin">
+        <form method="post" action="indexLogin">
           <input type="text" class="form-control" name="username" placeholder="Nombre usuario"/>
           <input type="password" class="form-control" name="password" placeholder="Contraseña"/>
           <button>Entrar</button>

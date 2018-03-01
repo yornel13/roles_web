@@ -57,9 +57,11 @@ public class UserDAO {
             preparedStatement.setString(2, "password");
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            user.setUsername(resultSet.getString("username"));
-            user.setPassword(resultSet.getString("password"));
+            user.setUsername(resultSet.getString(4));
+            user.setPassword(resultSet.getString(5));
             user.setTipo(resultSet.getString("tipo"));
+
+            System.out.println("UserDAO viene: "+user.getUsername());
 
         } catch (SQLException e) {
             e.printStackTrace();

@@ -475,7 +475,7 @@
       <updated>1519740713013</updated>
       <workItem from="1519740756338" duration="3216000" />
       <workItem from="1519744128580" duration="8262000" />
-      <workItem from="1519850762889" duration="22381000" />
+      <workItem from="1519850762889" duration="22418000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'Joshuan' of https://github.com/yornel13/roles_web into Yornel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/Roles_Web_war_exploded/index.jsp&#10;#&#9;out/artifacts/Roles_Web_war_exploded/probando.jsp&#10;#&#9;web/index.jsp&#10;#&#9;web/probando.jsp">
       <created>1519851651917</created>
@@ -526,11 +526,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519928878212</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="gggsds">
+      <created>1519928910075</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1519928910075</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36815000" />
+    <option name="totallyTimeSpent" value="36852000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

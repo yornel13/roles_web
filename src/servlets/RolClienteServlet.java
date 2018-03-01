@@ -31,14 +31,14 @@ public class RolClienteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequests(req, resp);
         String str1 = req.getParameter("next");
-        System.out.println("You clicked " + str1 + " submit button<br>");
+        System.out.println("You clicked do get " + str1 + " submit button<br>");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequests(req, resp);
         String str1 = req.getParameter("next");
-        System.out.println("You clicked " + str1 + " submit button<br>");
+        System.out.println("You clicked do post " + str1 + " submit button<br>");
     }
 
 }

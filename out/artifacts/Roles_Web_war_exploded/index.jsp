@@ -13,28 +13,22 @@
     <link rel="stylesheet" href="css/login.css" type="text/css">
   </head>
   <body>
-    <h1>Probando page</h1>
+
 
     <div class="login-page">
       <div class="form">
-        <form class="register-form">
-          <input type="text" placeholder="name"/>
-          <input type="password" placeholder="password"/>
-          <input type="text" placeholder="email address"/>
-          <button>create</button>
-          <p class="message">Already registered? <a href="#">Sign In</a></p>
-        </form>
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
-          <button>login</button>
+        <h1 class="login-text">Login</h1>
+        <form method="get" action="indexLogin">
+          <input type="text" class="form-control" name="username" placeholder="Nombre usuario"/>
+          <input type="password" class="form-control" name="password" placeholder="Contraseña"/>
+          <button>Entrar</button>
         </form>
       </div>
     </div>
 
     <form  action="/roles_web/rol_cliente">
       <button>
-        Ir a probando
+        Ir a rol cliente
       </button>
     </form>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01ca9d46-f089-4273-9775-93347b94350b" name="Default" comment="gggsds">
+    <list default="true" id="01ca9d46-f089-4273-9775-93347b94350b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -475,7 +475,7 @@
       <updated>1519740713013</updated>
       <workItem from="1519740756338" duration="3216000" />
       <workItem from="1519744128580" duration="8262000" />
-      <workItem from="1519850762889" duration="22349000" />
+      <workItem from="1519850762889" duration="22381000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'Joshuan' of https://github.com/yornel13/roles_web into Yornel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/Roles_Web_war_exploded/index.jsp&#10;#&#9;out/artifacts/Roles_Web_war_exploded/probando.jsp&#10;#&#9;web/index.jsp&#10;#&#9;web/probando.jsp">
       <created>1519851651917</created>
@@ -519,11 +519,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519928684214</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="gggsds">
+      <created>1519928878212</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1519928878212</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36783000" />
+    <option name="totallyTimeSpent" value="36815000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -612,7 +619,8 @@
     <MESSAGE value="post merge joshuan" />
     <MESSAGE value="Merge branch 'Joshuan' of https://github.com/yornel13/roles_web into Yornel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/Roles_Web_war_exploded/index.jsp&#10;#&#9;out/production/Roles Web/dao/UserDAO.class" />
     <MESSAGE value="ggg" />
-    <option name="LAST_COMMIT_MESSAGE" value="ggg" />
+    <MESSAGE value="gggsds" />
+    <option name="LAST_COMMIT_MESSAGE" value="gggsds" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

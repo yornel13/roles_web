@@ -15,12 +15,15 @@ import java.io.IOException;
 public class IndexServlet extends HttpServlet {
 
     private void processRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Utilidad.getIntancia().irAPagina(request, response, getServletContext(), "/rol_cliente.jsp");
+
+        if (request.getParameter("ir") != null) {
+            Utilidad.getIntancia().irAPagina(request, response, getServletContext(), "/rol_cliente.jsp");
+            return;
+        }
 
         System.out.println("Llamo servlet");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
 
         if(!username.isEmpty() && !password.isEmpty()){
             System.out.println("Campos requeridos llenos");
@@ -35,6 +38,8 @@ public class IndexServlet extends HttpServlet {
                     System.out.println("Usuario paso el login es de tipo: " + user.getTipo());
                     switch (user.getTipo()) {
                         case "A":
+                            Utilidad.getIntancia().irAPagina(request, response, getServletContext(), "/rol_cliente.jsp");
+                            response.sendRedirect("rol_cliente.jsp");
                             System.out.println("entro en Admin");
                             break;
                         case "E":

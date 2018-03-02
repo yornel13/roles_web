@@ -23,8 +23,7 @@ public class RolClienteServlet extends HttpServlet {
         List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId("20170201", 6);
         request.setAttribute("dameLista", rolClientes);
 
-        RequestDispatcher dispatcher = getServletContext().getNamedDispatcher("IndexServlet");
-        dispatcher.include(request, response);
+        request.getRequestDispatcher("rol_cliente.jsp").forward(request, response);
     }
 
     @Override

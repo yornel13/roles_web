@@ -46,12 +46,13 @@ public class LoginServlet extends HttpServlet {
             }
             else {
                 System.out.println("El usuario no exite o es nulo");
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("login.jsp");
             }
 
         }
         else {
             System.out.println("Se requieren los campos llenos");
+            response.sendRedirect("login.jsp");
         }
 
     }
@@ -66,7 +67,7 @@ public class LoginServlet extends HttpServlet {
         if (req.getParameter("goLogin") != null) {
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         } else {
-            //processRequests(req, resp);
+            processRequests(req, resp);
         }
     }
 }

@@ -3,6 +3,7 @@
 
 <%
     List<RolCliente> listaRoles = (List<RolCliente>) request.getAttribute("dameLista");
+    String mes = (String) request.getAttribute("mes");
 %>
 <%
     String a = request.getParameter("next");
@@ -23,9 +24,9 @@
     <div class="container">
 
         <form class="container-range" action="rol_cliente" method="post">
-            <button href="#" class="previous">&#8249;</button>
-            <strong>Enero 2017</strong>
-            <button href="#" class="next">&#8250;</button>
+            <button href="#" name="previous" class="previous">&#8249;</button>
+            <strong><%=mes%></strong>
+            <button href="#" name="next" class="next">&#8250;</button>
         </form>
 
 

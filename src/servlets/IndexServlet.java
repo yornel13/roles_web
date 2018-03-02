@@ -15,42 +15,43 @@ import java.io.IOException;
 public class IndexServlet extends HttpServlet {
 
     private void processRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Utilidad.getIntancia().irAPagina(request, response, getServletContext(), "/rol_cliente.jsp");
 
         System.out.println("Llamo servlet");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
 
-
         if(!username.isEmpty() && !password.isEmpty()){
-            System.out.println("Campos requridos llenos");
+            System.out.println("Campos requeridos llenos");
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getRegisteredUser(username, password);
 
-            if(user != null){
+            System.out.println("El username es: "+user.getUsername());
+
+            if(user.getUsername() != null && user.getPassword() != null){
                 System.out.println("Usuario es diferente de nulo");
                 if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                     System.out.println("Usuario paso el login es de tipo: " + user.getTipo());
                     switch (user.getTipo()) {
                         case "A":
                             System.out.println("entro en Admin");
-                            Utilidad.getIntancia().irAPagina(request, response, getServletContext(), "/rol_cliente.jsp");
                             break;
                         case "E":
+                            System.out.println("Entro en empleado");
                             response.sendRedirect("rol_individual.jsp");
                             break;
                     }
                 }
             }
             else {
-                System.out.println("El usuario no exite");
+                System.out.println("El usuario no exite o es nulo");
                 response.sendRedirect("index.jsp");
             }
 
         }
-
         else {
-            System.out.println("Los campos entan vacio");
+            System.out.println("Se requieren los campos llenos");
         }
 
 

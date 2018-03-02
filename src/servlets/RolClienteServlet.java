@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "RolClienteServlet", urlPatterns = "/rol_cliente")
+@WebServlet("/rol_cliente")
 public class RolClienteServlet extends HttpServlet {
 
     private void processRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

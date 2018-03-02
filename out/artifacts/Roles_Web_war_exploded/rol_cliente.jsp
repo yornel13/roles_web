@@ -22,11 +22,12 @@
 
     <div class="container">
 
-        <div class="container-range">
-            <a href="#" class="previous">&#8249;</a>
+        <form class="container-range" action="rol_cliente" method="post">
+            <button href="#" class="previous">&#8249;</button>
             <strong>Enero 2017</strong>
-            <a href="#" type="submit" class="next" name="next">&#8250;</a>
-        </div>
+            <button href="#" class="next">&#8250;</button>
+        </form>
+
 
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover" >

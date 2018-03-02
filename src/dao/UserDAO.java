@@ -46,25 +46,29 @@ public class UserDAO {
     }
 
     public User getRegisteredUser(String username, String password){
-        String userRegistered = "SELECT tipo FROM user WHERE username= ? AND password= ?";
+        String userRegistered = "SELECT tipo FROM user WHERE username=? AND password=?";
 
         User user = new User();
         try {
             conn = new DBConnection().conectar();
             preparedStatement = conn.prepareStatement(userRegistered);
-            preparedStatement.setString(1, "username");
-            preparedStatement.setString(2, "password");
+            System.out.println("DAO username: "+username+" password: "+password);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            user.setUsername(resultSet.getString(4));
-            user.setPassword(resultSet.getString(5));
+            user.setUsername(resultSet.getString("username"));
+            user.setPassword(resultSet.getString("password"));
             user.setTipo(resultSet.getString("tipo"));
 
             System.out.println("UserDAO viene: "+user.getUsername());
 
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println(e.getMessage());
 
+        }finally {
+            cerrarRecursos();
         }
         return user;
     }

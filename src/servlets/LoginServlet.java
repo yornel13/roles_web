@@ -20,8 +20,8 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        if(!username.isEmpty() && !password.isEmpty()){
-            System.out.println("Campos requeridos llenos");
+        if(!username.equals("") && !password.equals("")){
+            System.out.println("Campos requeridos llenos con username: "+username+" password: "+password);
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getRegisteredUser(username, password);
 
@@ -46,13 +46,13 @@ public class LoginServlet extends HttpServlet {
             }
             else {
                 System.out.println("El usuario no exite o es nulo");
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("login.jsp");
             }
 
         }
         else {
             System.out.println("Se requieren los campos llenos");
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("login.jsp");
         }
 
     }
@@ -67,7 +67,8 @@ public class LoginServlet extends HttpServlet {
         if (req.getParameter("goLogin") != null) {
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         } else {
-            //processRequests(req, resp);
+            processRequests(req, resp);
+
         }
     }
 }

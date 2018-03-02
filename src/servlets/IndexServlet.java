@@ -16,16 +16,14 @@ public class IndexServlet extends HttpServlet {
 
     private void processRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        if (request.getParameter("ir") != null) {
-            Utilidad.getIntancia().irAPagina(request, response, getServletContext(), "/rol_cliente.jsp");
-            return;
-        }
 
-        System.out.println("Llamo servlet");
+
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        System.out.println("username: "+username+" password:  "+password);
 
-        if(!username.isEmpty() && !password.isEmpty()){
+        if(!username.equals("") && !password.equals("")){
             System.out.println("Campos requeridos llenos");
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getRegisteredUser(username, password);
@@ -57,6 +55,7 @@ public class IndexServlet extends HttpServlet {
         }
         else {
             System.out.println("Se requieren los campos llenos");
+            response.sendRedirect("index.jsp");
         }
 
 

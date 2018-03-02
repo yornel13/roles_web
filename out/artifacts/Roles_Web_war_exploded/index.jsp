@@ -9,27 +9,18 @@
 <html>
   <head>
     <title>Login Control</title>
-    <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
-    <link rel="stylesheet" href="css/login.css" type="text/css">
   </head>
   <body>
-
-
-    <div class="login-page">
+    <div>
       <div class="form">
-        <h1 class="login-text">Login</h1>
-        <form method="post" action="indexLogin">
-          <input type="text" class="form-control" name="username" placeholder="Nombre usuario"/>
-          <input type="password" class="form-control" name="password" placeholder="Contraseña"/>
-          <button>Entrar</button>
+        <form method="post" action="login">
+          <button name="goLogin">Ir a login</button>
+        </form>
+        <form method="post" action="rol_cliente">
+          <button name="goRolCliente">Ir a rol cliente</button>
         </form>
       </div>
     </div>
 
-    <form method="post" action="rol_cliente">
-      <button name="ir">Ir a rol cliente</button>
-    </form>
-
-    <%@include file="WEB-INF/partials-static/scripts-bootstrap.html"%>
   </body>
 </html>

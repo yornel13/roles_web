@@ -4,7 +4,6 @@ import dao.RolClienteDAO;
 import dao.UserDAO;
 import models.RolCliente;
 import models.User;
-import utilidad.Utilidad;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,7 +23,7 @@ public class RolClienteServlet extends HttpServlet {
         List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId("20170201", 6);
         request.setAttribute("dameLista", rolClientes);
 
-        Utilidad.getIntancia().irAPagina(request, response, getServletContext(), "/rol_cliente.jsp");
+        request.getRequestDispatcher("rol_cliente.jsp").forward(request, response);
     }
 
     @Override

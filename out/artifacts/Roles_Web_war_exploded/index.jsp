@@ -26,10 +26,8 @@
       </div>
     </div>
 
-    <form  action="/roles_web/rol_cliente">
-      <button>
-        Ir a rol cliente
-      </button>
+    <form method="post" action="rol_cliente">
+      <button name="ir">Ir a rol cliente</button>
     </form>
 
     <%@include file="WEB-INF/partials-static/scripts-bootstrap.html"%>

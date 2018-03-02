@@ -3,6 +3,7 @@ package dao;
 import models.User;
 
 import javax.jws.soap.SOAPBinding;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +12,12 @@ public class UserDAO {
 
     private Connection conn;
     private Statement stat;
-    private PreparedStatement preparedStatement;
     private ResultSet rs;
 
     public List<User> getUsers(){
 
         List<User> list = new ArrayList<>();
-        String q = "SELECT * FROM user";
+        final String q = "SELECT * FROM user";
 
         try {
 
@@ -45,18 +45,20 @@ public class UserDAO {
         return list;
     }
 
-    public User getRegisteredUser(String username, String password){
-        String userRegistered = "SELECT tipo FROM user WHERE username=? AND password=?";
-
+    public User getRegisteredUser(String username, String password) throws IOException{
+        final String userRegistered = "SELECT * FROM user WHERE username=? AND password=?";
+        System.out.println("DAO username: "+username+" password: "+password);
         User user = new User();
+
         try {
             conn = new DBConnection().conectar();
-            preparedStatement = conn.prepareStatement(userRegistered);
-            System.out.println("DAO username: "+username+" password: "+password);
+            PreparedStatement preparedStatement = conn.prepareStatement(userRegistered);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
+
             ResultSet resultSet = preparedStatement.executeQuery();
 
+            System.out.println("Valor de la col username: "+resultSet.getString("username"));
             user.setUsername(resultSet.getString("username"));
             user.setPassword(resultSet.getString("password"));
             user.setTipo(resultSet.getString("tipo"));

@@ -6,18 +6,18 @@
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <schema id="3" parent="1" name="agenda"/>
-    <schema id="4" parent="1" name="dbcontroltest"/>
-    <schema id="5" parent="1" name="dbcontrol_web"/>
-    <schema id="6" parent="1" name="dbradar"/>
-    <schema id="7" parent="1" name="information_schema"/>
-    <schema id="8" parent="1" name="mysql"/>
-    <schema id="9" parent="1" name="neolocal"/>
-    <schema id="10" parent="1" name="neosepel_neohomenajes"/>
-    <schema id="11" parent="1" name="performance_schema"/>
-    <schema id="12" parent="1" name="sakila"/>
-    <schema id="13" parent="1" name="sys"/>
-    <schema id="14" parent="1" name="world"/>
+    <schema id="3" parent="1" name="dbcontrol_web"/>
+    <schema id="4" parent="1" name="dbradar"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="sakila"/>
+    <schema id="9" parent="1" name="sys"/>
+    <schema id="10" parent="1" name="world"/>
+    <schema id="11" parent="1" name="db_empleados"/>
+    <schema id="12" parent="1" name="test"/>
+    <schema id="13" parent="1" name="tienda_ed"/>
+    <schema id="14" parent="1" name="web_db"/>
     <table id="15" parent="2" name="abono_deuda"/>
     <table id="16" parent="2" name="accion_tipo"/>
     <table id="17" parent="2" name="actuariales"/>

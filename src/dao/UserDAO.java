@@ -46,8 +46,8 @@ public class UserDAO {
     }
 
     public User getRegisteredUser(String username, String password) throws IOException{
-        final String userRegistered = "SELECT * FROM user WHERE username=? AND password=?";
-        System.out.println("DAO username: "+username+" password: "+password);
+        final String userRegistered = "SELECT tipo FROM user WHERE username=? AND password=?";
+        System.out.println("From view to DAO username: "+username+" password: "+password);
         User user = new User();
 
         try {
@@ -56,12 +56,19 @@ public class UserDAO {
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
 
-            ResultSet resultSet = preparedStatement.executeQuery();
+            rs = preparedStatement.executeQuery();
 
-            System.out.println("Valor de la col username: "+resultSet.getString("username"));
-            user.setUsername(resultSet.getString("username"));
-            user.setPassword(resultSet.getString("password"));
-            user.setTipo(resultSet.getString("tipo"));
+            while (rs.next()) {
+                user.setId(rs.getInt("id"));
+                user.setNombre(rs.getString("nombre"));
+                user.setApellido(rs.getString("apellido"));
+                user.setCedula(rs.getString("cedula"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setTipo(rs.getString("tipo"));
+                user.setActivo(rs.getBoolean("activo"));
+            }
+
 
             System.out.println("UserDAO viene: "+user.getUsername());
 

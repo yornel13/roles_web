@@ -4,13 +4,12 @@
 <%
     List<RolCliente> listaRoles = (List<RolCliente>) request.getAttribute("dameLista");
     String mes = (String) request.getAttribute("mes");
-%>
-<%
-    String a = request.getParameter("next");
-    if(a != null){
-        System.out.println("click next");
+    String searchDate = (String) request.getAttribute("searchDate");
+    if (searchDate == null) {
+        searchDate = "";
     }
 %>
+
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -23,12 +22,30 @@
 
     <div class="container">
 
-        <form class="container-range" action="rol_cliente" method="post">
-            <button href="#" name="previous" class="previous">&#8249;</button>
-            <strong><%=mes%></strong>
-            <button href="#" name="next" class="next">&#8250;</button>
-        </form>
+        <div class="container-filter">
 
+            <form class="container-range" action="rol_cliente" method="post">
+                <button href="#" name="previous" class="previous">&#8249;</button>
+                <strong><%=mes%></strong>
+                <button href="#" name="next" class="next">&#8250;</button>
+            </form>
+
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div id="imaginary_container">
+                        <form class="input-group stylish-input-group input-append" action="rol_cliente" method="post">
+                            <input value="<%=searchDate%>" name="text" class="form-control" placeholder="Buscar empleado" >
+                            <span class="input-group-addon">
+                                <button class="searchButton" name="search" action="rol_cliente" method="post">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover" >
@@ -43,6 +60,11 @@
                                 listaRoles) {
                     %>
                     <tr>
+                        <td>
+                            <button class="searchButton" name="search">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </td>
                         <td><%=rolCliente.getCedula()%></td>
                         <td><%=rolCliente.getEmpleado()%></td>
                         <td><%=rolCliente.getEmpresa()%></td>

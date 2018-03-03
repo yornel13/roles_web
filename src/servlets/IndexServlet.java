@@ -23,7 +23,7 @@ public class IndexServlet extends HttpServlet {
             resp.sendRedirect("login");
         }
         if (req.getParameter("goRolCliente") != null) {
-            req.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01").getFecha());
+            req.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01").minusMonths(1).getFecha());
             req.getSession().setAttribute("clienteId", "6");
             resp.sendRedirect("rol_cliente");
         }

@@ -20,8 +20,8 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        if(!username.isEmpty() && !password.isEmpty()){
-            System.out.println("Campos requeridos llenos");
+        if(!username.equals("") && !password.equals("")){
+            System.out.println("Campos requeridos llenos con username: "+username+" password: "+password);
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getRegisteredUser(username, password);
 
@@ -68,6 +68,7 @@ public class LoginServlet extends HttpServlet {
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         } else {
             processRequests(req, resp);
+
         }
     }
 }

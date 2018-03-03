@@ -98,7 +98,6 @@ nav ul li a:hover{
     display: inline-block;
     padding: 8px 16px;
     margin-right: 16px;
-
     border: none;
     cursor:pointer;
     overflow: hidden;
@@ -116,7 +115,6 @@ nav ul li a:hover{
     display: inline-block;
     padding: 8px 16px;
     margin-left: 16px;
-
     border: none;
     cursor:pointer;
     overflow: hidden;

@@ -3,6 +3,7 @@ package dao;
 import models.User;
 
 import javax.jws.soap.SOAPBinding;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +12,12 @@ public class UserDAO {
 
     private Connection conn;
     private Statement stat;
-    private PreparedStatement preparedStatement;
     private ResultSet rs;
 
     public List<User> getUsers(){
 
         List<User> list = new ArrayList<>();
-        String q = "SELECT * FROM user";
+        final String q = "SELECT * FROM user";
 
         try {
 
@@ -45,26 +45,39 @@ public class UserDAO {
         return list;
     }
 
-    public User getRegisteredUser(String username, String password){
-        String userRegistered = "SELECT tipo FROM user WHERE username= ? AND password= ?";
-
+    public User getRegisteredUser(String username, String password) throws IOException{
+        final String userRegistered = "SELECT tipo FROM user WHERE username=? AND password=?";
+        System.out.println("From view to DAO username: "+username+" password: "+password);
         User user = new User();
+
         try {
             conn = new DBConnection().conectar();
-            preparedStatement = conn.prepareStatement(userRegistered);
-            preparedStatement.setString(1, "username");
-            preparedStatement.setString(2, "password");
-            ResultSet resultSet = preparedStatement.executeQuery();
+            PreparedStatement preparedStatement = conn.prepareStatement(userRegistered);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
 
-            user.setUsername(resultSet.getString(4));
-            user.setPassword(resultSet.getString(5));
-            user.setTipo(resultSet.getString("tipo"));
+            rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                user.setId(rs.getInt("id"));
+                user.setNombre(rs.getString("nombre"));
+                user.setApellido(rs.getString("apellido"));
+                user.setCedula(rs.getString("cedula"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setTipo(rs.getString("tipo"));
+                user.setActivo(rs.getBoolean("activo"));
+            }
+
 
             System.out.println("UserDAO viene: "+user.getUsername());
 
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println(e.getMessage());
 
+        }finally {
+            cerrarRecursos();
         }
         return user;
     }

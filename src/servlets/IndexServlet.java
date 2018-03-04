@@ -1,5 +1,7 @@
 package servlets;
 
+import utilidad.Fecha;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,17 +14,19 @@ public class IndexServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getParameter("goLogin") != null) {
-            req.getRequestDispatcher("/login.jsp").forward(req, resp);
-        }
-        if (req.getParameter("goRolCliente") != null) {
-            req.getRequestDispatcher("/rol_cliente.jsp").forward(req, resp);
-        }
-        System.out.println("index get");
+
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("index post");
+        if (req.getParameter("goLogin") != null) {
+            System.out.println("entro en indexServlet goLogin");
+            resp.sendRedirect("login");
+        }
+        if (req.getParameter("goRolCliente") != null) {
+            req.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01").getFecha());
+            req.getSession().setAttribute("clienteId", "6");
+            resp.sendRedirect("rol_cliente");
+        }
     }
 }

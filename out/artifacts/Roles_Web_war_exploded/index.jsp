@@ -16,7 +16,7 @@
         <form method="post" action="login">
           <button name="goLogin">Ir a login</button>
         </form>
-        <form method="post" action="rol_cliente">
+        <form method="post" action="index">
           <button name="goRolCliente">Ir a rol cliente</button>
         </form>
       </div>

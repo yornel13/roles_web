@@ -4,6 +4,7 @@ import dao.RolClienteDAO;
 import dao.UserDAO;
 import models.RolCliente;
 import models.User;
+import utilidad.Fecha;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,27 +18,47 @@ import java.util.List;
 @WebServlet("/rol_cliente")
 public class RolClienteServlet extends HttpServlet {
 
-    private void processRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        RolClienteDAO rolClienteDAO = new RolClienteDAO();
-        List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId("20170201", 6);
-        request.setAttribute("dameLista", rolClientes);
-
-        request.getRequestDispatcher("rol_cliente.jsp").forward(request, response);
-    }
+    RolClienteDAO rolClienteDAO = new RolClienteDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequests(req, resp);
-        String str1 = req.getParameter("next");
-        System.out.println("You clicked do get " + str1 + " submit button<br>");
+        String fecha = (String) req.getSession().getAttribute("fecha");
+        Integer clienteId = Integer.valueOf((String) req.getSession().getAttribute("clienteId"));
+
+        List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId(fecha, clienteId);
+        req.setAttribute("dameLista", rolClientes);
+        req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
+        req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequests(req, resp);
-        String str1 = req.getParameter("next");
-        System.out.println("You clicked do post " + str1 + " submit button<br>");
+        String next = req.getParameter("next");
+        String previous = req.getParameter("previous");
+
+        if (next != null) {
+
+            String fecha = (String) req.getSession().getAttribute("fecha");
+            fecha = new Fecha(fecha).plusMonths(1).toString();
+            Integer clienteId = Integer.valueOf((String) req.getSession().getAttribute("clienteId"));
+            List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId(fecha, clienteId);
+            req.setAttribute("dameLista", rolClientes);
+            req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
+            req.getSession().setAttribute("fecha", fecha);
+            req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+
+        } else if (previous != null) {
+
+            String fecha = (String) req.getSession().getAttribute("fecha");
+            fecha = new Fecha(fecha).minusMonths(1).toString();
+            Integer clienteId = Integer.valueOf((String) req.getSession().getAttribute("clienteId"));
+            List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId(fecha, clienteId);
+            req.setAttribute("dameLista", rolClientes);
+            req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
+            req.getSession().setAttribute("fecha", fecha);
+            req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+        }
+
     }
 
 }

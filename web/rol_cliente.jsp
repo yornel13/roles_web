@@ -2,14 +2,22 @@
 <%@ page import="models.RolCliente" %>
 
 <%
-    List<RolCliente> listaRoles = (List<RolCliente>) request.getAttribute("dameLista");
+    if(session.getAttribute("admin") == null) {
+        System.out.println("No hay session");
+        response.sendRedirect("login.jsp");
+        return;
+    }else{
+        System.out.println("fino en else");
+        String mes = (String) request.getAttribute("mes");
 %>
 <%
     String a = request.getParameter("next");
+
     if(a != null){
         System.out.println("click next");
     }
 %>
+
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -18,14 +26,15 @@
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
 </head>
 <body>
-    <%@include file="WEB-INF/partials-static/header_principal.html" %>
+
+        <%@include file="WEB-INF/partials-static/header_principal.html" %>
 
     <div class="container">
 
         <form class="container-range" action="rol_cliente" method="post">
-            <button href="#" class="previous">&#8249;</button>
-            <strong>Enero 2017</strong>
-            <button href="#" class="next">&#8250;</button>
+            <button href="#" name="previous" class="previous">&#8249;</button>
+            <strong><%=mes%></strong>
+            <button href="#" name="next" class="next">&#8250;</button>
         </form>
 
 
@@ -38,6 +47,8 @@
                 </thead>
                 <tbody>
                     <%
+                        List<RolCliente> listaRoles = (List<RolCliente>) request.getAttribute("dameLista");
+
                         for (RolCliente rolCliente :
                                 listaRoles) {
                     %>
@@ -69,6 +80,7 @@
                     </tr>
                     <%
                         }
+    }
                     %>
                 </tbody
             </table>

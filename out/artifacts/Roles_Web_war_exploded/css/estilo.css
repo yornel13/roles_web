@@ -154,3 +154,25 @@ nav ul li a:hover{
     overflow: hidden;
     outline:none;
 }
+.emptyTable{
+    padding-top: 100px;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.emptyTable p a{
+    text-decoration: none;
+    font-size: 40px;;
+    font-weight: normal;
+    font-family: rale;
+    color: darkgray;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}

@@ -28,5 +28,10 @@ public class IndexServlet extends HttpServlet {
             resp.sendRedirect("rol_cliente");
             //req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
         }
+        if (req.getParameter("goRolesEmpleado") != null) {
+            req.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01").minusMonths(1).getFecha());
+            req.getSession().setAttribute("empleadoId", "99");
+            resp.sendRedirect("rol_empleado");
+        }
     }
 }

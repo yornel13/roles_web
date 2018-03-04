@@ -38,13 +38,10 @@ public class RolClienteServlet extends HttpServlet {
         Integer clienteId = Integer.valueOf((String) req.getSession().getAttribute("clienteId"));
 
         List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId(fecha, clienteId);
-        req.setAttribute("dameLista", rolClientes);
+        req.setAttribute("roles", rolClientes);
         req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
         req.getSession().setAttribute("rolClientes", rolClientes);
         req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
-
-        System.out.println("final doGet");
-
     }
 
     @Override
@@ -59,7 +56,7 @@ public class RolClienteServlet extends HttpServlet {
             fecha = new Fecha(fecha).plusMonths(1).toString();
             Integer clienteId = Integer.valueOf((String) req.getSession().getAttribute("clienteId"));
             List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId(fecha, clienteId);
-            req.setAttribute("dameLista", rolClientes);
+            req.setAttribute("roles", rolClientes);
             req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
             req.getSession().setAttribute("rolClientes", rolClientes);
             req.getSession().setAttribute("fecha", fecha);
@@ -71,7 +68,7 @@ public class RolClienteServlet extends HttpServlet {
             fecha = new Fecha(fecha).minusMonths(1).toString();
             Integer clienteId = Integer.valueOf((String) req.getSession().getAttribute("clienteId"));
             List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId(fecha, clienteId);
-            req.setAttribute("dameLista", rolClientes);
+            req.setAttribute("roles", rolClientes);
             req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
             req.getSession().setAttribute("rolClientes", rolClientes);
             req.getSession().setAttribute("fecha", fecha);
@@ -92,12 +89,10 @@ public class RolClienteServlet extends HttpServlet {
             ).collect(Collectors.toList());
 
             req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
-            req.setAttribute("dameLista", rolesFilter);
+            req.setAttribute("roles", rolesFilter);
             req.setAttribute("searchDate", searchDate);
             req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
         }
-
-        System.out.println("final doPost");
     }
 
 }

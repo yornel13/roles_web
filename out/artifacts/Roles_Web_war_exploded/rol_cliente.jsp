@@ -7,6 +7,7 @@
 <html>
 <head>
     <title>Rol Cliente</title>
+    <link rel="icon" href="imagenes/security_icon.png" />
     <link rel="stylesheet" href="css/estilo-table.css">
     <link rel="stylesheet" href="css/estilo.css">
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
@@ -53,8 +54,7 @@
             <table class="table table-striped table-bordered table-hover" style="max-width: 1000px; position: relative;left:0;right:0;margin: auto;">
                 <thead>
                     <tr class="table-info">
-                        <th style="background: white"><small>Fecha: del <%=Fecha.toTextRange(rolCliente.getInicio(),
-                                rolCliente.getFinalizo())%></small></th>
+                        <th style="background: white"><small>Fecha: del <%=Fecha.toTextRangeNormalized(rolCliente.getInicio())%></small></th>
                     </tr>
                 </thead>
             </table>

@@ -15,6 +15,7 @@ public class RolIndividual implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
+	private Integer usuarioId;
 	private Usuario usuario;
 	private String inicio;
 	private String finalizo;
@@ -319,5 +320,11 @@ public class RolIndividual implements java.io.Serializable {
         this.reserva = reserva;
     }
 
-        
+	public Integer getUsuarioId() {
+		return usuarioId;
+	}
+
+	public void setUsuarioId(Integer usuarioId) {
+		this.usuarioId = usuarioId;
+	}
 }

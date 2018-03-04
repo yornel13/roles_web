@@ -24,6 +24,16 @@ public class RolClienteServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String searchId = req.getParameter("id");
+        if (searchId != null) {
+            Integer rolId = Integer.valueOf(searchId);
+            RolCliente rolCliente = rolClienteDAO.findById(rolId);
+            req.setAttribute("rol", rolCliente);
+            req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+            return;
+        }
+
         String fecha = (String) req.getSession().getAttribute("fecha");
         Integer clienteId = Integer.valueOf((String) req.getSession().getAttribute("clienteId"));
 
@@ -31,7 +41,10 @@ public class RolClienteServlet extends HttpServlet {
         req.setAttribute("dameLista", rolClientes);
         req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
         req.getSession().setAttribute("rolClientes", rolClientes);
-        req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+        req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
+
+        System.out.println("final doGet");
+
     }
 
     @Override
@@ -39,6 +52,7 @@ public class RolClienteServlet extends HttpServlet {
         String next = req.getParameter("next");
         String previous = req.getParameter("previous");
         String search = req.getParameter("search");
+
         if (next != null) {
 
             String fecha = (String) req.getSession().getAttribute("fecha");
@@ -49,7 +63,7 @@ public class RolClienteServlet extends HttpServlet {
             req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
             req.getSession().setAttribute("rolClientes", rolClientes);
             req.getSession().setAttribute("fecha", fecha);
-            req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+            req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
 
         } else if (previous != null) {
 
@@ -61,7 +75,7 @@ public class RolClienteServlet extends HttpServlet {
             req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
             req.getSession().setAttribute("rolClientes", rolClientes);
             req.getSession().setAttribute("fecha", fecha);
-            req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+            req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
 
         } else if (search != null) {
 
@@ -80,9 +94,10 @@ public class RolClienteServlet extends HttpServlet {
             req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
             req.setAttribute("dameLista", rolesFilter);
             req.setAttribute("searchDate", searchDate);
-            req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+            req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
         }
 
+        System.out.println("final doPost");
     }
 
 }

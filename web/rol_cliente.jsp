@@ -1,19 +1,13 @@
-<%@ page import="java.util.List" %>
 <%@ page import="models.RolCliente" %>
-
-<%
-    List<RolCliente> listaRoles = (List<RolCliente>) request.getAttribute("dameLista");
-    String mes = (String) request.getAttribute("mes");
-    String searchDate = (String) request.getAttribute("searchDate");
-    if (searchDate == null) {
-        searchDate = "";
-    }
-%>
-
+<%@ page import="utilidad.Fecha" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%
+    RolCliente rolCliente = (RolCliente) request.getAttribute("rol");
+%>
 <html>
 <head>
     <title>Rol Cliente</title>
+    <link rel="stylesheet" href="css/estilo-table.css">
     <link rel="stylesheet" href="css/estilo.css">
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
 </head>
@@ -22,81 +16,116 @@
 
     <div class="container">
 
-        <div class="container-filter">
+        <div class="content-table">
 
-            <form class="container-range" action="rol_cliente" method="post">
-                <button href="#" name="previous" class="previous">&#8249;</button>
-                <strong><%=mes%></strong>
-                <button href="#" name="next" class="next">&#8250;</button>
-            </form>
-
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <div id="imaginary_container">
-                        <form class="input-group stylish-input-group input-append" action="rol_cliente" method="post">
-                            <input value="<%=searchDate%>" name="text" class="form-control" placeholder="Buscar empleado" >
-                            <span class="input-group-addon">
-                                <button class="searchButton" name="search" action="rol_cliente" method="post">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover" >
+            <table class="table table-striped table-bordered table-hover" style="max-width: 800px; position: relative;left:0;right:0;margin: auto;">
+                <thead>
+                <tr class="table-info">
+                    <th class="th-size-1" style="background: lightsteelblue">Empleado</th>
+                    <th class="th-size-1" style="background: lightsteelblue">Cedula</th>
+                    <th class="th-size-1" style="background: lightsteelblue">Cargo</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td style="background: white"><%=rolCliente.getUsuario().getApellido()+" "+rolCliente.getUsuario().getNombre()%></td>
+                    <td style="background: white"><%=rolCliente.getCedula()%></td>
+                    <td style="background: white"><%=rolCliente.getUsuario().getDetallesEmpleado().getCargo().getNombre()%></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="background: white">Empresa: <%=rolCliente.getEmpresa()%></td>
+                </tr>
+            </table>
+            <br>
+            <table class="table table-striped table-bordered table-hover" style="max-width: 800px; position: relative;left:0;right:0;margin: auto;">
+                <thead>
+                <tr class="table-info">
+                    <th class="th-size-1" style="background: lightsteelblue">Cliente</th>
+                    <th class="th-size-1" style="background: lightsteelblue">Ruc</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td style="background: white"><%=rolCliente.getClienteNombre()%></td>
+                    <td style="background: white"><%=rolCliente.getCliente().getRuc()%></td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <table class="table table-striped table-bordered table-hover" style="max-width: 1000px; position: relative;left:0;right:0;margin: auto;">
                 <thead>
                     <tr class="table-info">
-                        <%@include file="WEB-INF/partials-static/header_list.html" %>
+                        <th style="background: white"><small>Fecha: del <%=Fecha.toTextRange(rolCliente.getInicio(),
+                                rolCliente.getFinalizo())%></small></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <%
-                        for (RolCliente rolCliente :
-                                listaRoles) {
-                    %>
-                    <tr>
-                        <td>
-                            <button class="searchButton" name="search">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </td>
-                        <td><%=rolCliente.getCedula()%></td>
-                        <td><%=rolCliente.getEmpleado()%></td>
-                        <td><%=rolCliente.getEmpresa()%></td>
-                        <td><%=rolCliente.getDias()%></td>
-                        <td><%=rolCliente.getHorasNormales()%></td>
-                        <td><%=rolCliente.getHorasSobreTiempo()%></td>
-                        <td><%=rolCliente.getHorasSuplementarias()%></td>
-                        <td><%=rolCliente.getTotalHorasExtras()%></td>
-                        <td><%=rolCliente.getSalario()%></td>
-                        <td><%=rolCliente.getMontoHorasSobreTiempo()%></td>
-                        <td><%=rolCliente.getMontoHorasSuplementarias()%></td>
-                        <td><%=rolCliente.getBono()%></td>
-                        <td><%=rolCliente.getTransporte()%></td>
-                        <td><%=rolCliente.getTotalBonos()%></td>
-                        <td><%=rolCliente.getSubtotal()%></td>
-                        <td><%=rolCliente.getVacaciones()%></td>
-                        <td><%=rolCliente.getDecimoTercero()%></td>
-                        <td><%=rolCliente.getDecimoCuarto()%></td>
-                        <td><%=rolCliente.getDecimoTercero()%></td>
-                        <td><%=rolCliente.getJubilacionPatronal()%></td>
-                        <td><%=rolCliente.getAportePatronal()%></td>
-                        <td><%=rolCliente.getSeguros()%></td>
-                        <td><%=rolCliente.getUniformes()%></td>
-                        <td><%=rolCliente.getTotalIngreso()%></td>
-                    </tr>
-                    <%
-                        }
-                    %>
-                </tbody
             </table>
+            <table class="table table-striped table-bordered table-hover" style="max-width: 1000px; position: relative;left:0;right:0;margin: auto;">
+                <thead>
+                    <tr class="table-info">
+                        <th class="th-size-1">Dias</th>
+                        <th class="th-size-1">Horas (N)</th>
+                        <th class="th-size-1">Horas (ST)</th>
+                        <th class="th-size-1">Horas (RC)</th>
+                        <th class="th-size-1-2">Horas (ST+RC)</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td><%=rolCliente.getDias()%></td>
+                    <td><%=rolCliente.getHorasNormales()%></td>
+                    <td><%=rolCliente.getHorasSobreTiempo()%></td>
+                    <td><%=rolCliente.getHorasSuplementarias()%></td>
+                    <td><%=rolCliente.getTotalHorasExtras()%></td>
+                </tr>
+            </table>
+            <table class="table table-striped table-bordered table-hover" style="max-width: 1000px; position: relative;left:0;right:0;margin: auto;">
+                <thead>
+                    <tr class="table-info">
+                        <th class="th-size-0">Salario</th>
+                        <th class="th-size-0">Sobre Tiempo</th>
+                        <th class="th-size-0">Recargo</th>
+                        <th class="th-size-0">Bono</th>
+                        <th class="th-size-0">Transporte</th>
+                        <th class="th-size-0">Total Bonos</th>
+                        <th class="th-size-0">Subtotal</th>
+                        <th class="th-size-0">Vacaciones</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>$<%=rolCliente.getSalario()%></td>
+                    <td>$<%=rolCliente.getMontoHorasSobreTiempo()%></td>
+                    <td>$<%=rolCliente.getMontoHorasSuplementarias()%></td>
+                    <td>$<%=rolCliente.getBono()%></td>
+                    <td>$<%=rolCliente.getTransporte()%></td>
+                    <td>$<%=rolCliente.getTotalBonos()%></td>
+                    <td>$<%=rolCliente.getSubtotal()%></td>
+                    <td>$<%=rolCliente.getVacaciones()%></td>
+                </tr>
+            </table>
+            <table class="table table-striped table-bordered table-hover" style="max-width: 1000px; position: relative;left:0;right:0;margin: auto;">
+                <thead>
+                    <tr class="table-info">
+                        <th class="th-size-0">Decimo 3ro</th>
+                        <th class="th-size-0">Decimo 4to</th>
+                        <th class="th-size-0">F. Reserva</th>
+                        <th class="th-size-0">Jub. Patronal</th>
+                        <th class="th-size-0">Ap. Patronal</th>
+                        <th class="th-size-0">Seguros</th>
+                        <th class="th-size-0">Uniformes</th>
+                        <th class="th-size-0" style="background: sandybrown">Total Ingresos</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>$<%=rolCliente.getDecimoTercero()%></td>
+                    <td>$<%=rolCliente.getDecimoCuarto()%></td>
+                    <td>$<%=rolCliente.getDecimoTercero()%></td>
+                    <td>$<%=rolCliente.getJubilacionPatronal()%></td>
+                    <td>$<%=rolCliente.getAportePatronal()%></td>
+                    <td>$<%=rolCliente.getSeguros()%></td>
+                    <td>$<%=rolCliente.getUniformes()%></td>
+                    <td><strong>$<%=rolCliente.getTotalIngreso()%></strong></td>
+                </tr>
+            </table>
+
         </div>
     </div>
 </body>
 </html>
-

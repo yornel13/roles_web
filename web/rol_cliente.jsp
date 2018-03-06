@@ -7,7 +7,7 @@
         response.sendRedirect("login.jsp");
         return;
     }else{
-        System.out.println("fino en else");
+        System.out.println("fino en else, hay sesion");
         String mes = (String) request.getAttribute("mes");
 %>
 <%
@@ -27,7 +27,7 @@
 </head>
 <body>
 
-        <%@include file="WEB-INF/partials-static/header_principal.html" %>
+    <%@include file="WEB-INF/partials-static/header_principal.html" %>
 
     <div class="container">
 

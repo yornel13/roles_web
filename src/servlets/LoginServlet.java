@@ -36,21 +36,24 @@ public class LoginServlet extends HttpServlet {
                     switch (user.getTipo()) {
                         case "A":
                             System.out.println("entro en Admin");
+                            response.sendRedirect("admin.jsp");
+                            break;
+                        case "M":
+                            System.out.println("Entro en empresa");
+                            response.sendRedirect("rol_individual.jsp");
+                            break;
+                        case "E":
+                            System.out.println("Entro en empleado");
+                            break;
+                        default:
+                            System.out.println("Entro en cliente");
                             HttpSession session = request.getSession();
                             session.setAttribute("admin", user.getTipo());
 
                             request.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01")
                                     .minusMonths(3).getFecha());
-                            request.getSession().setAttribute("clienteId", "06");
+                            request.getSession().setAttribute("clienteId", user.getId().toString());
                             response.sendRedirect("rol_cliente");
-                            break;
-                        case "E":
-                            System.out.println("Entro en empleado");
-                            response.sendRedirect("rol_individual.jsp");
-                            break;
-                        default:
-                            System.out.println("Entro en cliente");
-                            response.sendRedirect("rol_individual.jsp");
                             break;
                     }
                 }
@@ -71,7 +74,13 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        // System.out.println("GET");
-        System.out.println("GET "+ req.getParameter("logout"));
+
+        processRequests(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("POST "+ req.getParameter("logout"));
         if(req.getParameter("logout")!= null){
 
             HttpSession session = req.getSession();
@@ -81,12 +90,6 @@ public class LoginServlet extends HttpServlet {
             resp.sendRedirect("login.jsp");
             return;
         }
-        processRequests(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 
         if (req.getParameter("goLogin") != null) {
             System.out.println("Entro post en if");

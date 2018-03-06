@@ -9,11 +9,15 @@ header{
     height: 70px;
     position: fixed;
 }
+
 .ancho{
     width: 80%;
     height: 70px;
     background: transparent;
     margin: auto;
+}
+#admin-form{
+    width: 400px;
 }
 .logo{
     width: 30%;
@@ -53,6 +57,7 @@ nav ul li a{
     letter-spacing: 1px;
     font-family: rale;
 }
+
 nav ul li a:hover{
     color: #444;
 }
@@ -115,3 +120,5 @@ nav ul li a:hover{
     padding: 24px;
     display: inline-block;
 }
+
+

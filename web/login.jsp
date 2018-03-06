@@ -11,6 +11,7 @@
     <title>Login Control</title>
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
     <link rel="stylesheet" href="css/login.css" type="text/css">
+
 </head>
 <body>
 
@@ -19,7 +20,7 @@
     <div class="form">
         <h1 class="login-text">Login</h1>
         <form method="post" action="login">
-            <input type="text" class="form-control" name="username" placeholder="Nombre usuario"/>
+            <input class="form-control" name="username" placeholder="Nombre usuario"/>
             <input type="password" class="form-control" name="password" placeholder="Contraseña"/>
             <button>Entrar</button>
         </form>

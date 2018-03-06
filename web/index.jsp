@@ -23,6 +23,9 @@
         <form method="post" action="index">
           <button name="goRolesEmpleado">Ir a roles empleado</button>
         </form>
+        <form method="post" action="index">
+          <button name="goRolesEmpresa">Ir a roles empresa</button>
+        </form>
       </div>
     </div>
 

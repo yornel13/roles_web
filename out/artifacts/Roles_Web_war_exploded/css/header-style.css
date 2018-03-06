@@ -53,7 +53,9 @@ header{
     font-family: rale;
 }
 
-.usuario i{
+.usuario button{
+    background: transparent;
+    border: 0;
     top:-47px;
     position: relative;
     width: 36px;
@@ -61,10 +63,10 @@ header{
     font-size:36px;
     color: white;
 }
-.usuario i:hover{
+.usuario button:hover{
     color: #ddd;
 }
-.usuario i .tooltiptext {
+.usuario button .tooltiptext {
     font-size: 16px;
     visibility: hidden;
     width: 60px;
@@ -79,7 +81,7 @@ header{
     right: 5%;
 }
 
-.usuario i:hover .tooltiptext {
+.usuario button:hover .tooltiptext {
     visibility: visible;
 }
 @font-face {

@@ -14,7 +14,7 @@ public class IndexServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
     @Override
@@ -24,9 +24,14 @@ public class IndexServlet extends HttpServlet {
             resp.sendRedirect("login");
         }
         if (req.getParameter("goRolCliente") != null) {
-            req.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01").getFecha());
+            req.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01").minusMonths(1).getFecha());
             req.getSession().setAttribute("clienteId", "6");
-            resp.sendRedirect("rol_cliente");
+            resp.sendRedirect("rol/cliente");
+        }
+        if (req.getParameter("goRolesEmpleado") != null) {
+            req.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01").minusMonths(1).getFecha());
+            req.getSession().setAttribute("empleadoId", "99");
+            resp.sendRedirect("rol/individual");
         }
     }
 }

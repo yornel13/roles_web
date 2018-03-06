@@ -14,27 +14,41 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
-@WebServlet("/rol_cliente")
+@WebServlet("/rol/cliente")
 public class RolClienteServlet extends HttpServlet {
 
     RolClienteDAO rolClienteDAO = new RolClienteDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String searchId = req.getParameter("id");
+        if (searchId != null) {
+            Integer rolId = Integer.valueOf(searchId);
+            RolCliente rolCliente = rolClienteDAO.findById(rolId);
+            req.setAttribute("rol", rolCliente);
+            req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+            return;
+        }
+
         String fecha = (String) req.getSession().getAttribute("fecha");
         Integer clienteId = Integer.valueOf((String) req.getSession().getAttribute("clienteId"));
 
         List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId(fecha, clienteId);
-        req.setAttribute("dameLista", rolClientes);
+        req.setAttribute("roles", rolClientes);
         req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
-        req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+        req.getSession().setAttribute("rolClientes", rolClientes);
+        req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String next = req.getParameter("next");
         String previous = req.getParameter("previous");
+        String search = req.getParameter("search");
 
         if (next != null) {
 
@@ -42,10 +56,11 @@ public class RolClienteServlet extends HttpServlet {
             fecha = new Fecha(fecha).plusMonths(1).toString();
             Integer clienteId = Integer.valueOf((String) req.getSession().getAttribute("clienteId"));
             List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId(fecha, clienteId);
-            req.setAttribute("dameLista", rolClientes);
+            req.setAttribute("roles", rolClientes);
             req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
+            req.getSession().setAttribute("rolClientes", rolClientes);
             req.getSession().setAttribute("fecha", fecha);
-            req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+            req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
 
         } else if (previous != null) {
 
@@ -53,12 +68,31 @@ public class RolClienteServlet extends HttpServlet {
             fecha = new Fecha(fecha).minusMonths(1).toString();
             Integer clienteId = Integer.valueOf((String) req.getSession().getAttribute("clienteId"));
             List<RolCliente> rolClientes = rolClienteDAO.findAllByFechaAndClienteId(fecha, clienteId);
-            req.setAttribute("dameLista", rolClientes);
+            req.setAttribute("roles", rolClientes);
             req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
+            req.getSession().setAttribute("rolClientes", rolClientes);
             req.getSession().setAttribute("fecha", fecha);
-            req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
-        }
+            req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
 
+        } else if (search != null) {
+
+            String fecha = (String) req.getSession().getAttribute("fecha");
+            fecha = new Fecha(fecha).toString();
+            String searchDate = req.getParameter("text");
+
+            Predicate<RolCliente> fullNamePredit = p -> p.getEmpleado().toLowerCase().contains(searchDate.toLowerCase());
+            Predicate<RolCliente> cedulaPredit = p -> p.getCedula().toLowerCase().contains(searchDate.toLowerCase());
+            Predicate<RolCliente> empresaPredit = p -> p.getEmpresa().toLowerCase().contains(searchDate.toLowerCase());
+            List<RolCliente> rolesFilter = ((List<RolCliente>) req.getSession().getAttribute("rolClientes"))
+                    .stream().filter(
+                            fullNamePredit.or(cedulaPredit).or(empresaPredit)
+            ).collect(Collectors.toList());
+
+            req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
+            req.setAttribute("roles", rolesFilter);
+            req.setAttribute("searchDate", searchDate);
+            req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
+        }
     }
 
 }

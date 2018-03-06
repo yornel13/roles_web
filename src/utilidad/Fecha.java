@@ -7,8 +7,11 @@ package utilidad;
 
 import javafx.scene.control.ChoiceBox;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.temporal.TemporalAdjusters;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -114,9 +117,7 @@ public class Fecha {
     public String toStringInverse() {
         return dia+"-"+mes+"-"+ano;
     }
-    
-    
-    
+
     public Fecha plusYears(int years) {
         Fecha newFecha = new Fecha(fecha);
         Integer newYears = newFecha.getAnoInt()+years;
@@ -430,5 +431,31 @@ public class Fecha {
         }
 
         return new Fecha(ano+mes+dia);
+    }
+
+    public static String toText(Fecha fecha) {
+        return fecha.getDia()+" de "+fecha.getMonthName()+" "+fecha.getAno();
+    }
+
+    public static String toText(String fechaString) {
+        Fecha fecha = new Fecha(fechaString);
+        return fecha.getDia()+" de "+fecha.getMonthName()+" "+fecha.getAno();
+    }
+
+    public static String toTextRangeFecha(Fecha fecha1, Fecha fecha2) {
+        return toText(fecha1)+" al "+toText(fecha2);
+    }
+
+    public static String toTextRangeFecha(String fechaString1, String fechaString2) {
+        return toText(fechaString1)+" al "+toText(fechaString2);
+    }
+
+    public static String toTextRangeNormalized(String fechaInicio) {
+        Fecha fecha = new Fecha(fechaInicio);
+        LocalDate now = LocalDate.of(fecha.getAnoInt(),fecha.getMesInt(),1);
+        Integer dayMax = now.with(TemporalAdjusters.lastDayOfMonth()).getDayOfMonth();
+        Integer dayMin = now.with(TemporalAdjusters.firstDayOfMonth()).getDayOfMonth();
+        return dayMin+" de "+fecha.getMonthName()+" "+fecha.getAno()
+                +" al "+ dayMax+" de "+fecha.getMonthName()+" "+fecha.getAno();
     }
 }

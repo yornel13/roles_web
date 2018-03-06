@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>Login Control</title>
+    <title>::Inicio::</title>
+    <link rel="icon" href="images/security_icon.png" />
   </head>
   <body>
     <div>
@@ -18,6 +19,9 @@
         </form>
         <form method="post" action="index">
           <button name="goRolCliente">Ir a rol cliente</button>
+        </form>
+        <form method="post" action="index">
+          <button name="goRolesEmpleado">Ir a roles empleado</button>
         </form>
       </div>
     </div>

@@ -25,7 +25,6 @@
                         <th>Cedula</th>
                         <th>Nombre usuario</th>
                         <th>Tipo</th>
-                        <th>Activo</th>
                     </tr>
                 </thead>
 
@@ -42,7 +41,6 @@
                         <td><%=user.getCedula()%></td>
                         <td><%=user.getUsername()%></td>
                         <td><%=user.getTipo()%></td>
-                        <td><%=user.getActivo()%></td>
                     </tr>
                 <%
                     }

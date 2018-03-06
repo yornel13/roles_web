@@ -17,7 +17,14 @@ public class EmpresaServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        if (req.getParameter("goEmpleados") != null) {
+            System.out.println("entro en indexServlet goLogin");
+            resp.sendRedirect("login");
+        }
+        if (req.getParameter("goClientes") != null) {
+            req.getSession().setAttribute("clienteId", "6");
+            resp.sendRedirect("clientes");
+        }
     }
 
 }

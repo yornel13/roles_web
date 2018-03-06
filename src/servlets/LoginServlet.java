@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
                             request.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01")
                                     .minusMonths(3).getFecha());
                             request.getSession().setAttribute("clienteId", "06");
-                            response.sendRedirect("rol/cliente");
+                            response.sendRedirect("rol_cliente");
                             break;
                         case "E":
                             System.out.println("Entro en empleado");

@@ -1,6 +1,13 @@
 package models;
 
+import utilidad.UserType;
+
 public class User {
+
+    public static final String ADMINISTRADOR = "A";
+    public static final String EMPLEADO = "E";
+    public static final String CLIENTE = "C";
+    public static final String EMPRESA = "M";
 
     private Integer id;
     private String nombre;
@@ -73,5 +80,20 @@ public class User {
 
     public void setActivo(Boolean activo) {
         this.activo = activo;
+    }
+
+    public UserType getType() {
+        switch (tipo) {
+            case ADMINISTRADOR:
+                return UserType.ADMINISTRADOR;
+            case EMPLEADO:
+                return UserType.EMPLEADO;
+            case CLIENTE:
+                return UserType.CLIENTE;
+            case EMPRESA:
+                return UserType.EMPRESA;
+            default:
+                return UserType.NONE;
+        }
     }
 }

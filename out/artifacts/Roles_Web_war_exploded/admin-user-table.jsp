@@ -57,6 +57,5 @@
 
 
 
-<%@include file="WEB-INF/partials-static/scripts-bootstrap.html"%>
 </body>
 </html>

@@ -11,7 +11,6 @@
     <title>Login Control</title>
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
     <link rel="stylesheet" href="css/login.css" type="text/css">
-
 </head>
 <body>
 

@@ -9,7 +9,7 @@
 <html>
   <head>
     <title>::Inicio::</title>
-    <link rel="icon" href="imagenes/security_icon.png" />
+    <link rel="icon" href="images/security_icon.png" />
   </head>
   <body>
     <div>

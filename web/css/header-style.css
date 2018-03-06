@@ -1,0 +1,88 @@
+header{
+    z-index: 100;
+    width: 100%;
+    background:  #039BE5;
+    opacity: 0.85;
+    height: 70px;
+    position: fixed;
+}
+.ancho{
+    width: 80%;
+    height: 70px;
+    background: transparent;
+    margin: auto;
+}
+.logo{
+    width: 30%;
+    height: 70px;
+    background: transparent;
+    float: left;
+    padding-top: 10px;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+.logo p a{
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: rale;
+}
+.usuario{
+    width: 70%;
+    height: 70px;
+    float: left;
+    text-align: right;
+    padding-top: 17px;
+    box-sizing: border-box;
+}
+.usuario p{
+    color: white;
+    margin-right: 36px;
+    width: auto;
+    height: 36px;
+    padding-top: 10px;
+}
+.usuario p a{
+    padding-right: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: rale;
+}
+
+.usuario i{
+    top:-47px;
+    position: relative;
+    width: 36px;
+    height: 36px;
+    font-size:36px;
+    color: white;
+}
+.usuario i:hover{
+    color: #ddd;
+}
+.usuario i .tooltiptext {
+    font-size: 16px;
+    visibility: hidden;
+    width: 60px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    right: 5%;
+}
+
+.usuario i:hover .tooltiptext {
+    visibility: visible;
+}
+@font-face {
+    font-family: rale;
+    src: url(../fonts/Raleway-Regular.ttf);
+}

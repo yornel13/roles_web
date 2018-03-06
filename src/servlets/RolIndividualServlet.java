@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/rol_empleado")
-public class RolEmpleadoServlet extends HttpServlet {
+@WebServlet("/rol/individual")
+public class RolIndividualServlet extends HttpServlet {
 
     RolClienteDAO rolClienteDAO = new RolClienteDAO();
     RolIndividualDAO rolIndividualDAO = new RolIndividualDAO();

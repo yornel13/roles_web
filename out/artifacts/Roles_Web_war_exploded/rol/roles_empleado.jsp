@@ -10,21 +10,21 @@
 <html>
     <head>
         <title>Roles Empleado</title>
-        <link rel="icon" href="imagenes/security_icon.png" />
-        <link rel="stylesheet" href="css/estilo.css">
-        <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
+        <link rel="icon" href="../images/security_icon.png" />
+        <link rel="stylesheet" href="../css/general-style.css">
+        <link rel="stylesheet" href="../css/header-style.css">
+        <link rel="stylesheet" href="../css/date-search-style.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <%@include file="../WEB-INF/partials-static/meta-bootstrap.html"%>
     </head>
     <body>
-        <%@include file="WEB-INF/partials-static/header_principal.html" %>
+        <%@include file="../WEB-INF/partials-static/header_principal.html" %>
         <div class="container">
 
             <div class="container-filter">
 
-                <form class="container-range" action="rol_empleado" method="post">
-                    <button href="#" name="previous" class="previous">&#8249;</button>
-                    <strong><%=mes%></strong>
-                    <button href="#" name="next" class="next">&#8250;</button>
-                </form>
+                <%@include file="../WEB-INF/partials-dynamic/date_search.html" %>
 
             </div>
             <%
@@ -65,7 +65,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <form action="rol_cliente">
+                            <form action="cliente">
                                 <button class="searchButton" name="id" value="<%=rol.getId()%>">
                                     <span class="glyphicon glyphicon-search"></span>
                                 </button>
@@ -129,7 +129,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <form action="rol_empleado">
+                            <form>
                                 <button class="searchButton" name="id" value="<%=rolIndividual.getId()%>">
                                     <span class="glyphicon glyphicon-search"></span>
                                 </button>
@@ -165,9 +165,7 @@
             <%
                 } else {
             %>
-            <div class="emptyTable">
-                <p><a href="">No hubo resultados para la busqueda</a></p>
-            </div>
+            <%@include file="../WEB-INF/partials-static/empty_search.html" %>
             <%
                 }
             %>

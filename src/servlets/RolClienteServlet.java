@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-@WebServlet("/rol_cliente")
+@WebServlet("/rol/cliente")
 public class RolClienteServlet extends HttpServlet {
 
     RolClienteDAO rolClienteDAO = new RolClienteDAO();

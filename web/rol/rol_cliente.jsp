@@ -7,13 +7,16 @@
 <html>
 <head>
     <title>Rol Cliente</title>
-    <link rel="icon" href="imagenes/security_icon.png" />
-    <link rel="stylesheet" href="css/estilo-table.css">
-    <link rel="stylesheet" href="css/estilo.css">
-    <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
+    <link rel="icon" href="../images/security_icon.png" />
+    <link rel="stylesheet" href="../css/table-style.css">
+    <link rel="stylesheet" href="../css/general-style.css">
+    <link rel="stylesheet" href="../css/header-style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%@include file="../WEB-INF/partials-static/meta-bootstrap.html"%>
 </head>
 <body>
-    <%@include file="WEB-INF/partials-static/header_principal.html" %>
+    <%@include file="../WEB-INF/partials-static/header_principal.html" %>
 
     <div class="container">
 

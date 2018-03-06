@@ -14,24 +14,24 @@ public class IndexServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getParameter("goLogin") != null) {
+            System.out.println("entro en indexServlet goLogin");
             resp.sendRedirect("login");
         }
         if (req.getParameter("goRolCliente") != null) {
             req.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01").minusMonths(1).getFecha());
             req.getSession().setAttribute("clienteId", "6");
-            resp.sendRedirect("rol_cliente");
-            //req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+            resp.sendRedirect("rol/cliente");
         }
         if (req.getParameter("goRolesEmpleado") != null) {
             req.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01").minusMonths(1).getFecha());
             req.getSession().setAttribute("empleadoId", "99");
-            resp.sendRedirect("rol_empleado");
+            resp.sendRedirect("rol/individual");
         }
     }
 }

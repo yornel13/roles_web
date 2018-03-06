@@ -1,5 +1,6 @@
 package dao;
 
+import com.sun.org.apache.regexp.internal.RE;
 import models.User;
 
 import javax.jws.soap.SOAPBinding;
@@ -69,8 +70,7 @@ public class UserDAO {
                 user.setActivo(rs.getBoolean("activo"));
             }
 
-
-            System.out.println("UserDAO viene: "+user.getUsername());
+            System.out.println("UserDAO username viene: "+user.getUsername());
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -80,6 +80,35 @@ public class UserDAO {
             cerrarRecursos();
         }
         return user;
+    }
+
+
+    public Boolean addUser(String nombre, String apellido, String cedula, String username, String password, String tipo, String activo){
+        final String addUser = "INSERT INTO user " +
+                                      "(nombre, apellido, cedula, username, password, tipo, activo)" +
+                                      "VALUES (?,?,?,?,?,?,?)";
+
+        Boolean booleanReturn = false;
+
+        try {
+            conn = new DBConnection().conectar();
+            PreparedStatement preparedStatement = conn.prepareStatement(addUser);
+
+            preparedStatement.setString(1, nombre);
+            preparedStatement.setString(2, apellido);
+            preparedStatement.setString(3, cedula);
+            preparedStatement.setString(4, username);
+            preparedStatement.setString(5, password);
+            preparedStatement.setString(6, tipo);
+            preparedStatement.setString(7, activo);
+            booleanReturn = preparedStatement.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            cerrarRecursos();
+        }
+        return booleanReturn;
     }
 
 

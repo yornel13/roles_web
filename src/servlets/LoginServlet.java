@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
                     switch (user.getTipo()) {
                         case "A":
                             System.out.println("entro en Admin");
-                            response.sendRedirect("admin.jsp");
+                            response.sendRedirect("admin");
                             break;
                         case "M":
                             System.out.println("Entro en empresa");

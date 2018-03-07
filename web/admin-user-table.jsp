@@ -6,13 +6,20 @@
   Time: 8:31 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Control - Admin</title>
+    <link rel="icon" href="images/security_icon.png" />
+    <link rel="stylesheet" href="css/general-style.css">
+    <link rel="stylesheet" href="css/header-style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
 </head>
 <body>
+    <%@include file="WEB-INF/partials-static/header_principal.html" %>
+
     <div class="container">
 
         <div class="table-responsive">
@@ -20,6 +27,7 @@
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr class="table-info">
+                        <th></th>
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Cedula</th>
@@ -36,6 +44,13 @@
                             for (User user :
                                     listaUsuario) {
                         %>
+                        <td>
+                            <form>
+                                <button class="searchButton" name="user_id" value="<%=user.getId()%>">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </form>
+                        </td>
                         <td><%=user.getNombre()%></td>
                         <td><%=user.getApellido()%></td>
                         <td><%=user.getCedula()%></td>
@@ -57,6 +72,5 @@
 
 
 
-<%@include file="WEB-INF/partials-static/scripts-bootstrap.html"%>
 </body>
 </html>

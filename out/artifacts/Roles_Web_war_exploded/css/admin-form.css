@@ -1,0 +1,23 @@
+
+#edit_button{
+    background-color: transparent;
+    color:#5d7ec2;
+}
+
+#select{
+    font-size: medium;
+    height: auto;
+}
+#display_control{
+    visibility: hidden;
+
+}
+#glyphicon_control{
+    size: 40px;
+    font-size: medium;
+}
+#estado{
+    size: 40px;
+    font-size: medium;
+}
+

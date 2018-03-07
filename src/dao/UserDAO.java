@@ -111,6 +111,32 @@ public class UserDAO {
         return booleanReturn;
     }
 
+    public User getUserByID(Integer id) {
+        String userByID = "SELECT * FROM user WHERE id = "+id;
+
+        User user = new User();
+
+        try {
+            conn = new DBConnection().conectar();
+            Statement statement  = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery(userByID);
+
+            while (resultSet.next()){
+                user.setId(resultSet.getInt("id"));
+                user.setNombre(resultSet.getString("nombre"));
+                user.setApellido(resultSet.getString("apellido"));
+                user.setCedula(resultSet.getString("cedula"));
+                user.setUsername(resultSet.getString("username"));
+                user.setPassword(resultSet.getString("password"));
+                user.setTipo(resultSet.getString("tipo"));
+                user.setActivo(resultSet.getBoolean("activo"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
 
     private void cerrarRecursos() {
         try {

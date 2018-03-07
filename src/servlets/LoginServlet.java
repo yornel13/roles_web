@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 
                             request.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01")
                                     .minusMonths(3).getFecha());
-                            request.getSession().setAttribute("clienteId", user.getId().toString());
+                            request.getSession().setAttribute("user", user);
                             response.sendRedirect("rol_cliente");
                             break;
                     }
@@ -74,7 +74,6 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        // System.out.println("GET");
-
         processRequests(req, resp);
     }
 

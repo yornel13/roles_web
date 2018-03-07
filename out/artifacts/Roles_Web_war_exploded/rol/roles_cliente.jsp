@@ -1,14 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.util.List" %>
 <%@ page import="models.RolCliente" %>
-
 <%
-    List<RolCliente> roles = (List<RolCliente>) request.getAttribute("roles");
-    String mes = (String) request.getAttribute("mes");
-    String searchDate = (String) request.getAttribute("searchDate");
-    if (searchDate == null) {
-        searchDate = "";
-    }
+    List<RolCliente> roles = (List<RolCliente>) request.getAttribute(Const.ROLES_CLIENTE);
 %>
 <html>
     <head>
@@ -23,20 +17,16 @@
         <%@include file="../WEB-INF/partials-static/meta-bootstrap.html"%>
     </head>
     <body>
-        <%@include file="../WEB-INF/partials-static/header_principal.html" %>
+        <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
 
         <div class="container">
 
             <div class="container-filter">
 
-                <%@include file="../WEB-INF/partials-dynamic/date_search.html" %>
-                <%
-                    if (!searchDate.equals("") || roles != null && !roles.isEmpty() ) {
-                %>
-                <%@include file="../WEB-INF/partials-dynamic/bar_search.html" %>
-                <%
-                    }
-                %>
+                <%@include file="../WEB-INF/partials-dynamic/date_search.jsp" %>
+
+                <%@include file="../WEB-INF/partials-dynamic/bar_search.jsp" %>
+
             </div>
             <%
                 if (roles != null && !roles.isEmpty()) {

@@ -1,19 +1,12 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Yornel
-  Date: 27/2/2018
-  Time: 10:12 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
   <head>
-    <title>::Inicio::</title>
+    <title>::HOME::</title>
     <link rel="icon" href="images/security_icon.png" />
   </head>
   <body>
     <div>
-      <div class="form">
+      <!--<div class="form">
         <form method="post" action="login">
           <button name="goLogin">Ir a login</button>
         </form>
@@ -26,7 +19,10 @@
         <form method="post" action="index">
           <button name="goRolesEmpresa">Ir a roles empresa</button>
         </form>
-      </div>
+      </div>-->
+      <%
+        response.sendRedirect("login");
+      %>
     </div>
 
   </body>

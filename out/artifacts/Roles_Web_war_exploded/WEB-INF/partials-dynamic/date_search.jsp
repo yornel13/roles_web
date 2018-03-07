@@ -1,3 +1,6 @@
+<%
+    String mes = (String) request.getAttribute(Const.FILTER_MONTH);
+%>
 <form class="container-range" method="post">
     <button href="#" name="previous" class="previous">
         &#8249;

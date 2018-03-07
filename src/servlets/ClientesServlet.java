@@ -3,6 +3,7 @@ package servlets;
 import dao.ClienteDAO;
 import models.Cliente;
 import models.RolCliente;
+import utilidad.Const;
 import utilidad.Fecha;
 
 import javax.servlet.ServletException;
@@ -21,16 +22,16 @@ public class ClientesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Cliente> clientes = clienteDAO.findAll();
-        req.setAttribute("clients", clientes);
+        req.setAttribute(Const.CLIENTES, clientes);
         req.getRequestDispatcher("clientes.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String clienteId = req.getParameter("id");
+        String clienteId = req.getParameter(Const.ID);
         if (clienteId != null) {
-            req.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01").minusMonths(1).getFecha());
-            req.getSession().setAttribute("clienteId", clienteId);
+            req.getSession().setAttribute(Const.FECHA, Fecha.getFechaActualInit());
+            req.getSession().setAttribute(Const.CLIENTE_ID, Integer.valueOf(clienteId));
             resp.sendRedirect("rol/cliente");
             return;
         }

@@ -96,4 +96,19 @@ public class User {
                 return UserType.NONE;
         }
     }
+
+    public String getTipoText() {
+        switch (tipo) {
+            case ADMINISTRADOR:
+                return "Administrador";
+            case EMPLEADO:
+                return "Empleado";
+            case CLIENTE:
+                return "Cliente";
+            case EMPRESA:
+                return "Empresa";
+            default:
+                return "NONE";
+        }
+    }
 }

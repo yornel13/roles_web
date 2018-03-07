@@ -3,9 +3,8 @@
 <%@ page import="models.RolIndividual" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
-    List<RolCliente> roles = (List<RolCliente>) request.getAttribute("roles");
-    RolIndividual rolIndividual = (RolIndividual) request.getAttribute("rolIndividual");
-    String mes = (String) request.getAttribute("mes");
+    List<RolCliente> roles = (List<RolCliente>) request.getAttribute(Const.ROLES_CLIENTE);
+    RolIndividual rolIndividual = (RolIndividual) request.getAttribute(Const.ROL_INDIVIDUAL);
 %>
 <html>
     <head>
@@ -19,12 +18,12 @@
         <%@include file="../WEB-INF/partials-static/meta-bootstrap.html"%>
     </head>
     <body>
-        <%@include file="../WEB-INF/partials-static/header_principal.html" %>
+        <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
         <div class="container">
 
             <div class="container-filter">
 
-                <%@include file="../WEB-INF/partials-dynamic/date_search.html" %>
+                <%@include file="../WEB-INF/partials-dynamic/date_search.jsp" %>
 
             </div>
             <%

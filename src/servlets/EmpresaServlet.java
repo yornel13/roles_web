@@ -1,5 +1,8 @@
 package servlets;
 
+import utilidad.Const;
+import utilidad.Fecha;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,11 +21,10 @@ public class EmpresaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getParameter("goEmpleados") != null) {
-            System.out.println("entro en indexServlet goLogin");
-            resp.sendRedirect("login");
+            req.getSession().setAttribute(Const.FECHA, Fecha.getFechaActualInit());
+            resp.sendRedirect("rol/empleados");
         }
         if (req.getParameter("goClientes") != null) {
-            req.getSession().setAttribute("clienteId", "6");
             resp.sendRedirect("clientes");
         }
     }

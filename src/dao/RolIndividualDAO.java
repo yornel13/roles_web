@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RolIndividualDAO {
 
@@ -32,6 +34,7 @@ public class RolIndividualDAO {
 
                 rol = new RolIndividual();
                 rol.setId(rs.getInt("id"));
+                rol.setUsuarioId(rs.getInt("usuario_id"));
                 rol.setInicio(rs.getString("inicio"));
                 rol.setFinalizo(rs.getString("finalizo"));
                 rol.setDetalles(rs.getString("detalles"));
@@ -98,6 +101,75 @@ public class RolIndividualDAO {
         }
         return rol;
     }
+
+    public List<RolIndividual> findByFechaAndEmpresaId(String fecha, Integer empresaId) {
+
+        List<RolIndividual> list = new ArrayList<>();
+
+        String q = "SELECT * FROM rol_individual "
+                + "JOIN usuario "
+                + "ON usuario.id = rol_individual.usuario_id "
+                + "JOIN detalles_empleado "
+                + "ON detalles_empleado.id = usuario.detalles_empleado_id "
+                + "where inicio = '"+fecha+"' "
+                + "and empresa_id = "+empresaId;
+        try {
+
+            conn = new DBConnectionGuardias().conectar();
+            stat = conn.createStatement();
+            rs = stat.executeQuery(q);
+
+            while (rs.next()) {
+
+                RolIndividual rol = new RolIndividual();
+                rol.setId(rs.getInt("id"));
+                rol.setUsuarioId(rs.getInt("usuario_id"));
+                rol.setInicio(rs.getString("inicio"));
+                rol.setFinalizo(rs.getString("finalizo"));
+                rol.setDetalles(rs.getString("detalles"));
+                rol.setFecha(rs.getTimestamp("fecha"));
+                rol.setSueldo(rs.getDouble("sueldo"));
+                rol.setDias(rs.getDouble("dias"));
+                rol.setHorasNormales(rs.getDouble("horas_normales"));
+                rol.setHorasSuplementarias(rs.getDouble("horas_suplementarias"));
+                rol.setHorasSobreTiempo(rs.getDouble("horas_sobre_tiempo"));
+                rol.setTotalHorasExtras(rs.getDouble("total_horas_extras"));
+                rol.setSalario(rs.getDouble("salario"));
+                rol.setMontoHorasSuplementarias(rs.getDouble("monto_horas_suplementarias"));
+                rol.setMontoHorasSobreTiempo(rs.getDouble("monto_horas_sobre_tiempo"));
+                rol.setBono(rs.getDouble("bono"));
+                rol.setTransporte(rs.getDouble("transporte"));
+                rol.setTotalBonos(rs.getDouble("total_bonos"));
+                rol.setVacaciones(rs.getDouble("vacaciones"));
+                rol.setSubtotal(rs.getDouble("subtotal"));
+                rol.setDecimoTercero(rs.getDouble("decimo_tercero"));
+                rol.setDecimoCuarto(rs.getDouble("decimo_cuarto"));
+                rol.setJubilacionPatronal(rs.getDouble("jubilacion_patronal"));
+                rol.setAportePatronal(rs.getDouble("aporte_patronal"));
+                rol.setSeguros(rs.getDouble("seguros"));
+                rol.setUniformes(rs.getDouble("uniformes"));
+                rol.setTotalIngreso(rs.getDouble("total_ingreso"));
+                rol.setEmpleado(rs.getString("empleado"));
+                rol.setCedula(rs.getString("cedula"));
+                rol.setEmpresa(rs.getString("empresa"));
+                list.add(rol);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+                stat.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+            }
+        }
+        return list;
+    }
+
 
     public RolIndividual findById(Integer id) {
 

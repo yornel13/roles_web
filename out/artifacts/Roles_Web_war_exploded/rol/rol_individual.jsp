@@ -2,7 +2,7 @@
 <%@ page import="utilidad.Fecha" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
-    RolIndividual rolIndividual = (RolIndividual) request.getAttribute("rol");
+    RolIndividual rolIndividual = (RolIndividual) request.getAttribute(Const.ROL_INDIVIDUAL);
 %>
 <html>
     <head>
@@ -12,10 +12,11 @@
         <link rel="stylesheet" href="../css/general-style.css">
         <link rel="stylesheet" href="../css/header-style.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <%@include file="../WEB-INF/partials-static/meta-bootstrap.html"%>
     </head>
     <body>
-        <%@include file="../WEB-INF/partials-static/header_principal.html" %>
+        <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
 
         <div class="container">
 
@@ -30,7 +31,7 @@
                     </tr>
                     </thead>
                     <tr>
-                        <td style="background: white"><%=rolIndividual.getUsuario().getApellido()+" "+rolIndividual.getUsuario().getNombre()%></td>
+                        <td style="background: white"><%=rolIndividual.getUsuario().getNombre()+" "+rolIndividual.getUsuario().getApellido()%></td>
                         <td style="background: white"><%=rolIndividual.getCedula()%></td>
                         <td style="background: white"><%=rolIndividual.getUsuario().getDetallesEmpleado().getCargo().getNombre()%></td>
                     </tr>

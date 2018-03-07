@@ -2,7 +2,7 @@
 <%@ page import="models.Cliente" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
-    List<Cliente> clients = (List<Cliente>) request.getAttribute("clients");
+    List<Cliente> clientes = (List<Cliente>) request.getAttribute(Const.CLIENTES);
 %>
 <html>
     <head>
@@ -16,7 +16,7 @@
         <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
     </head>
     <body>
-    <%@include file="WEB-INF/partials-static/header_principal.html" %>
+    <%@include file="WEB-INF/partials-dynamic/header_principal.jsp" %>
     <div class="container">
 
         <div class="content-table">
@@ -32,12 +32,12 @@
                 <tbody>
                     <%
                         for (Cliente client :
-                                clients) {
+                                clientes) {
                     %>
                     <tr>
                         <td>
                             <form method="post">
-                                <button class="searchButton" name="id" value="<%=client.getId()%>">
+                                <button class="searchButton" name="<%=Const.ID%>" value="<%=client.getId()%>">
                                     <span class="glyphicon glyphicon-search"></span>
                                 </button>
                             </form>

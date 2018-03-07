@@ -433,6 +433,33 @@ public class Fecha {
         return new Fecha(ano+mes+dia);
     }
 
+    public static String getFechaActualInit() {
+
+        String dia;
+        String mes;
+        String ano;
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int month = localDate.getMonthValue();
+        int year = localDate.getYear();
+        ano = String.valueOf(year);
+        mes = String.valueOf(month);
+        if (localDate.getDayOfMonth() > 30) {
+            dia = "30";
+        } else {
+            dia = String.valueOf(localDate.getDayOfMonth());
+        }
+
+        if (mes.length() == 1) {
+            mes = "0"+mes;
+        }
+        if (dia.length() == 1) {
+            dia = "0"+dia;
+        }
+
+        return new Fecha(ano+mes+"01").minusMonths(1).getFecha();
+    }
+
     public static String toText(Fecha fecha) {
         return fecha.getDia()+" de "+fecha.getMonthName()+" "+fecha.getAno();
     }
@@ -457,5 +484,9 @@ public class Fecha {
         Integer dayMin = now.with(TemporalAdjusters.firstDayOfMonth()).getDayOfMonth();
         return dayMin+" de "+fecha.getMonthName()+" "+fecha.getAno()
                 +" al "+ dayMax+" de "+fecha.getMonthName()+" "+fecha.getAno();
+    }
+
+    public static String getFechaCorta(String fecha) {
+        return new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAno();
     }
 }

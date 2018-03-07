@@ -15,8 +15,6 @@ public class ClienteDAO {
     private Statement stat;
     private ResultSet rs;
 
-
-
     public List<Cliente> findAll() {
 
         List<Cliente> list = new ArrayList<>();
@@ -54,6 +52,44 @@ public class ClienteDAO {
             }
         }
         return list;
+    }
+
+    public Cliente findByRuc(String ruc) {
+
+        Cliente cliente = null;
+
+        String q = "SELECT * FROM cliente WHERE ruc = '"+ruc+"'";
+        try {
+
+            conn = new DBConnectionGuardias().conectar();
+            stat = conn.createStatement();
+            rs = stat.executeQuery(q);
+
+            while (rs.next()) {
+
+                cliente = new Cliente();
+                cliente.setId(rs.getInt("id"));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setDetalles(rs.getString("detalles"));
+                cliente.setRuc(rs.getString("ruc"));
+                cliente.setDireccion(rs.getString("direccion"));
+                cliente.setTelefono(rs.getString("telefono"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+                stat.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+            }
+        }
+        return cliente;
     }
 
 }

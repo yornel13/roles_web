@@ -4,6 +4,7 @@ import dao.RolClienteDAO;
 import dao.RolIndividualDAO;
 import models.RolCliente;
 import models.RolIndividual;
+import utilidad.Const;
 import utilidad.Fecha;
 
 import javax.servlet.ServletException;
@@ -23,24 +24,24 @@ public class RolIndividualServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String searchId = req.getParameter("id");
+        String searchId = req.getParameter(Const.ID);
         if (searchId != null) {
             Integer rolId = Integer.valueOf(searchId);
             RolIndividual rolIndividual = rolIndividualDAO.findById(rolId);
-            req.setAttribute("rol", rolIndividual);
+            req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
             req.getRequestDispatcher("rol_individual.jsp").forward(req, resp);
             return;
         }
 
-        String fecha = (String) req.getSession().getAttribute("fecha");
-        Integer empleadoId = Integer.valueOf((String) req.getSession().getAttribute("empleadoId"));
+        String fecha = (String) req.getSession().getAttribute(Const.FECHA);
+        Integer empleadoId = (Integer) req.getSession().getAttribute(Const.EMPLEADO_ID);
 
         List<RolCliente> rolesClients = rolClienteDAO.findAllByFechaAndUsuarioId(fecha, empleadoId);
         RolIndividual rolIndividual = rolIndividualDAO.findByFechaAndUsuarioId(fecha, empleadoId);
-        req.setAttribute("rolIndividual", rolIndividual);
-        req.setAttribute("roles", rolesClients);
-        req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
-        req.getSession().setAttribute("rolesClients", rolesClients);
+        req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
+        req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
+        req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+        req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesClients);
         req.getRequestDispatcher("roles_empleado.jsp").forward(req, resp);
     }
 
@@ -52,30 +53,30 @@ public class RolIndividualServlet extends HttpServlet {
 
         if (next != null) {
 
-            String fecha = (String) req.getSession().getAttribute("fecha");
+            String fecha = (String) req.getSession().getAttribute(Const.FECHA);
             fecha = new Fecha(fecha).plusMonths(1).toString();
-            Integer empleadoId = Integer.valueOf((String) req.getSession().getAttribute("empleadoId"));
+            Integer empleadoId = (Integer) req.getSession().getAttribute(Const.EMPLEADO_ID);
             List<RolCliente> rolesClients = rolClienteDAO.findAllByFechaAndUsuarioId(fecha, empleadoId);
             RolIndividual rolIndividual = rolIndividualDAO.findByFechaAndUsuarioId(fecha, empleadoId);
-            req.setAttribute("rolIndividual", rolIndividual);
-            req.setAttribute("roles", rolesClients);
-            req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
-            req.getSession().setAttribute("rolesClients", rolesClients);
-            req.getSession().setAttribute("fecha", fecha);
+            req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
+            req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
+            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesClients);
+            req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("roles_empleado.jsp").forward(req, resp);
 
         } else if (previous != null) {
 
-            String fecha = (String) req.getSession().getAttribute("fecha");
+            String fecha = (String) req.getSession().getAttribute(Const.FECHA);
             fecha = new Fecha(fecha).minusMonths(1).toString();
-            Integer empleadoId = Integer.valueOf((String) req.getSession().getAttribute("empleadoId"));
+            Integer empleadoId = (Integer) req.getSession().getAttribute(Const.EMPLEADO_ID);
             List<RolCliente> rolesClients = rolClienteDAO.findAllByFechaAndUsuarioId(fecha, empleadoId);
             RolIndividual rolIndividual = rolIndividualDAO.findByFechaAndUsuarioId(fecha, empleadoId);
-            req.setAttribute("rolIndividual", rolIndividual);
-            req.setAttribute("roles", rolesClients);
-            req.setAttribute("mes",  new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAnoInt());
-            req.getSession().setAttribute("rolesClients", rolesClients);
-            req.getSession().setAttribute("fecha", fecha);
+            req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
+            req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
+            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesClients);
+            req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("roles_empleado.jsp").forward(req, resp);
 
         }

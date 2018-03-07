@@ -12,7 +12,7 @@
         <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
     </head>
     <body>
-        <%@include file="WEB-INF/partials-static/header_principal.html" %>
+        <%@include file="WEB-INF/partials-dynamic/header_principal.jsp" %>
 
         <div class="container-buttons">
             <form action="empresa" method="post">

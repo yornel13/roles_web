@@ -48,7 +48,7 @@ public class UserDAO {
 
     public User getRegisteredUser(String username, String password) throws IOException{
         final String userRegistered = "SELECT * FROM user WHERE username = ? AND password = ?";
-        System.out.println("From view to DAO username: "+username+" password: "+password);
+
         User user = new User();
 
         try {
@@ -69,8 +69,6 @@ public class UserDAO {
                 user.setTipo(rs.getString("tipo"));
                 user.setActivo(rs.getBoolean("activo"));
             }
-
-            System.out.println("UserDAO username viene: "+user.getUsername());
 
         } catch (SQLException e) {
             e.printStackTrace();

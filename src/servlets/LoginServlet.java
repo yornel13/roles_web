@@ -1,64 +1,58 @@
 package servlets;
 
+import dao.ClienteDAO;
+import dao.EmpresaDAO;
 import dao.UserDAO;
+import dao.UsuarioDAO;
+import models.Cliente;
+import models.Empresa;
 import models.User;
+import models.Usuario;
+import utilidad.Const;
 import utilidad.Fecha;
-import utilidad.Utilidad;
+import utilidad.UserType;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
+    Integer expiry = new Integer(5*60);
+
+    UserDAO userDAO = new UserDAO();
+    ClienteDAO clienteDAO = new ClienteDAO();
+    UsuarioDAO usuarioDAO = new UsuarioDAO();
+    EmpresaDAO empresaDAO = new EmpresaDAO();
+
     private void processRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("Llamo login servlet");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        String username = request.getParameter(Const.USERNAME);
+        String password = request.getParameter(Const.PASSWORD);
 
-        if(!username.equals("") && !password.equals("")){
-            System.out.println("Campos requeridos llenos con username: "+username+" password: "+password);
-            UserDAO userDAO = new UserDAO();
+        if(!username.equals(Const.EMPTY) && !password.equals(Const.EMPTY)){
+
             User user = userDAO.getRegisteredUser(username, password);
 
-            System.out.println("El username es: "+user.getUsername());
-
-            if(user.getUsername() != null && user.getPassword() != null){
-                System.out.println("Usuario es diferente de nulo");
+            if(user != null){
                 if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
-                    System.out.println("Usuario paso el login es de tipo: " + user.getTipo());
-                    switch (user.getTipo()) {
-                        case "A":
-                            System.out.println("entro en Admin");
-                            response.sendRedirect("admin");
-                            break;
-                        case "M":
-                            System.out.println("Entro en empresa");
-                            response.sendRedirect("rol_individual.jsp");
-                            break;
-                        case "E":
-                            System.out.println("Entro en empleado");
-                            break;
-                        default:
-                            System.out.println("Entro en cliente");
-                            HttpSession session = request.getSession();
-                            session.setAttribute("admin", user.getTipo());
 
-                            request.getSession().setAttribute("fecha", Fecha.getFechaActual().withDay("01")
-                                    .minusMonths(3).getFecha());
-                            request.getSession().setAttribute("clienteId", user.getId().toString());
-                            response.sendRedirect("rol_cliente");
-                            break;
+                    if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
+
+                        Cookie loginCookie = new Cookie(Const.USERNAME, user.getUsername());
+                        loginCookie.setMaxAge(expiry);
+                        response.addCookie(loginCookie);
+                        request.getSession().setAttribute(Const.USER, user);
+                        if (user.getType() == UserType.ADMINISTRADOR) {
+                            response.sendRedirect("admin");
+                        } else {
+                            response.sendRedirect("login?successful");
+                        }
                     }
                 }
-            }
-            else {
+            } else {
                 System.out.println("Username o password erroneo");
                 response.sendRedirect("login.jsp");
             }
@@ -73,9 +67,32 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       // System.out.println("GET");
-
-        processRequests(req, resp);
+        if (req.getParameter(Const.SUCCESSFUL) != null) {
+            User user = (User) req.getSession().getAttribute(Const.USER);
+            req.getSession().setAttribute(Const.FECHA, Fecha.getFechaActualInit());
+            switch (user.getType()) {
+                case EMPRESA:
+                    Empresa empresa = empresaDAO.findByRuc(user.getCedula());
+                    req.getSession().setAttribute(Const.DATA_USER, empresa);
+                    req.getSession().setAttribute(Const.EMPRESA_ID, empresa.getId());
+                    resp.sendRedirect("empresa");
+                    break;
+                case CLIENTE:
+                    Cliente cliente = clienteDAO.findByRuc(user.getCedula());
+                    req.getSession().setAttribute(Const.DATA_USER, cliente);
+                    req.getSession().setAttribute(Const.CLIENTE_ID, cliente.getId());
+                    resp.sendRedirect("rol/cliente");
+                    break;
+                case EMPLEADO:
+                    Usuario usuario = usuarioDAO.findByCedula(user.getCedula());
+                    req.getSession().setAttribute(Const.DATA_USER, usuario);
+                    req.getSession().setAttribute(Const.EMPLEADO_ID, usuario.getId());
+                    resp.sendRedirect("rol/individual");
+                    break;
+            }
+        } else {
+            req.getRequestDispatcher("login.jsp").include(req, resp);
+        }
     }
 
     @Override
@@ -87,7 +104,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println("Logout con el usuario: "+ session.getAttributeNames().toString());
             session.removeAttribute(session.getAttributeNames().toString());
             session.invalidate();
-            resp.sendRedirect("login.jsp");
+            resp.sendRedirect("login");
             return;
         }
 

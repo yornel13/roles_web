@@ -8,9 +8,7 @@ import models.Cliente;
 import models.Empresa;
 import models.User;
 import models.Usuario;
-import utilidad.Const;
-import utilidad.Fecha;
-import utilidad.UserType;
+import utilidad.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,8 +17,6 @@ import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-
-    Integer expiry = new Integer(5*60);
 
     UserDAO userDAO = new UserDAO();
     ClienteDAO clienteDAO = new ClienteDAO();
@@ -41,10 +37,7 @@ public class LoginServlet extends HttpServlet {
 
                     if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
 
-                        Cookie loginCookie = new Cookie(Const.USERNAME, user.getUsername());
-                        loginCookie.setMaxAge(expiry);
-                        response.addCookie(loginCookie);
-                        request.getSession().setAttribute(Const.USER, user);
+                        SessionUtility.save(user, request, response);
                         if (user.getType() == UserType.ADMINISTRADOR) {
                             response.sendRedirect("admin");
                         } else {
@@ -90,6 +83,13 @@ public class LoginServlet extends HttpServlet {
                     resp.sendRedirect("rol/individual");
                     break;
             }
+        } else if (req.getParameter(Const.LOGOUT) != null) {
+            SessionUtility.remove(req, resp);
+            req.getRequestDispatcher("login.jsp").include(req, resp);
+        } else if (req.getParameter(Const.EXPIRY) != null) {
+            SessionUtility.remove(req, resp);
+            req.setAttribute(Const.MESSAGE, "La sesión ha expirado");
+            req.getRequestDispatcher("login.jsp").include(req, resp);
         } else {
             req.getRequestDispatcher("login.jsp").include(req, resp);
         }

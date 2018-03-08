@@ -6,6 +6,7 @@ import models.RolIndividual;
 import models.User;
 import utilidad.Const;
 import utilidad.Fecha;
+import utilidad.SessionUtility;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,6 +30,7 @@ public class EmpleadosServlet  extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.req = req;
         this.resp = resp;
+        if (SessionUtility.isExpiry(req, resp)) return;
 
         String empleadoId = req.getParameter(Const.ID);
         if (empleadoId != null) {
@@ -51,6 +53,7 @@ public class EmpleadosServlet  extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.req = req;
         this.resp = resp;
+        if (SessionUtility.isExpiry(req, resp)) return;
 
         String next = req.getParameter("next");
         String previous = req.getParameter("previous");

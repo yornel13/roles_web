@@ -19,6 +19,10 @@
     <%@include file="WEB-INF/partials-dynamic/header_principal.jsp" %>
     <div class="container">
 
+        <section>
+            <h2 class="content-title">Clientes</h2>
+        </section>
+
         <div class="content-table">
 
             <table class="table table-striped table-bordered table-hover" style="max-width: 1000px; position: relative;left:0;right:0;margin: auto;">

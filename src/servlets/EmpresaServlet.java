@@ -2,6 +2,7 @@ package servlets;
 
 import utilidad.Const;
 import utilidad.Fecha;
+import utilidad.SessionUtility;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,11 +16,13 @@ public class EmpresaServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (SessionUtility.isExpiry(req, resp)) return;
         req.getRequestDispatcher("empresa.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (SessionUtility.isExpiry(req, resp)) return;
         if (req.getParameter("goEmpleados") != null) {
             req.getSession().setAttribute(Const.FECHA, Fecha.getFechaActualInit());
             resp.sendRedirect("rol/empleados");

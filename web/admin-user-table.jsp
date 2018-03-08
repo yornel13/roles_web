@@ -1,5 +1,6 @@
 <%@ page import="models.User" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%--
   Created by IntelliJ IDEA.
   User: Joshuan Marval
   Date: 5/3/2018
@@ -18,7 +19,7 @@
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
 </head>
 <body>
-    <%@include file="WEB-INF/partials-static/header_principal.html" %>
+    <%@include file="WEB-INF/partials-dynamic/header_principal.jsp" %>
 
     <div class="container">
 
@@ -41,21 +42,21 @@
                         <%
                             List<User> listaUsuario = (List<User>) request.getAttribute("listaUsuario");
 
-                            for (User user :
+                            for (User userIn :
                                     listaUsuario) {
                         %>
                         <td>
                             <form>
-                                <button class="searchButton" name="user_id" value="<%=user.getId()%>">
+                                <button class="searchButton" name="user_id" value="<%=userIn.getId()%>">
                                     <span class="glyphicon glyphicon-search"></span>
                                 </button>
                             </form>
                         </td>
-                        <td><%=user.getNombre()%></td>
-                        <td><%=user.getApellido()%></td>
-                        <td><%=user.getCedula()%></td>
-                        <td><%=user.getUsername()%></td>
-                        <td><%=user.getTipo()%></td>
+                        <td><%=userIn.getNombre()%></td>
+                        <td><%=userIn.getApellido()%></td>
+                        <td><%=userIn.getCedula()%></td>
+                        <td><%=userIn.getUsername()%></td>
+                        <td><%=userIn.getTipo()%></td>
                     </tr>
                 <%
                     }
@@ -68,9 +69,6 @@
 
 
     </div>
-
-
-
 
 </body>
 </html>

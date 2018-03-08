@@ -20,6 +20,10 @@
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
         <div class="container">
 
+            <section>
+                <h2 class="content-title">Roles Individual</h2>
+            </section>
+
             <div class="container-filter">
 
                 <%@include file="../WEB-INF/partials-dynamic/date_search.jsp" %>

@@ -10,57 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01ca9d46-f089-4273-9775-93347b94350b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utilidad/SessionUtility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/models/User.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/models/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/ClientesServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/ClientesServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/EmpleadosServlet$1.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/EmpleadosServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/EmpleadosServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/EmpleadosServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/EmpresaServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/EmpresaServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/RolClienteServlet$1.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/RolClienteServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/RolClienteServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/RolClienteServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/RolIndividualServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/RolIndividualServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/User.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/ClientesServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/ClientesServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpleadosServlet$1.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpleadosServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpleadosServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpleadosServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpresaServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpresaServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/LoginServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/LoginServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet$1.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolIndividualServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolIndividualServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/partials-dynamic/header_principal.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/partials-dynamic/header_principal.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/admin-user-table.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/admin-user-table.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/admin.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/clientes.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/clientes.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/css/general-style.css" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/css/general-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/login.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/rol/empleados.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/rol/empleados.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/rol/rol_cliente.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/rol/rol_cliente.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/rol/rol_individual.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/rol/rol_individual.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/rol/roles_cliente.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/rol/roles_cliente.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/rol/roles_empleado.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/rol/roles_empleado.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/User.java" afterPath="$PROJECT_DIR$/src/models/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/ClientesServlet.java" afterPath="$PROJECT_DIR$/src/servlets/ClientesServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/EmpleadosServlet.java" afterPath="$PROJECT_DIR$/src/servlets/EmpleadosServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/EmpresaServlet.java" afterPath="$PROJECT_DIR$/src/servlets/EmpresaServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/LoginServlet.java" afterPath="$PROJECT_DIR$/src/servlets/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/RolClienteServlet.java" afterPath="$PROJECT_DIR$/src/servlets/RolClienteServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/RolIndividualServlet.java" afterPath="$PROJECT_DIR$/src/servlets/RolIndividualServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utilidad/Const.java" afterPath="$PROJECT_DIR$/src/utilidad/Const.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utilidad/Utilidad.java" afterPath="$PROJECT_DIR$/src/utilidad/Utilidad.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/partials-dynamic/header_principal.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/partials-dynamic/header_principal.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin-user-table.jsp" afterPath="$PROJECT_DIR$/web/admin-user-table.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin.jsp" afterPath="$PROJECT_DIR$/web/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/clientes.jsp" afterPath="$PROJECT_DIR$/web/clientes.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/general-style.css" afterPath="$PROJECT_DIR$/web/css/general-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/empleados.jsp" afterPath="$PROJECT_DIR$/web/rol/empleados.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/rol_cliente.jsp" afterPath="$PROJECT_DIR$/web/rol/rol_cliente.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/rol_individual.jsp" afterPath="$PROJECT_DIR$/web/rol/rol_individual.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/roles_cliente.jsp" afterPath="$PROJECT_DIR$/web/rol/roles_cliente.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/roles_empleado.jsp" afterPath="$PROJECT_DIR$/web/rol/roles_empleado.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,7 +52,7 @@
       <file leaf-file-name="roles_cliente.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/rol/roles_cliente.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="544">
               <caret line="32" column="63" lean-forward="false" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
               <folding />
             </state>
@@ -113,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/partials-dynamic/bar_search.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="44" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="44" />
+              <caret line="2" column="44" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -122,21 +72,29 @@
       <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="1309">
               <caret line="90" column="46" lean-forward="false" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="391">
+              <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -268,7 +226,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -322,7 +280,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -597,12 +555,14 @@
       <workItem from="1520201722349" duration="11822000" />
       <workItem from="1520272182730" duration="28837000" />
       <workItem from="1520342111213" duration="30290000" />
-      <workItem from="1520465538379" duration="15018000" />
+      <workItem from="1520465538379" duration="15060000" />
+      <workItem from="1520538984093" duration="637000" />
+      <workItem from="1520776493952" duration="234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179867000" />
+    <option name="totallyTimeSpent" value="180780000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -615,7 +575,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
@@ -627,20 +586,20 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.16471216" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32826087" sideWeight="0.83528787" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32826087" sideWeight="0.83528787" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17270789" sideWeight="0.4935275" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17590618" sideWeight="0.4935275" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21908316" sideWeight="0.50647247" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -703,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="58" column="19" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,12 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="723">
           <caret line="92" column="5" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="92" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1520356268891" expanded="true" signature="420:458" ph="SELECT * FRO... cliente" />
-            <marker date="1520356268891" expanded="true" signature="1600:1635" ph="SELECT * FRO... cliente" />
-            <marker date="1520356268891" expanded="true" signature="1600:1643" ph="SELECT * FRO... cliente" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -731,11 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="58" column="23" lean-forward="false" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1520357010293" expanded="true" signature="397:446" ph="SELECT * FRO... usuario" />
-            <marker date="1520357010293" expanded="true" signature="1544:1587" ph="SELECT * FRO... detalles_empleado" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,10 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="50" column="22" lean-forward="false" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1520356377561" expanded="true" signature="359:409" ph="SELECT * FRO... empresa" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,7 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="48" column="16" lean-forward="false" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,7 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-495">
           <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -779,22 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="167" column="16" lean-forward="false" selection-start-line="167" selection-start-column="11" selection-end-line="167" selection-end-column="16" />
-          <folding>
-            <marker date="1520374238368" expanded="true" signature="498:872" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1520374238368" expanded="true" signature="4226:4552" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1520374238368" expanded="true" signature="4226:4604" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1520374238368" expanded="true" signature="7939:7964" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1520374238368" expanded="true" signature="7939:8009" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1520374238368" expanded="true" signature="10793:10826" ph="SELECT * FRO... usuario" />
-            <marker date="1520374238368" expanded="true" signature="12510:12546" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1520374238368" expanded="true" signature="12510:12547" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1520374238368" expanded="true" signature="12510:12551" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1520374238368" expanded="true" signature="15276:15309" ph="SELECT * FRO... usuario" />
-            <marker date="1520374238368" expanded="true" signature="16373:16416" ph="SELECT * FRO... detalles_empleado" />
-            <marker date="1520374238368" expanded="true" signature="17392:17425" ph="SELECT * FRO... empresa" />
-            <marker date="1520374238368" expanded="true" signature="17958:17989" ph="SELECT * FRO... cargo" />
-            <marker date="1520374238368" expanded="true" signature="18438:18471" ph="SELECT * FRO... cliente" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,19 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="36" column="32" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="32" />
-          <folding>
-            <marker date="1520380129714" expanded="true" signature="564:637" ph="SELECT * FRO... rol_individual" />
-            <marker date="1520380129714" expanded="true" signature="2842:2875" ph="SELECT * FRO... usuario" />
-            <marker date="1520380129714" expanded="true" signature="4504:4533" ph="SELECT * FRO... rol_individual" />
-            <marker date="1520380129714" expanded="true" signature="4504:4787" ph="SELECT * FRO... rol_individual" />
-            <marker date="1520380129714" expanded="true" signature="4504:4835" ph="SELECT * FRO... rol_individual" />
-            <marker date="1520380129714" expanded="true" signature="4504:4836" ph="SELECT * FRO... rol_individual" />
-            <marker date="1520380129714" expanded="true" signature="7587:7627" ph="SELECT * FRO... rol_individual" />
-            <marker date="1520380129714" expanded="true" signature="10136:10169" ph="SELECT * FRO... usuario" />
-            <marker date="1520380129714" expanded="true" signature="11239:11282" ph="SELECT * FRO... detalles_empleado" />
-            <marker date="1520380129714" expanded="true" signature="12264:12297" ph="SELECT * FRO... empresa" />
-            <marker date="1520380129714" expanded="true" signature="12836:12867" ph="SELECT * FRO... cargo" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -838,16 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="5" column="71026" lean-forward="false" selection-start-line="5" selection-start-column="71017" selection-end-line="5" selection-end-column="71026" />
-          <folding>
-            <element signature="e#61909#62109#2" expanded="false" />
-            <element signature="e#62317#62466#2" expanded="false" />
-            <element signature="e#62968#63114#2" expanded="false" />
-            <element signature="e#63415#63581#1" expanded="false" />
-            <element signature="e#74301#74544#2" expanded="false" />
-            <element signature="e#75411#75660#2" expanded="false" />
-            <element signature="e#101957#102147#2" expanded="false" />
-            <element signature="e#102193#102383#2" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,7 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-263">
           <caret line="46" column="4" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="52" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,7 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,7 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="77" column="14" lean-forward="false" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,10 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
           <caret line="115" column="64" lean-forward="false" selection-start-line="115" selection-start-column="64" selection-end-line="115" selection-end-column="64" />
-          <folding>
-            <element signature="e#2442#2443#0" expanded="true" />
-            <element signature="e#2513#2514#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1026,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="135" column="8" lean-forward="false" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,19 +940,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/partials-static/header_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="25" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,7 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="113" lean-forward="false" selection-start-line="3" selection-start-column="113" selection-end-line="3" selection-end-column="113" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1106,7 +990,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/rol/roles_cliente.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="544">
           <caret line="32" column="63" lean-forward="false" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
           <folding />
         </state>
@@ -1115,14 +999,14 @@
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/partials-dynamic/bar_search.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="44" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="44" />
+          <caret line="2" column="44" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
+        <state relative-caret-position="1309">
           <caret line="90" column="46" lean-forward="false" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
           <folding />
         </state>
@@ -1130,11 +1014,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -43,6 +43,29 @@ public class SessionUtility {
         return profile;
     }
 
+    public static User getUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        User user = null;
+        String username = null;
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null){
+            for(Cookie cookie : cookies){
+                if(cookie.getName().equals(Const.USERNAME)) {
+                    username = cookie.getValue();
+                }
+            }
+        }
+        if(username != null) {
+            user = (User) request.getSession().getAttribute(Const.USER);
+            if (user == null || !user.getUsername().equals(username)) user = null;
+        }
+        if (user == null) {
+            response.sendRedirect("/roles_web/login?expiry");
+            return null;
+        }
+
+        return user;
+    }
+
     public static Boolean isActive(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = null;
         String username = null;

@@ -34,14 +34,5 @@
                 </ul>
             </div>
         </div>
-        <!--<form action="/roles_web/login" >
-            <div class="usuario">
-                <p><a><%=profile%></a></p>
-                <button name="logout" class="fa fa-sign-out">
-                    <span class="tooltiptext">Salir</span>
-                </button>
-
-            </div>
-        </form>-->
     </div>
 </header>

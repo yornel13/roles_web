@@ -1,4 +1,4 @@
-.btn {
+.btns {
     position: relative;
 
     display: block;
@@ -21,20 +21,20 @@
     height: 100px;
 }
 
-.btn:hover, .btn:focus {
+.btns:hover, .btns:focus {
     background-color: #27ae60;
 }
 
-.btn > * {
+.btns > * {
     position: relative;
 }
 
-.btn span {
+.btns span {
     display: block;
     padding: 12px 24px;
 }
 
-.btn:before {
+.btns:before {
     content: "";
 
     position: absolute;
@@ -56,7 +56,7 @@
     transform: translate(-50%, -50%);
 }
 
-.btn:active:before {
+.btns:active:before {
     width: 120%;
     padding-top: 120%;
     transition: width .2s ease-out, padding-top .2s ease-out;
@@ -70,20 +70,20 @@ h2 {
     font-weight: normal;
 }
 
-.btn.orange {
+.btns.orange {
     font-size: 24px;
     background-color: #e67e22;
 }
 
-.btn.orange:hover, .btn.orange:focus {
+.btns.orange:hover, .btns.orange:focus {
     background-color: #d35400;
 }
 
-.btn.red {
+.btns.red {
     font-size: 24px;
     background-color: #e74c3c;
 }
 
-.btn.red:hover, .btn.red:focus {
+.btns.red:hover, .btns.red:focus {
     background-color: #c0392b;
 }

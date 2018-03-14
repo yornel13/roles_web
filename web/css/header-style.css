@@ -5,6 +5,7 @@ header{
     opacity: 0.85;
     height: 70px;
     position: fixed;
+
 }
 .ancho{
     width: 80%;
@@ -57,7 +58,7 @@ header{
     background: transparent;
     border: 0;
     top:-47px;
-    position: relative;
+    position: absolute;
     width: 36px;
     height: 36px;
     font-size:36px;
@@ -88,3 +89,4 @@ header{
     font-family: rale;
     src: url(../fonts/Raleway-Regular.ttf);
 }
+

@@ -2,9 +2,10 @@
     margin: 0;
     padding: 0;
 }
-.container {
-    padding-top: 70px;
+.custom-container {
+    padding-top: 5px;
 }
+
 .table-responsive{
     overflow: auto;
 }
@@ -33,6 +34,9 @@
 .container-filter{
     position:relative;
     padding-bottom: 16px;
+}
+.container{
+    padding-top: 70px;
 }
 .searchButton{
     background: Transparent no-repeat;
@@ -86,4 +90,5 @@
     font-family: rale;
 
 }
+
 

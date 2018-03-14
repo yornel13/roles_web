@@ -7,48 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01ca9d46-f089-4273-9775-93347b94350b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/partials-static/modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/add-user.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/change_username_pass.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap-msg.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bootstrap-msg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.confirm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.confirm.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/ClienteDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/ClienteDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/EmpresaDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/EmpresaDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/RolClienteDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/RolClienteDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/RolIndividualDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/RolIndividualDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/UserDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/UserDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/UsuarioDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/dao/UsuarioDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/AdminServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/AdminServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/utilidad/Const.class" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/classes/utilidad/Const.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/ClienteDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/ClienteDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/EmpresaDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/EmpresaDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/RolClienteDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/RolClienteDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/RolIndividualDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/RolIndividualDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/UserDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/UserDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/UsuarioDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/UsuarioDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/AdminServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/AdminServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/LoginServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/LoginServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Const.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Const.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/partials-dynamic/header_principal.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/WEB-INF/partials-dynamic/header_principal.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/admin-user-table.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/admin-user-table.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/admin.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/css/admin-form.css" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/css/admin-form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/css/general-style.css" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/css/general-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/css/header-style.css" afterPath="$PROJECT_DIR$/out/artifacts/Roles_Web_war_exploded/css/header-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/dao/UserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/AdminServlet.java" afterPath="$PROJECT_DIR$/src/servlets/AdminServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/LoginServlet.java" afterPath="$PROJECT_DIR$/src/servlets/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utilidad/Const.java" afterPath="$PROJECT_DIR$/src/utilidad/Const.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/partials-dynamic/header_principal.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/partials-dynamic/header_principal.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin-user-table.jsp" afterPath="$PROJECT_DIR$/web/admin-user-table.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin.jsp" afterPath="$PROJECT_DIR$/web/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/admin-form.css" afterPath="$PROJECT_DIR$/web/css/admin-form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/general-style.css" afterPath="$PROJECT_DIR$/web/css/general-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/header-style.css" afterPath="$PROJECT_DIR$/web/css/header-style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,17 +49,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminServlet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdminServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/servlets/AdminServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="-3132">
               <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-user-table.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin-user-table.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/admin-user-table.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="706">
@@ -619,12 +578,12 @@
       <workItem from="1520779391999" duration="45153000" />
       <workItem from="1520860605421" duration="1326000" />
       <workItem from="1520878448779" duration="38547000" />
-      <workItem from="1520938208670" duration="12055000" />
+      <workItem from="1520938208670" duration="13043000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345508000" />
+    <option name="totallyTimeSpent" value="346496000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -645,21 +604,21 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.16471216" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34375" sideWeight="0.16944024" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34375" sideWeight="0.83528787" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34375" sideWeight="0.83055973" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885022" sideWeight="0.48026314" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885022" sideWeight="0.7794486" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18683812" sideWeight="0.5131579" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18003026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885022" sideWeight="0.5197368" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885022" sideWeight="0.22055137" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1075,14 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/AdminServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/admin-user-table.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="706">
@@ -1090,6 +1041,14 @@
           <folding>
             <element signature="e#4266#4273#1#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/AdminServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3132">
+          <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>

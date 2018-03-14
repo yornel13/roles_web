@@ -86,6 +86,11 @@ public class LoginServlet extends HttpServlet {
         } else if (req.getParameter(Const.LOGOUT) != null) {
             SessionUtility.remove(req, resp);
             req.getRequestDispatcher("login.jsp").include(req, resp);
+        } else if (req.getParameter("profile") != null) {
+            /**********************************************/
+            /*******Redireccionar aqui a perfil************/
+            /**********************************************/
+            resp.sendRedirect("/roles_web/admin"); // <----------------------
         } else if (req.getParameter(Const.EXPIRY) != null) {
             SessionUtility.remove(req, resp);
             req.setAttribute(Const.MESSAGE, "La sesión ha expirado");

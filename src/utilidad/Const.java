@@ -22,4 +22,5 @@ public class Const {
     public static final String ROLES_INDIVIDUAL = "roles_individual";
     public static final String ROL_INDIVIDUAL = "rol_individual";
     public static final String SEARCH_TEXT = "search_text";
+    public static final Integer ACTIVE = 1;
 }

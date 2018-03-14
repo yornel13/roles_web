@@ -2,9 +2,10 @@
     margin: 0;
     padding: 0;
 }
-.container {
-    padding-top: 70px;
+.custom-container {
+    padding-top: 5px;
 }
+
 .table-responsive{
     overflow: auto;
 }
@@ -34,6 +35,7 @@
     position:relative;
     padding-bottom: 16px;
 }
+
 .searchButton{
     background: Transparent no-repeat;
     border: none;
@@ -70,4 +72,5 @@
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
 }
+
 

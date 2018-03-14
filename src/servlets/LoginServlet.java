@@ -97,7 +97,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("POST "+ req.getParameter("logout"));
+        System.out.println("POST el logout viene asi "+ req.getParameter("logout"));
         if(req.getParameter("logout")!= null){
 
             HttpSession session = req.getSession();
@@ -108,11 +108,10 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
+
         if (req.getParameter("goLogin") != null) {
-            System.out.println("Entro post en if");
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         } else {
-            System.out.println("Paso post en else");
             processRequests(req, resp);
         }
     }

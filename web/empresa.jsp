@@ -16,8 +16,8 @@
 
         <div class="container-buttons">
             <form action="empresa" method="post">
-                <button name="goEmpleados" class="btn orange" ><span>Empleados</span></button>
-                <button name="goClientes" class="btn red"><span>Clientes</span></button>
+                <button name="goEmpleados" class="btns orange" ><span>Empleados</span></button>
+                <button name="goClientes" class="btns red"><span>Clientes</span></button>
             </form>
         </div>
     </body>

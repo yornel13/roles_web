@@ -27,6 +27,8 @@
         String infoMsg = (String) request.getAttribute("info_msg");
         String infoTitle = "Guardado!";
 
+        System.out.println("infoMsg es: "+infoMsg);
+
         if(infoMsg != null){
             if(infoMsg.equals("updated") ){
                 infoTitle = "Actualizado!";
@@ -36,8 +38,8 @@
             }
         }
     %>
-    <div class="alert-container container" style=" margin-top: 50px; margin-bottom: 10px; height: 100px;">
-        <div id="saved_info" class="alert alert-success align-content-center invisible" >
+    <div class="alert-container container" style=" margin-top: 35px; margin-bottom: 10px; padding-top:20px; height: 100px;">
+        <div id="saved_info" class="alert alert-success align-content-center invisible"  >
             <strong><%=infoTitle%></strong> <p id="msg_success_info"></p>
         </div>
     </div>
@@ -96,7 +98,6 @@
                 <%
                     }
 
-
                 %>
             </tbody>
             </table>
@@ -128,12 +129,6 @@
     <script>
 
         $(document).ready(function() {
-            
-            $('#delete_button').click(function () {
-            });
-
-            $("#modal_delete").modal(show);
-
 
             var typeInfo = $("#type_info").text();
             console.log(typeInfo);
@@ -148,8 +143,18 @@
                 },4000);
             }
 
+            if (!typeInfo.localeCompare("save_profile")) {
+                console.log(" entro saved");
+                $("#saved_info").removeClass("alert alert-success invisible")
+                    .addClass("alert alert-success");
+                $("#msg_success_info").text("Su perfil ha sido actualizado con exito");
+                setTimeout(function() {
+                    $("#saved_info").fadeOut(1500);
+                },4000);
+            }
+
             if (!typeInfo.localeCompare("updated")) {
-                console.log("entro saved");
+                console.log("entro update");
               $("#saved_info").removeClass("alert alert-success invisible")
                   .addClass("alert alert-success");
               $("#msg_success_info").text("El usuario ha sido modificado con exito");
@@ -158,16 +163,17 @@
                 },4000);
             }
 
-         /*
+
             if (!typeInfo.localeCompare("delete")) {
                 console.log(" entro saved");
                 $("#saved_info").removeClass("alert alert-success invisible")
-                  .addClass("alert alert-danger");
+                    .addClass("alert alert-danger");
                 $("#msg_success_info").text("El usuario ha sido borrado");
-                setTimeout(function() {
+                setTimeout(function () {
                     $("#saved_info").fadeOut(1500);
-                },4000);
-            }*/
+                }, 4000);
+            }
+
         })
 
     </script>

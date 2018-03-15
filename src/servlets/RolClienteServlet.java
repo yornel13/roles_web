@@ -4,7 +4,7 @@ import dao.RolClienteDAO;
 import models.*;
 import utilidad.Const;
 import utilidad.Fecha;
-import utilidad.UserType;
+import utilidad.SessionUtility;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,6 +28,7 @@ public class RolClienteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.req = req;
         this.resp = resp;
+        if (SessionUtility.isExpiry(req, resp)) return;
 
         String searchId = req.getParameter(Const.ID);
         if (searchId != null) {
@@ -51,6 +52,7 @@ public class RolClienteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.req = req;
         this.resp = resp;
+        if (SessionUtility.isExpiry(req, resp)) return;
 
         String next = req.getParameter("next");
         String previous = req.getParameter("previous");

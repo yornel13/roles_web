@@ -10,6 +10,8 @@ public class Const {
     public static final String PASSWORD = "password";
     public static final String EMPTY = "";
     public static final String SUCCESSFUL = "successful";
+    public static final String LOGOUT = "logout";
+    public static final String EXPIRY = "expiry";
     public static final String EMPRESA_ID = "empresaId";
     public static final String CLIENTE_ID = "clienteId";
     public static final String CLIENTE = "cliente";
@@ -23,4 +25,5 @@ public class Const {
     public static final String ROL_INDIVIDUAL = "rol_individual";
     public static final String SEARCH_TEXT = "search_text";
     public static final Integer ACTIVE = 1;
+    public static final String MESSAGE = "message";
 }

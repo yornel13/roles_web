@@ -1,5 +1,6 @@
 <%@ page import="models.RolIndividual" %>
 <%@ page import="java.util.List" %>
+<%@ page import="utilidad.Const" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     List<RolIndividual> roles = (List<RolIndividual>) request.getAttribute(Const.ROLES_INDIVIDUAL);
@@ -19,6 +20,10 @@
     <body>
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
         <div class="container">
+
+            <section>
+                <h2 class="content-title">Roles Individual</h2>
+            </section>
 
             <div class="container-filter">
 

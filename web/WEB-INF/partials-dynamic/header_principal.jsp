@@ -1,52 +1,38 @@
-<%@ page import="models.User" %>
-<%@ page import="utilidad.Const" %>
+<%@ page import="utilidad.SessionUtility" %>
 <%
-    User user = null;
-    String username = null;
-    String profile = null;
-    String userID = null;
-    Cookie[] cookies = request.getCookies();
-    if(cookies != null){
-        for(Cookie cookie : cookies){
-            if(cookie.getName().equals(Const.USERNAME)) {
-                username = cookie.getValue();
-            }
-        }
-    }
-
-    if(username != null) {
-        user = (User) request.getSession().getAttribute(Const.USER);
-        if(user != null){
-            userID = user.getId().toString();
-        }
-    }
-    if (user == null || !user.getUsername().equals(username)) user = null;
-
-    if (user == null) response.sendRedirect("/roles_web/index");
-    else profile = user.getTipoText() + ": " + user.getNombre() + " " + user.getApellido();
-
+    String profile = SessionUtility.getProfile(request, response);
 %>
 <header>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="href=https://www.jqueryscript.net/tags.php?/twitter/twitter-bootstrap-hover-dropdown.js"></script>
+
+   <%-- <script>
+        $(document).ready(function() {
+            $('.js-activated').dropdownHover().dropdown();
+        });
+    </script>--%>
+
     <div class="ancho">
         <div class="logo">
             <p><a href="">Control Guardias</a></p>
         </div>
-
-        <form>
-        <form  method="post" action="login">
-            <div>
-                <button name="logout" class="fa fa-sign-out">
-                    <span class="tooltiptext">Salir</span>
+        <div class="btn-toolbar" style="width: 70%;height: 70px;padding-top: 20px">
+            <div class="btn-group" style="position: absolute;right:10%;">
+                <button class="btn dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000"  style="background: transparent;
+                padding-right: 10px;                                                                                        color: white;
+                                                                                                                            font-size: 13px;
+                                                                                                                            text-decoration: none;
+                                                                                                                            text-transform: uppercase;
+                                                                                                                            font-weight: bold;
+                                                                                                                            letter-spacing: 1px;
+                                                                                                                            font-family: rale">
+                    <%=profile%>
                 </button>
+                <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="/roles_web/login?profile">Ir a perfil</a></li>
+                    <li><a tabindex="-1" href="/roles_web/login?logout">Salir</a></li>
+                </ul>
             </div>
-        </form>
-
-        <form  class="usuario"  action="admin">
-                <button id="profile_button" name="update_profile" style=" width: auto;" value="<%=userID%>">
-                    <a id="profile_text" style="font-size: medium;" ><%=profile%></a>
-                </button>
-        </form>
-
-        </form>
+        </div>
     </div>
 </header>

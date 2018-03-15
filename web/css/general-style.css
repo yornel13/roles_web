@@ -35,7 +35,9 @@
     position:relative;
     padding-bottom: 16px;
 }
-
+.container{
+    padding-top: 70px;
+}
 .searchButton{
     background: Transparent no-repeat;
     border: none;
@@ -71,6 +73,22 @@
     top: 45%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
+}
+@font-face {
+    font-family: rale;
+    src: url(../fonts/Raleway-Regular.ttf);
+}
+.content-title{
+    margin: 24px auto auto;
+    width: 60%;
+    color: white;
+    text-align: center;
+    background: #6f9cc2;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: rale;
+
 }
 
 

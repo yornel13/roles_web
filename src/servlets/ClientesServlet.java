@@ -5,6 +5,7 @@ import models.Cliente;
 import models.RolCliente;
 import utilidad.Const;
 import utilidad.Fecha;
+import utilidad.SessionUtility;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +22,8 @@ public class ClientesServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (SessionUtility.isExpiry(req, resp)) return;
+
         List<Cliente> clientes = clienteDAO.findAll();
         req.setAttribute(Const.CLIENTES, clientes);
         req.getRequestDispatcher("clientes.jsp").forward(req, resp);
@@ -28,6 +31,8 @@ public class ClientesServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (SessionUtility.isExpiry(req, resp)) return;
+
         String clienteId = req.getParameter(Const.ID);
         if (clienteId != null) {
             req.getSession().setAttribute(Const.FECHA, Fecha.getFechaActualInit());

@@ -1,5 +1,6 @@
 <%@ page import="models.RolIndividual" %>
 <%@ page import="utilidad.Fecha" %>
+<%@ page import="utilidad.Const" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     RolIndividual rolIndividual = (RolIndividual) request.getAttribute(Const.ROL_INDIVIDUAL);
@@ -19,6 +20,10 @@
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
 
         <div class="container">
+
+            <section>
+                <h2 class="content-title">Rol Individual</h2>
+            </section>
 
             <div class="content-table">
 

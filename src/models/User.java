@@ -111,4 +111,8 @@ public class User {
                 return "NONE";
         }
     }
+
+    public String getProfile() {
+        return getTipoText()+": "+getNombre()+" "+getApellido();
+    }
 }

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.util.List" %>
 <%@ page import="models.RolCliente" %>
+<%@ page import="utilidad.Const" %>
 <%
     List<RolCliente> roles = (List<RolCliente>) request.getAttribute(Const.ROLES_CLIENTE);
 %>
@@ -20,6 +21,10 @@
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
 
         <div class="container">
+
+            <section>
+                <h2 class="content-title">Roles Cliente</h2>
+            </section>
 
             <div class="container-filter">
 

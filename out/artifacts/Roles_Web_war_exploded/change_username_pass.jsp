@@ -13,10 +13,13 @@
 <body>
 
 <%
-    User user = (User) request.getAttribute("user_logged_id");
+    User userLogged = (User) request.getAttribute("user_logged_id");
+
 
     String infoMsg = (String) request.getAttribute("info_msg");
+    String usernameReturned = (String) request.getAttribute("username");
 
+    System.out.println("login user: "+userLogged.getNombre()+" infoMsg: "+infoMsg+" username "+usernameReturned);
 %>
 
 <div class="container">
@@ -38,7 +41,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text"><span class="glyphicon glyphicon-user"></span></div>
                         </div>
-                        <input name="username" class="form-control" placeholder="Nombre usuario" disabled value="<%=user.getUsername()%>">
+                        <input name="username" class="form-control" placeholder="Nombre usuario" disabled value="<%=userLogged.getUsername()%>">
                     </div>
                 </div>
 
@@ -91,9 +94,16 @@
                 <div id="wrong_info" class="alert alert-danger" hidden>
                     <strong>Campos obligatorios!</strong> <p id="msg_wrong_info"></p>
                 </div>
+                <div id="wrong_info_password" class="alert alert-danger" hidden>
+                    <strong>Contraseña invalida!</strong> <p id="msg_wrong_pass"></p>
+                </div>
 
                 <div id="saved_info" class="alert alert-success" hidden>
                     <strong>Guardado!</strong> <p id="msg_success_info"></p>
+                </div>
+
+                <div id="wrong_info_username" class="alert alert-danger" hidden>
+                    <strong>Usuario existente!</strong> <p id="msg_wrong_info_username">El nombre de usuario <strong><%=usernameReturned%></strong> se encuentra en uso</p>
                 </div>
 
             </form>
@@ -113,11 +123,38 @@
 
         if(!typeInfo.localeCompare("empty_1")){
             $("#wrong_info").prop('hidden', false);
-            $("#msg_wrong_info").text("Los campos de nombre usuario y contraseña son requeridos");
+            $("#msg_wrong_info").text("EL campo de nombre usuario es requerido");
         }
         if(!typeInfo.localeCompare("empty_2")){
             $("#wrong_info").prop('hidden', false);
-            $("#msg_wrong_info").text("Los campos de contraseña y confirmacion no coinciden");
+            $("#msg_wrong_info").text("Campo de contraseña es requerido para el cambio de nombre usuario");
+        }
+        if(!typeInfo.localeCompare("empty_3")){
+            $("#wrong_info").prop('hidden', false);
+            $("#msg_wrong_info").text("Contraseña invalida para el cambio de nombre de usuario ");
+        }
+        if(!typeInfo.localeCompare("empty_4")){
+            $("#wrong_info_password").prop('hidden', false);
+            $("#msg_wrong_pass").text("No se pudo realizar cambios, error al ingresar la contraseña");
+        }
+        if(!typeInfo.localeCompare("empty_5")){
+            $("#wrong_info").prop('hidden', false);
+            $("#msg_wrong_info").text("La contraseña nueva no coincide con el campo de confirmacion");
+        }
+        if(!typeInfo.localeCompare("empty_6")){
+            $("#wrong_info").prop('hidden', false);
+            $("#msg_wrong_info").text("Los campos de nueva contraseña y confirmacion son requeridos");
+        }
+        if(!typeInfo.localeCompare("empty_7")){
+            $("#wrong_info").prop('hidden', false);
+            $("#msg_wrong_info").text("Debe colocar la contraseña actual para efectuar cualquier cambio");
+        }
+        if(!typeInfo.localeCompare("no_permission")){
+            $("#wrong_info").prop('hidden', false);
+            $("#msg_wrong_info").text("EL campo de contraseña actual es requerido para el cambio de nombre usuario");
+        }
+        if(!typeInfo.localeCompare("username_exists")){
+            $("#wrong_info_username").prop('hidden', false);
         }
 
 

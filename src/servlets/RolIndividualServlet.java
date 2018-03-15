@@ -6,6 +6,7 @@ import models.RolCliente;
 import models.RolIndividual;
 import utilidad.Const;
 import utilidad.Fecha;
+import utilidad.SessionUtility;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,6 +24,7 @@ public class RolIndividualServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (SessionUtility.isExpiry(req, resp)) return;
 
         String searchId = req.getParameter(Const.ID);
         if (searchId != null) {
@@ -47,6 +49,7 @@ public class RolIndividualServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (SessionUtility.isExpiry(req, resp)) return;
 
         String next = req.getParameter("next");
         String previous = req.getParameter("previous");

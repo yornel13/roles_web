@@ -35,51 +35,76 @@
             <form  class="well" method="post" action="admin">
 
                 <br>
-                <div class="form-row">
-                    <label class="sr-only" >Nombre usuario</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><span class="glyphicon glyphicon-user"></span></div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Cambiar nombre de usuario
+                        <br>
+                        <br>
+                        <div class="">
+                            <label class="sr-only" >Nombre usuario</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><span class="glyphicon glyphicon-user"></span></div>
+                                </div>
+                                <input name="username" class="form-control" placeholder="Nombre usuario" disabled value="<%=userLogged.getUsername()%>">
+                            </div>
                         </div>
-                        <input name="username" class="form-control" placeholder="Nombre usuario" disabled value="<%=userLogged.getUsername()%>">
+
+                        <br>
+                        <br>
+
+                        <div class="">
+                            <label class="sr-only" >Contraseña</label>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="glyphicon glyphicon-lock"></i></div>
+                                </div>
+                                <input type="password" name="password" class="form-control" placeholder="Contraseña" disabled>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <br>
+
+
                 <br>
 
-                <div class="form-row">
-                    <label class="sr-only" >Contraseña</label>
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="glyphicon glyphicon-lock"></i></div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Cambiar contraseña
+                        <br>
+                        <br>
+                        <div class="">
+                            <label class="sr-only" >Contraseña</label>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="glyphicon glyphicon-lock"></i></div>
+                                </div>
+                                <input type="password" name="password" class="form-control" placeholder="Contraseña" disabled>
+                            </div>
                         </div>
-                        <input type="password" name="password" class="form-control" placeholder="Contraseña" disabled>
-                    </div>
-                </div>
 
+                        <br>
 
-                <br>
-
-                <div class="form-row">
-                    <label class="sr-only" >Contraseña</label>
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="glyphicon glyphicon-lock"></i></div>
+                        <div class="">
+                            <label class="sr-only" >Nueva Contraseña</label>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="glyphicon glyphicon-lock"></i></div>
+                                </div>
+                                <input type="password" name="newpassword" class="form-control" placeholder="Nueva contraseña" disabled>
+                            </div>
                         </div>
-                        <input type="password" name="newpassword" class="form-control" placeholder="Nueva contraseña" disabled>
-                    </div>
-                </div>
 
-                <br>
+                        <br>
 
-                <div class="form-row">
-                    <label class="sr-only" >Contraseña</label>
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="glyphicon glyphicon-lock"></i></div>
+                        <div class="">
+                            <label class="sr-only" >Confirmar Contraseña</label>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="glyphicon glyphicon-lock"></i></div>
+                                </div>
+                                <input type="password" name="password" class="form-control" placeholder="Confirmar contraseña" disabled>
+                            </div>
                         </div>
-                        <input type="password" name="password" class="form-control" placeholder="Confirmar contraseña" disabled>
                     </div>
                 </div>
 

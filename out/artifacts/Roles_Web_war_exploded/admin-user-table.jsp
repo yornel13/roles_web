@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Control - Admin</title>
+
     <link rel="icon" href="images/security_icon.png" />
     <link rel="stylesheet" href="css/general-style.css">
     <link rel="stylesheet" href="css/header-style.css">
@@ -66,36 +67,35 @@
 
                     List<User> listaUsuario = (List<User>) request.getAttribute("listaUsuario");
 
-                    for (User userIn :
+                    for (User registeredUser :
                             listaUsuario) {
 
                         String className = "";
-                        if(!userIn.getActivo()){
+                        if(!registeredUser.getActivo()){
                             className = "table-danger";
                         }
                 %>
                     <tr class="<%=className%>" >
                         <td>
-                            <form>
-                                <button class="searchButton" name="user_id" value="<%=userIn.getId()%>">
+                            <form method="post">
+                                <button class="searchButton" name="user_id" value="<%=registeredUser.getId()%>">
                                     <span class="glyphicon glyphicon-search"></span>
                                 </button>
                             </form>
                         </td>
-                        <td><%=userIn.getNombre()%></td>
-                        <td><%=userIn.getApellido()%></td>
-                        <td><%=userIn.getCedula()%></td>
-                        <td><%=userIn.getUsername()%></td>
-                        <td><%=userIn.getTipoText()%></td>
+                        <td><%=registeredUser.getNombre()%></td>
+                        <td><%=registeredUser.getApellido()%></td>
+                        <td><%=registeredUser.getCedula()%></td>
+                        <td><%=registeredUser.getUsername()%></td>
+                        <td><%=registeredUser.getTipoText()%></td>
                         <td>
-                            <form action="admin">
-                                <button id="delete_button" name="delete" style="background-color: transparent;  border: none; cursor:pointer; overflow: hidden; outline:none; " value="<%=userIn.getId()%>">
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </button>
-                            </form>
+                            <button id="delete_trash_button"  onclick="getUserId(this)" data-toggle="modal" data-target="#modal_delete" data-backdrop="false" style="background-color: transparent;  border: none; cursor:pointer; overflow: hidden; outline:none; " data-value="<%=registeredUser.getId()%>">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
                         </td>
                     </tr>
                 <%
+
                     }
 
                 %>
@@ -104,7 +104,10 @@
         </div>
     </div>
 
-    <div id="modal_delete" class="modal" tabindex="-1" role="dialog">
+
+
+    <!--MODAL-->
+    <div id="modal_delete" class="modal fade"  >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -116,22 +119,44 @@
                 <div class="modal-body">
                     <p>¿Esta seguro que desea eliminar el usuario?.</p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Aceptar</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Canel</button>
-                </div>
+
+                    <div class="modal-footer">
+                        <form method="post" action="admin">
+                        <button name="delete_modal_button"  class="btn btn-primary" id="delete_modal_button" value="">Aceptar</button>
+                        </form>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+
             </div>
         </div>
     </div>
 
 
     <span id="type_info" hidden><%=infoMsg%></span>
+
     <script>
+
+        function getUserId(elemento) {
+            var deleteID = $(elemento).data('value');
+            console.log(deleteID);
+            $("#delete_modal_button").val(deleteID);
+
+        }
+
 
         $(document).ready(function() {
 
             var typeInfo = $("#type_info").text();
-            console.log(typeInfo);
+
+
+            $("#modal").on('shown.bs.modal', function () {
+                if(!typeInfo.localeCompare("modal")){
+                    console.log(" entro en modal");
+
+                  $("#modal").modal({show: true});
+                }
+
+            });
 
             if (!typeInfo.localeCompare("saved")) {
                 console.log(" entro saved");
@@ -174,9 +199,10 @@
                 }, 4000);
             }
 
+
         })
 
     </script>
-
+    <%@include file="WEB-INF/partials-static/scripts-bootstrap.html"%>
 </body>
 </html>

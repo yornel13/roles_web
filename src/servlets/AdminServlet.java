@@ -21,6 +21,8 @@ public class AdminServlet extends HttpServlet {
     private Integer activo;
     private String typeInfo;
     private String inputedUsername;
+    private String deleteUserID;
+    private UserDAO userDAO = new UserDAO();
 
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,6 +56,18 @@ public class AdminServlet extends HttpServlet {
 
         if(request.getParameter("activo") != null){
             activo = Integer.valueOf(request.getParameter("activo"));
+        }
+
+
+        /**Selected user from table*/
+
+        userToUpdateID = request.getParameter("user_id");
+        if(userToUpdateID != null){
+            Integer id = Integer.valueOf(userToUpdateID);
+            User user = userDAO.getUserByID(id);
+            request.setAttribute("user", user);
+            request.getRequestDispatcher("admin.jsp").forward(request, response);
+            return;
         }
 
         /**Save user*/
@@ -268,8 +282,6 @@ public class AdminServlet extends HttpServlet {
                             }
                         } else { // Cambio contraseña y username
 
-
-
                             if(userLogged.getPassword().equals(password)){
                                 if(!newPassword.isEmpty() && !confirmPassword.isEmpty()){
                                     if(newPassword.equals(confirmPassword)){
@@ -326,29 +338,11 @@ public class AdminServlet extends HttpServlet {
         }
 
 
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("-> GET");
-
-        userToUpdateID = request.getParameter("user_id");
-        UserDAO userDAO = new UserDAO();
-
-        /**Selected user from table*/
-
-
-        if(userToUpdateID != null){
-            Integer id = Integer.valueOf(userToUpdateID);
-            User user = userDAO.getUserByID(id);
-            request.setAttribute("user", user);
-            request.getRequestDispatcher("admin.jsp").forward(request, response);
-            return;
-        }
-
-        /**Delete users*/
-        String deleteUserID = request.getParameter("delete");
-        if(deleteUserID != null){
-            Integer deleteID = Integer.parseInt(deleteUserID);
+        /**Delete user*/
+        String modalID  = request.getParameter("delete_modal_button");
+        System.out.println(" el id usuario a borrar es:  "+modalID);
+        if(modalID != null){
+            Integer deleteID = Integer.parseInt(modalID);
             new UserDAO().deleteUser(deleteID);
             System.out.println("Usuario borrado con exito");
             typeInfo = "delete";
@@ -359,7 +353,7 @@ public class AdminServlet extends HttpServlet {
             return;
         }
 
-        /**Go to user profile*/
+        /**Go to user profile por POST no por aqui*/
         System.out.println("Como llega el ID "+request.getParameter("update_profile"));
         String userLoginID = request.getParameter("update_profile");
         if(userLoginID != null){
@@ -370,9 +364,13 @@ public class AdminServlet extends HttpServlet {
             request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
             return;
         }
-        System.out.println("siguio");
-        /**Get and load users from DB to table **/
 
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("-> GET");
+
+        /**Get and load users from DB to table **/
         List<User> listaUsuario = userDAO.getUsers();
         request.setAttribute("listaUsuario", listaUsuario);
         request.getRequestDispatcher("admin-user-table.jsp").forward(request,response);

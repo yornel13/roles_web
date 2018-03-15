@@ -18,6 +18,7 @@ import java.io.IOException;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
+    private String typeInfo;
     UserDAO userDAO = new UserDAO();
     ClienteDAO clienteDAO = new ClienteDAO();
     UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -31,8 +32,9 @@ public class LoginServlet extends HttpServlet {
         if(!username.equals(Const.EMPTY) && !password.equals(Const.EMPTY)){
 
             User user = userDAO.getRegisteredUser(username, password);
-
-            if(user != null){
+            System.out.println("use viene: "+ user);
+            if(user.getId() != null){
+                System.out.println("paso user");
                 if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
 
                     if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
@@ -46,14 +48,17 @@ public class LoginServlet extends HttpServlet {
                     }
                 }
             } else {
-                System.out.println("Username o password erroneo");
-                response.sendRedirect("login.jsp");
+                typeInfo = "wrong_2";
+                request.setAttribute("info_msg", typeInfo );
+                System.out.println("Usuario o contraseña invalido!");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
 
-        }
-        else {
-            System.out.println("Los campos son requeridos");
-            response.sendRedirect("login.jsp");
+        } else {
+            typeInfo = "wrong_1";
+            request.setAttribute("info_msg", typeInfo );
+            System.out.println("Los campos de nombre usuario y contraseña son requeridos");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
 
     }
@@ -102,7 +107,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("POST el logout viene asi "+ req.getParameter("logout"));
         if(req.getParameter("logout")!= null){
 
             HttpSession session = req.getSession();

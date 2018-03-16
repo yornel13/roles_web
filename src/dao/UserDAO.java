@@ -231,18 +231,26 @@ public class UserDAO {
 
     }
 
-    public User existUsername(String username){
-        String existUser ="SELECT id FROM user WHERE username=?";
+    public User getUserByUsername(String username){
+        String existUser ="SELECT * FROM user WHERE username=?";
         User user = new User();
         conn = new DBConnection().conectar();
         try {
            PreparedStatement preparedStatement = conn.prepareStatement(existUser);
            preparedStatement.setString(1, username);
+
            ResultSet resultSet  = preparedStatement.executeQuery();
 
 
             while (resultSet.next()){
                 user.setId(resultSet.getInt("id"));
+                user.setNombre(resultSet.getString("nombre"));
+                user.setApellido(resultSet.getString("apellido"));
+                user.setCedula(resultSet.getString("cedula"));
+                user.setUsername(resultSet.getString("username"));
+                user.setPassword(resultSet.getString("password"));
+                user.setTipo(resultSet.getString("tipo"));
+                user.setActivo(resultSet.getBoolean("activo"));
             }
 
         } catch (SQLException e) {

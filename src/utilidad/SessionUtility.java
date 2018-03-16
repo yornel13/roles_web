@@ -35,6 +35,7 @@ public class SessionUtility {
         }
         if(username != null) {
             user = (User) request.getSession().getAttribute(Const.USER);
+
             if (user == null || !user.getUsername().equals(username)) user = null;
         }
         if (user == null) response.sendRedirect("/roles_web/login?expiry");

@@ -3,14 +3,14 @@
     String profile = SessionUtility.getProfile(request, response);
 %>
 <header>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="href=https://www.jqueryscript.net/tags.php?/twitter/twitter-bootstrap-hover-dropdown.js"></script>
+     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+     <script src="href=https://www.jqueryscript.net/tags.php?/twitter/twitter-bootstrap-hover-dropdown.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            $('.js-activated').dropdownHover().dropdown();
-        });
-    </script>
+    <%-- <script>
+         $(document).ready(function() {
+             $('.js-activated').dropdownHover().dropdown();
+         });
+     </script>--%>
 
     <div class="ancho">
         <div class="logo">

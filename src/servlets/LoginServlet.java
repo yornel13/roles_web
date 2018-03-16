@@ -87,10 +87,7 @@ public class LoginServlet extends HttpServlet {
             SessionUtility.remove(req, resp);
             req.getRequestDispatcher("login.jsp").include(req, resp);
         } else if (req.getParameter("profile") != null) {
-            /**********************************************/
-            /*******Redireccionar aqui a perfil************/
-            /**********************************************/
-            resp.sendRedirect("/roles_web/admin?update_profile="+SessionUtility.getUser(req, resp).getId()); // <----------------------
+            resp.sendRedirect("/roles_web/admin?update_profile"); //
         } else if (req.getParameter(Const.EXPIRY) != null) {
             SessionUtility.remove(req, resp);
             req.setAttribute(Const.MESSAGE, "La sesión ha expirado");
@@ -102,7 +99,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("POST el logout viene asi "+ req.getParameter("logout"));
         if(req.getParameter("logout")!= null){
 
             HttpSession session = req.getSession();

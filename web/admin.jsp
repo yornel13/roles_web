@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Control - Admin</title>
-
+    <link rel="icon" href="images/security_icon.png" />
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="css/admin-form.css">

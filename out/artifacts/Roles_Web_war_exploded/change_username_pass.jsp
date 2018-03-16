@@ -19,7 +19,7 @@
     String infoMsg = (String) request.getAttribute("info_msg");
     String usernameReturned = (String) request.getAttribute("username");
 
-//    System.out.println("login user: "+userLogged.getNombre()+" infoMsg: "+infoMsg+" username "+usernameReturned);
+    System.out.println("login user: "+userLogged.getNombre()+" infoMsg: "+infoMsg+" username "+usernameReturned);
 %>
 
 <div class="container">

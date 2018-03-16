@@ -80,6 +80,40 @@ public class UserDAO {
         return user;
     }
 
+    public User getUser(String username) throws IOException{
+        final String userRegistered = "SELECT * FROM user WHERE username = ?";
+
+        User user = null;
+
+        try {
+            conn = new DBConnection().conectar();
+            PreparedStatement preparedStatement = conn.prepareStatement(userRegistered);
+            preparedStatement.setString(1, username);
+
+            rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                user = new User();
+                user.setId(rs.getInt("id"));
+                user.setNombre(rs.getString("nombre"));
+                user.setApellido(rs.getString("apellido"));
+                user.setCedula(rs.getString("cedula"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setTipo(rs.getString("tipo"));
+                user.setActivo(rs.getBoolean("activo"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+
+        }finally {
+            cerrarRecursos();
+        }
+        return user;
+    }
+
     public Integer updateUser(Integer id, String nombre, String apellido, String cedula,
                            String username, String password, String tipo, Integer activo){
 

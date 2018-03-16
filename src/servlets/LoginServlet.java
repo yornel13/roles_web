@@ -30,30 +30,30 @@ public class LoginServlet extends HttpServlet {
 
         if(!username.equals(Const.EMPTY) && !password.equals(Const.EMPTY)){
 
-            User user = userDAO.getRegisteredUser(username, password);
-
+            User user = userDAO.getUser(username);
             if(user != null){
                 if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
-
-                    if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
-
-                        SessionUtility.save(user, request, response);
-                        if (user.getType() == UserType.ADMINISTRADOR) {
-                            response.sendRedirect("admin");
-                        } else {
-                            response.sendRedirect("login?successful");
-                        }
+                    SessionUtility.save(user, request, response);
+                    if (user.getType() == UserType.ADMINISTRADOR) {
+                        response.sendRedirect("admin");
+                    } else {
+                        response.sendRedirect("login?successful");
                     }
+                } else {
+                    request.setAttribute(Const.MESSAGE, "Contraseña incorrecta!");
+                    request.setAttribute(Const.USERNAME, username);
+                    request.getRequestDispatcher("login.jsp").include(request, response);
                 }
             } else {
-                System.out.println("Username o password erroneo");
-                response.sendRedirect("login.jsp");
+                request.setAttribute(Const.MESSAGE, "El nombre de usuario no esta registrado!");
+                request.setAttribute(Const.USERNAME, username);
+                request.getRequestDispatcher("login.jsp").include(request, response);
             }
 
-        }
-        else {
-            System.out.println("Los campos son requeridos");
-            response.sendRedirect("login.jsp");
+        } else {
+            request.setAttribute(Const.MESSAGE, "Los campos son requeridos");
+            request.setAttribute(Const.USERNAME, username);
+            request.getRequestDispatcher("login.jsp").include(request, response);
         }
 
     }

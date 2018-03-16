@@ -3,6 +3,10 @@
 <%
     String message = (String) request.getAttribute(Const.MESSAGE);
     if (message == null) message = "";
+
+    String username = (String) request.getAttribute(Const.USERNAME);
+    if (username == null) username = "";
+
 %>
 <html>
     <head>
@@ -17,7 +21,7 @@
             <div class="form">
                 <h1 class="login-text">Login</h1>
                 <form method="post" action="login">
-                    <input class="form-control" name="username" placeholder="Nombre usuario"/>
+                    <input value="<%=username%>" class="form-control" name="username" placeholder="Nombre usuario"/>
                     <input type="password" class="form-control" name="password" placeholder="Contraseña"/>
                     <button>Entrar</button>
                     <br>

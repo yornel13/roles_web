@@ -20,6 +20,7 @@ public class Const {
     public static final String FILTER_MONTH = "filter_month";
     public static final String FILTER_DATA = "filter_data";
     public static final String ROLES_CLIENTE = "roles_cliente";
+    public static final String USERS = "user_list";
     public static final String ROL_CLIENTE = "rol_cliente";
     public static final String ROLES_INDIVIDUAL = "roles_individual";
     public static final String ROL_INDIVIDUAL = "rol_individual";

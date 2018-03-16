@@ -114,6 +114,34 @@ public class UserDAO {
         return user;
     }
 
+    public void updateUsername(Integer id, String username) {
+        final String updateUsername = "UPDATE user SET username=? WHERE id="+id;
+
+        conn = new DBConnection().conectar();
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(updateUsername);
+            preparedStatement.setString(1, username);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void updateUserPassword(Integer id, String password) {
+        String updatePassword ="UPDATE user SET password=? WHERE id="+id;
+
+        conn = new DBConnection().conectar();
+        try {
+           PreparedStatement preparedStatement =  conn.prepareStatement(updatePassword);
+           preparedStatement.setString(1, password);
+           preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public Integer updateUser(Integer id, String nombre, String apellido, String cedula,
                            String username, String password, String tipo, Integer activo){
 

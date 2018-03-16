@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Control - Admin</title>
-
+    <link rel="icon" href="images/security_icon.png" />
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
     <link rel="stylesheet" type="text/css" href="css/bootstrap-msg.css" />
     <link rel="stylesheet" href="css/admin.css">

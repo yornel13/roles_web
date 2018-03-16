@@ -18,7 +18,6 @@ import java.io.IOException;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
-    private String typeInfo;
     UserDAO userDAO = new UserDAO();
     ClienteDAO clienteDAO = new ClienteDAO();
     UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -31,34 +30,30 @@ public class LoginServlet extends HttpServlet {
 
         if(!username.equals(Const.EMPTY) && !password.equals(Const.EMPTY)){
 
-            User user = userDAO.getRegisteredUser(username, password);
-            System.out.println("use viene: "+ user);
-            if(user.getId() != null){
-                System.out.println("paso user");
+            User user = userDAO.getUser(username);
+            if(user != null){
                 if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
-
-                    if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
-
-                        SessionUtility.save(user, request, response);
-                        if (user.getType() == UserType.ADMINISTRADOR) {
-                            response.sendRedirect("admin");
-                        } else {
-                            response.sendRedirect("login?successful");
-                        }
+                    SessionUtility.save(user, request, response);
+                    if (user.getType() == UserType.ADMINISTRADOR) {
+                        response.sendRedirect("admin");
+                    } else {
+                        response.sendRedirect("login?successful");
                     }
+                } else {
+                    request.setAttribute(Const.MESSAGE, "Contraseña incorrecta!");
+                    request.setAttribute(Const.USERNAME, username);
+                    request.getRequestDispatcher("login.jsp").include(request, response);
                 }
             } else {
-                typeInfo = "wrong_2";
-                request.setAttribute("info_msg", typeInfo );
-                System.out.println("Usuario o contraseña invalido!");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.setAttribute(Const.MESSAGE, "El nombre de usuario no esta registrado!");
+                request.setAttribute(Const.USERNAME, username);
+                request.getRequestDispatcher("login.jsp").include(request, response);
             }
 
         } else {
-            typeInfo = "wrong_1";
-            request.setAttribute("info_msg", typeInfo );
-            System.out.println("Los campos de nombre usuario y contraseña son requeridos");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.setAttribute(Const.MESSAGE, "Los campos son requeridos");
+            request.setAttribute(Const.USERNAME, username);
+            request.getRequestDispatcher("login.jsp").include(request, response);
         }
 
     }
@@ -92,10 +87,7 @@ public class LoginServlet extends HttpServlet {
             SessionUtility.remove(req, resp);
             req.getRequestDispatcher("login.jsp").include(req, resp);
         } else if (req.getParameter("profile") != null) {
-            /**********************************************/
-            /*******Redireccionar aqui a perfil************/
-            /**********************************************/
-            resp.sendRedirect("/roles_web/admin?update_profile="+SessionUtility.getUser(req, resp).getId()); // <----------------------
+            resp.sendRedirect("/roles_web/admin?update_profile"); //
         } else if (req.getParameter(Const.EXPIRY) != null) {
             SessionUtility.remove(req, resp);
             req.setAttribute(Const.MESSAGE, "La sesión ha expirado");

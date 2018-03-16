@@ -1,4 +1,5 @@
 <%@ page import="utilidad.SessionUtility" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String profile = SessionUtility.getProfile(request, response);
 %>
@@ -32,6 +33,7 @@
                     <li><a tabindex="-1" href="/roles_web/login?profile">Ir a perfil</a></li>
                     <li><a tabindex="-1" href="/roles_web/login?logout">Salir</a></li>
                 </ul>
+                <input type="image" href="/roles_web/login?add-user" src="img/add-user.png"  class="btn "   style="background: transparent; fill: white;  margin-left: 20px;">
             </div>
         </div>
     </div>

@@ -12,11 +12,13 @@
     <title>Control - Admin</title>
 
     <link rel="icon" href="images/security_icon.png" />
+
     <link rel="stylesheet" href="css/general-style.css">
     <link rel="stylesheet" href="css/header-style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <%@include file="WEB-INF/partials-dynamic/header_principal.jsp" %>
@@ -168,15 +170,7 @@
                 },4000);
             }
 
-            if (!typeInfo.localeCompare("save_profile")) {
-                console.log(" entro saved");
-                $("#saved_info").removeClass("alert alert-success invisible")
-                    .addClass("alert alert-success");
-                $("#msg_success_info").text("Su perfil ha sido actualizado con exito");
-                setTimeout(function() {
-                    $("#saved_info").fadeOut(1500);
-                },4000);
-            }
+
 
             if (!typeInfo.localeCompare("updated")) {
                 console.log("entro update");

@@ -31,7 +31,6 @@ public class AdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("-> POST");
 
-        UserDAO userDAO = new UserDAO();
         userToUpdateID = request.getParameter("update_user");
         User userLogged = SessionUtility.getUser(request,response);
 
@@ -44,6 +43,7 @@ public class AdminServlet extends HttpServlet {
         String cedula = request.getParameter("cedula");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String currentPassword = request.getParameter("current_password");
         String newPassword = request.getParameter("newpassword");
         String confirmPassword = request.getParameter("confirm_password");
         String tipo = request.getParameter("tipo");
@@ -230,109 +230,121 @@ public class AdminServlet extends HttpServlet {
 
         /**  Update profile*/
         if(request.getParameter("save_profile") != null){
-            request.setAttribute("user_logged_id", userLogged);
+            if(username != null){
+                if(!username.isEmpty()){
+                    User user = userDAO.getUserByUsername(username);
+                    if(user.getId() == null){ // puedo cambiar
+                        if(!password.isEmpty()){
+                            if(userLogged.getPassword().equals(password)){
+                                userDAO.updateUsername(userLogged.getId(), username);
+                                userLogged = userDAO.getUserByID(userLogged.getId());
+                                System.out.println("Cambio exitoso");
+                                typeInfo = "save_profile";
+                                request.setAttribute("info_msg", typeInfo );
 
-            if(!username.isEmpty()){
-                User compareUsername = userDAO.getUserByUsername(username);
-                if(compareUsername.getId() == null){ // Cambio de usuario
-                    if(!password.isEmpty()){
+                                request.setAttribute("user_logged_id", userLogged);
+                                request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
 
-                        if(userLogged.getPassword().equals(password)){
-                            System.out.println("Nombre ususario cambiado con exito");
+                            }else {
+                                System.out.println("Contraseña invalida");
+                                typeInfo = "empty_3";
+                                request.setAttribute("info_msg", typeInfo );
 
-                            Integer id = userLogged.getId();
-                            new UserDAO().updateUserProfile(id, username, newPassword);
-
-                            typeInfo = "save_profile";
+                                request.setAttribute("user_logged_id", userLogged);
+                                request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
+                            }
+                        }else {
+                            System.out.println("La contraseña es requerida para el cambio de usuaro");
+                            typeInfo = "empty_2";
                             request.setAttribute("info_msg", typeInfo );
 
-                            List<User> listaUsuario = userDAO.getUsers();
-                            request.setAttribute("listaUsuario", listaUsuario);
-                            request.getRequestDispatcher("admin-user-table.jsp").include(request, response);
+                            request.setAttribute("user_logged_id", userLogged);
+                            request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
+
+                        }
+
+                    }else{
+                        if(userLogged.getId().equals(user.getId())){
+                            System.out.println("redireccion a profile");
+                            request.setAttribute("user_logged_id", userLogged);
+                            request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
+
                         }else{
-                            System.out.println("Contraseña invalida para el cambio de Nombre usuario");
-                            typeInfo = "empty_3";
+                            System.out.println("El nombre usuario tal esta en uso");
+                            typeInfo = "username_exists";
+                            inputedUsername = username;
                             request.setAttribute("info_msg", typeInfo );
+                            request.setAttribute("username", inputedUsername);
+
                             request.setAttribute("user_logged_id", userLogged);
                             request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
                         }
-                    } else {
-                        System.out.println("Campo contraseña es requerido para el cambio de nombre usuario");
-                        typeInfo = "empty_2";
+                    }
+
+                }else{
+                    System.out.println("El campo de usuario esta vacio");
+                    typeInfo = "empty_1";
+                    request.setAttribute("info_msg", typeInfo );
+
+                    request.setAttribute("user_logged_id", userLogged);
+                    request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
+                }
+            }
+
+            // Password validator
+            if (!currentPassword.isEmpty()){
+                if (!newPassword.isEmpty()){
+                    if (!confirmPassword.isEmpty()) {
+                        if(newPassword.equals(confirmPassword)){
+                            System.out.println("Mi pass: "+userLogged.getPassword()+"  currentpass es: "+currentPassword);
+                            if (userLogged.getPassword().equals(currentPassword)){
+
+
+                                userDAO.updateUserPassword(userLogged.getId(), newPassword);
+                                System.out.println("Cambio de contraseña exitoso save_pass");
+                                typeInfo = "save_pass";
+                                request.setAttribute("info_msg", typeInfo );
+
+                                request.setAttribute("user_logged_id", userLogged);
+                                request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
+                            }else {
+                                System.out.println("La contraseñas actual es invalida!");
+                                typeInfo = "wrong_pass2";
+                                request.setAttribute("info_msg", typeInfo );
+
+                                request.setAttribute("user_logged_id", userLogged);
+                                request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
+                            }
+                        }else {
+                            System.out.println("Las contraseñas no coincinden");
+                            typeInfo = "wrong_pass1";
+                            request.setAttribute("info_msg", typeInfo );
+
+                            request.setAttribute("user_logged_id", userLogged);
+                            request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
+                        }
+                    }else{
+                        System.out.println("El campo de confirmacio es requerido");
+                        typeInfo = "empty_pass3";
                         request.setAttribute("info_msg", typeInfo );
+
                         request.setAttribute("user_logged_id", userLogged);
                         request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
                     }
                 }else{
+                    System.out.println("Debe especificar la nueva contraseña");
+                    typeInfo = "empty_pass2";
+                    request.setAttribute("info_msg", typeInfo );
 
-                    if(userLogged.getId().equals(compareUsername.getId())){ // ES el mismo nombre -> soy yo
-                        if(password.isEmpty()){
-                            if(newPassword != null || confirmPassword != null){
-                                System.out.println("Debe colocar la contraseña actual para efectuar cualquier cambio");
-                                typeInfo = "empty_7";
-
-                                request.setAttribute("info_msg", typeInfo );
-                                request.setAttribute("user_logged_id", userLogged);
-                                request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
-                            } else { // redirect
-                                inputedUsername = username;
-                                request.setAttribute("username", inputedUsername);
-                                request.setAttribute("user_logged_id", userLogged);
-                                request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
-                            }
-                        } else { // Cambio contraseña y username
-
-                            if(userLogged.getPassword().equals(password)){
-                                if(!newPassword.isEmpty() && !confirmPassword.isEmpty()){
-                                    if(newPassword.equals(confirmPassword)){
-                                        Integer id = userLogged.getId();
-                                        new UserDAO().updateUserProfile(id, username, newPassword);
-
-                                        typeInfo = "save_profile";
-                                        request.setAttribute("info_msg", typeInfo );
-
-                                        List<User> listaUsuario = userDAO.getUsers();
-                                        request.setAttribute("listaUsuario", listaUsuario);
-                                        request.getRequestDispatcher("admin-user-table.jsp").forward(request, response);
-                                    } else {
-                                        System.out.println("La contraseña nueva no coincide con el campo de confirmacion");
-                                        typeInfo = "empty_5";
-                                        request.setAttribute("info_msg", typeInfo );
-                                        request.setAttribute("user_logged_id", userLogged);
-                                        request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
-                                    }
-                                } else {
-                                    System.out.println("Los campos de nueva contraseña y confirmacion son requeridos");
-                                    typeInfo = "empty_6";
-                                    request.setAttribute("info_msg", typeInfo );
-                                    request.setAttribute("user_logged_id", userLogged);
-                                    request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
-                                }
-                            } else {
-                                System.out.println("Contraseña invalida para el cambio de clave");
-                                typeInfo = "empty_4";
-                                request.setAttribute("info_msg", typeInfo );
-                                request.setAttribute("user_logged_id", userLogged);
-                                request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
-                            }
-                        }
-
-
-                    } else { // Esta ocupado el nombre usuario
-                        System.out.println("El nombre de usuario "+username+" se encuentra en uso (save)");
-                        typeInfo = "username_exists";
-                        inputedUsername = username;
-                        request.setAttribute("info_msg", typeInfo );
-                        request.setAttribute("username", inputedUsername);
-
-                        request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
-                    }
+                    request.setAttribute("user_logged_id", userLogged);
+                    request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
                 }
-            }else {
-                System.out.println("Campo nombre usuario requerido");
-                typeInfo = "empty_1";
-                request.setAttribute("user_logged_id", userLogged);
+            }else{
+                System.out.println("El campo de contraseña es requerido para el cambio de clave");
+                typeInfo = "empty_pass1";
                 request.setAttribute("info_msg", typeInfo );
+
+                request.setAttribute("user_logged_id", userLogged);
                 request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
             }
         }
@@ -352,23 +364,19 @@ public class AdminServlet extends HttpServlet {
             request.getRequestDispatcher("admin-user-table.jsp").forward(request, response);
             return;
         }
+    }
 
-        /**Go to user profile por POST no por aqui*/
-        System.out.println("Como llega el ID "+request.getParameter("update_profile"));
-        String userLoginID = request.getParameter("update_profile");
-        if(userLoginID != null){
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        /**Go to user profile*/
+        if(request.getParameter("update_profile") != null){
             System.out.println("id no es null (PASO)");
-            Integer userloggedID = Integer.parseInt(userLoginID);
+            Integer userloggedID = SessionUtility.getUser(request, response).getId();
             User user = userDAO.getUserByID(userloggedID);
             request.setAttribute("user_logged_id", user );
             request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
             return;
         }
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("-> GET");
 
         /**Get and load users from DB to table **/
         List<User> listaUsuario = userDAO.getUsers();

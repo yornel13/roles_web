@@ -3,7 +3,7 @@
 <%
     String profile = SessionUtility.getProfile(request, response);
 %>
-<header>
+<header style="background: #6f9cc2;">
      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
      <script src="href=https://www.jqueryscript.net/tags.php?/twitter/twitter-bootstrap-hover-dropdown.js"></script>
 
@@ -33,7 +33,7 @@
                     <li><a tabindex="-1" href="/roles_web/login?profile">Ir a perfil</a></li>
                     <li><a tabindex="-1" href="/roles_web/login?logout">Salir</a></li>
                 </ul>
-                <input type="image" src="img/add-user.png"  class="btn "   style="background: transparent; fill: white;  margin-left: 20px;">
+
             </div>
         </div>
     </div>

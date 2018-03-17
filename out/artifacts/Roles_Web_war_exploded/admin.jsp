@@ -17,6 +17,16 @@
     String infoMsg = (String) request.getAttribute("info_msg");
     String username = (String) request.getAttribute("username");
 
+    String tipoReturned = user.getTipo();
+    String nameReturned = (String) request.getAttribute("nombre");
+    String lastnameReturned = (String) request.getAttribute("apellido");
+    String cedulaReturned = (String) request.getAttribute("cedula");
+    String usernameReturned = (String) request.getAttribute("username");
+
+    if(infoMsg != null){
+       tipoReturned = (String) request.getAttribute("tipo");
+    }
+
     System.out.println(infoMsg+" <----- "+"Nombre: " + user.getNombre()+" ---> admin.jsp");
 
 %>
@@ -26,7 +36,7 @@
 
         <div class="form">
 
-            <button type="button" id="edit_button" class="text-center btn btn-default offset-sm-11 col-sm-1 ">
+            <button type="button" id="edit_button" class="text-center btn btn-default offset-sm-11 col-sm-1 " style="background: transparent; color: #5d7ec2;">
                 <span id="glyphicon-span" class="glyphicon glyphicon-pencil"></span>
             </button>
 
@@ -44,7 +54,7 @@
                     String cliVal = "C";
                     String eVal = "E";
 
-                    if(user.getTipo().equals("M")){
+                    if(user.getTipo().equals("M") || tipoReturned.equals("M")){
                         level1 = "Empresa";
                         level2 = "Administrador";
                         level3 = "Cliente";
@@ -55,7 +65,7 @@
                         cliVal = "C";
                         eVal = "E";
                     }
-                    if(user.getTipo().equals("C")){
+                    if(user.getTipo().equals("C") || tipoReturned.equals("C")){
                         level1 = "Cliente";
                         level2 = "Administrador";
                         level3 = "Empresa";
@@ -66,7 +76,7 @@
                         cliVal = "M";
                         eVal = "E";
                     }
-                    if(user.getTipo().equals("E")){
+                    if(user.getTipo().equals("E") || tipoReturned.equals("E")){
                         level1 = "Empleado";
                         level2 = "Administrador";
                         level3 = "Empresa";
@@ -96,11 +106,11 @@
                 </div>
                 <br>
 
-                <input class="form-control" name="nombre" value="<%=user.getNombre()%>" placeholder="Nombre" disabled/>
+                <input id="name" class="form-control" name="nombre" value="<%=user.getNombre()%>" placeholder="Nombre" disabled/>
                 <br>
-                <input class="form-control" name="apellido" value="<%=user.getApellido()%>" placeholder="Apellido" disabled/>
+                <input id="lastname" class="form-control" name="apellido"  value="<%=user.getApellido()%>" placeholder="Apellido" disabled/>
                 <br>
-                <input class="form-control" type="number" name="cedula" value="<%=user.getCedula()%>" placeholder="cedula" disabled/>
+                <input id="cedula" class="form-control" type="number" name="cedula" value="<%=user.getCedula()%>" placeholder="cedula" disabled/>
 
                 <br>
 
@@ -110,7 +120,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text"><span class="glyphicon glyphicon-user"></span></div>
                         </div>
-                        <input name="username"  class="form-control" value="<%=user.getUsername()%>" placeholder="Nombre usuario" disabled>
+                        <input id="username" name="username"  class="form-control" value="<%=user.getUsername()%>" placeholder="Nombre usuario" disabled>
                     </div>
                 </div>
 
@@ -168,7 +178,7 @@
                 </div>
                 <br>
 
-                <button id="save_update" name="update_user" value="<%=user.getId()%>" style="background-color: #5d7ec2" class="btn btn-lg btn-primary disabled" >Guardar</button>
+                <button id="save_update" name="update_user" value="<%=user.getId()%>" style="background-color: #5d7ec2" class="btn btn-lg btn-primary" disabled>Guardar</button>
 
                 <br>
                 <br>
@@ -190,6 +200,18 @@
 </div>
 
     <span id="type_info" hidden><%=infoMsg%></span>
+    <span id="tipo-returned" hidden><%=tipoReturned%></span>
+    <span id="name-returned" hidden><%=nameReturned%></span>
+    <span id="lastname-returned" hidden><%=lastnameReturned%></span>
+    <span id="cedula-returned" hidden><%=cedulaReturned%></span>
+    <span id="username-returned" hidden><%=usernameReturned%></span>
+
+    <span id="samename" hidden><%=user.getNombre()%></span>
+    <span id="samelastname" hidden><%=user.getApellido()%></span>
+    <span id="samecedula" hidden><%=user.getCedula()%></span>
+    <span id="sameusername" hidden><%=user.getUsername()%></span>
+
+
 
     <script>
 
@@ -197,34 +219,105 @@
 
             var typeInfo = $("#type_info").text();
 
-            if(!typeInfo.localeCompare("saved")){
-                $("#saved_info").prop('hidden', false);
-                $("#msg_success_info").text("Usuario actualizado con exito");
-            }
-            if(!typeInfo.localeCompare("empty_1")){
-                $("#wrong_info").prop('hidden', false);
-                $("#msg_wrong_info").text("Los campos de nombre, apellido y cedula son requeridos");
-            }
-            if(!typeInfo.localeCompare("empty_2")){
-                $("#wrong_info").prop('hidden', false);
-                $("#msg_wrong_info").text("Los campos de nombre usuario y contraseña son requeridos");
-            }
-            if(!typeInfo.localeCompare("empty_3")){
-                $("#wrong_info").prop('hidden', false);
-                $("#msg_wrong_info").text("Los campos de contraseña y confirmacion no coinciden");
-            }
-            if(!typeInfo.localeCompare("same_dni")){
-                $("#wrong_info_cedula").prop('hidden', false);
-                $("#msg_wrong_info_cedula").text("Existe un usuario registrado con esta cedula");
-            }
-            if(!typeInfo.localeCompare("username_exists")){
-                $("#wrong_info_cedula").prop('hidden', false);
-            }
-            if(!typeInfo.localeCompare("empty_confirm")){
-                $("#wrong_info").prop('hidden', false);
-                $("#msg_wrong_info").text("Debe confirmar la contraseña");
+
+            var nameReturned = $("#name-returned").text();
+            var lastnameReturned = $("#lastname-returned").text();
+            var cedulaReturned = $("#cedula-returned").text();
+            var usernameReturned = $("#username-returned").text();
+
+            var samename = $("#samename").text();
+            var samelastname = $("#samelastname").text();
+            var samecedula = $("#samecedula").text();
+            var sameusername = $("#sameusername").text();
+
+            if(typeInfo.localeCompare(null)){
+                console.log("EN returned");
+                if(nameReturned.localeCompare("")){
+                    $("#name").val(nameReturned);
+                } else{
+                    $("#name").val(samename);
+                }
+                if(lastnameReturned.localeCompare("")){
+                    $("#lastname").val(lastnameReturned);
+                } else{
+                    $("#lastname").val(samelastname);
+                }
+                if(cedulaReturned.localeCompare("")){
+                    $("#cedula").val(cedulaReturned);
+                }else {
+                    $("#cedula").val(samecedula);
+                }
+                if(usernameReturned.localeCompare("")){
+                    $("#username").val(usernameReturned);
+                } else {
+                    $("#username").val(sameusername);
+                }
             }
 
+
+
+            if(!typeInfo.localeCompare("empty_1")){
+                $("#glyphicon-span").addClass('glyphicon glyphicon-remove');
+                $("#form-title").text('Editar usuario');
+                $("#wrong_info").prop('hidden', false);
+                $("#msg_wrong_info").text("Los campos de nombre, apellido y cedula son requeridos");
+
+                $("select").prop('disabled', false);
+                $("input").prop('disabled', false);
+                $("#save_update").prop('disabled', false)
+            }
+            if(!typeInfo.localeCompare("empty_2")){
+                $("#glyphicon-span").addClass('glyphicon glyphicon-remove');
+                $("#form-title").text('Editar usuario');
+                $("#wrong_info").prop('hidden', false);
+                $("#msg_wrong_info").text("El campos de nombre usuario es requerido");
+
+                $("select").prop('disabled', false);
+                $("input").prop('disabled', false);
+                $("#save_update").prop('disabled', false)
+            }
+            if(!typeInfo.localeCompare("empty_3")){
+                $("#glyphicon-span").addClass('glyphicon glyphicon-remove');
+                $("#form-title").text('Editar usuario');
+                $("#wrong_info").prop('hidden', false);
+                $("#msg_wrong_info").text("Los campos de contraseña y confirmacion no coinciden");
+
+                $("select").prop('disabled', false);
+                $("input").prop('disabled', false);
+                $("#save_update").prop('disabled', false)
+            }
+            if(!typeInfo.localeCompare("same_dni")){
+                $("#glyphicon-span").addClass('glyphicon glyphicon-remove');
+                $("#form-title").text('Editar usuario');
+                $("#wrong_info_cedula").prop('hidden', false);
+                $("#msg_wrong_info_cedula").text("Existe un usuario registrado con esta cedula");
+
+                $("select").prop('disabled', false);
+                $("input").prop('disabled', false);
+                $("#save_update").prop('disabled', false)
+            }
+            if(!typeInfo.localeCompare("username_exists")){
+                $("#glyphicon-span").addClass('glyphicon glyphicon-remove');
+                $("#form-title").text('Editar usuario');
+                $("#wrong_info_cedula").prop('hidden', false);
+
+                $("select").prop('disabled', false);
+                $("input").prop('disabled', false);
+                $("#save_update").prop('disabled', false)
+            }
+            if(!typeInfo.localeCompare("empty_confirm")){
+                $("#glyphicon-span").addClass('glyphicon glyphicon-remove');
+                $("#form-title").text('Editar usuario');
+                $("#wrong_info").prop('hidden', false);
+                $("#msg_wrong_info").text("Debe confirmar la contraseña");
+
+                $("select").prop('disabled', false);
+                $("input").prop('disabled', false);
+                $("#save_update").prop('disabled', false)
+            }
+
+
+            /**Click edit button*/
             $('body').on('click', '#edit_button', function(){
                 var formTitle = $("#form-title").text();
 
@@ -239,8 +332,7 @@
                     $("select").prop('disabled', false);
 
                     $("input").prop('disabled', false);
-                    $("#save_update").removeClass('btn btn-lg btn-primary disabled')
-                        .addClass('btn btn-lg btn-primary');
+                    $("#save_update").prop('disabled', false)
                 } else {
 
                     $("#form-title").text('Usuario');
@@ -252,8 +344,7 @@
                     $("select").prop('disabled', true);
                     $("#display_control").css("visibility", "hidden");
                     $("input").prop('disabled', true);
-                    $("#save_update").removeClass('btn btn-lg btn-primary ')
-                        .addClass('btn btn-lg btn-primary disabled');
+                    $("#save_update").prop('disabled', true)
                 }
 
             })

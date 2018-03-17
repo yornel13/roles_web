@@ -57,21 +57,22 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><span class="glyphicon glyphicon-user" ></span></div>
                                 </div>
-                                <input id="username_field" name="username" class="form-control" placeholder="Nombre usuario" disabled value="<%=userLogged.getUsername()%>">
+                                <input id="username_field" name="username" class="form-control" placeholder="Nombre usuario" tabindex="1" disabled value="<%=userLogged.getUsername()%>" required>
                             </div>
                         </div>
 
                         <br>
                         <br>
-
                         <div class="">
                             <label class="sr-only" >Contraseña</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="glyphicon glyphicon-lock"></i></div>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="glyphicon glyphicon-lock"></i></div>
+                                    </div>
+                                    <input id="password_field" type="password" name="password" class="form-control" tabindex="2" placeholder="Contraseña" required disabled>
                                 </div>
-                                <input id="password_field" type="password" name="password" class="form-control" placeholder="Contraseña" disabled>
-                            </div>
+                            <h6 class="pull-right"  style="color: #5d7ec2;" hidden>Requiere contraseña actual  </h6>
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -216,11 +217,11 @@
         }
         if(!typeInfo.localeCompare("wrong_pass1")){
             $("#wrong_info").prop('hidden', false);
-            $("#msg_wrong_info").text("Las contraseñas no coinciden, debe confirmar correctamente");
+            $("#msg_wrong_info").text("La nueva contraseña no coincide con la confirmada");
         }
         if(!typeInfo.localeCompare("wrong_pass2")){
             $("#wrong_info").prop('hidden', false);
-            $("#msg_wrong_info").text("Las contraseña actual es invalida!");
+            $("#msg_wrong_info").text("La contraseña actual es invalida!");
 
         }
 
@@ -241,6 +242,7 @@
 
                 $("#username_field").prop('disabled', false);
                 $("#password_field").prop('disabled', false);
+                $("h6").prop('hidden', false);
                 $("#save_profile_button").prop('disabled', false);
             } else {
                 $('#edit_button_password').prop('disabled', false);
@@ -254,6 +256,7 @@
 
                 $("#username_field").prop('disabled', true);
                 $("#password_field").prop('disabled', true);
+                $("h6").prop('hidden', true);
                 $("#save_profile_button").prop('disabled', true);
             }
 

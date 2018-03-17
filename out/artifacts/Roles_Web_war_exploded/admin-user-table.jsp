@@ -41,11 +41,18 @@
             }
         }
     %>
+    <form action="add-user.jsp">
+        <button  class="btn pull-right"   style="background: transparent; fill: white; margin-right: 30px; margin-top: 50px; margin-left: 20px;">
+            <img src="img/user_32.png">
+            <p style="color: #6F9CC2;">Añadir</p>
+        </button>
+    </form>
     <div class="alert-container container" style=" margin-top: 35px; margin-bottom: 10px; padding-top:20px; height: 100px;">
         <div id="saved_info" class="alert alert-success align-content-center invisible"  >
             <strong><%=infoTitle%></strong> <p id="msg_success_info"></p>
         </div>
     </div>
+
 
     <div  class="container" style="padding-top: 0px">
 
@@ -104,6 +111,7 @@
             </tbody>
             </table>
         </div>
+
     </div>
 
 

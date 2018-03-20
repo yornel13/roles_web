@@ -1,5 +1,5 @@
 <%@ page import="utilidad.SessionUtility" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%
     String profile = SessionUtility.getProfile(request, response);
 %>
@@ -24,7 +24,7 @@
                     <%=profile%>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a tabindex="-1" href="/roles_web/login?profile">Ir a perfil</a></li>
+                    <li><a tabindex="-1" href="/roles_web/login?profile" target="_blank">Ir a perfil</a></li>
                     <li><a tabindex="-1" href="/roles_web/login?logout">Salir</a></li>
                 </ul>
             </div>

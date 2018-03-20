@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
         <div id="imaginary_container">
-            <form class="input-group stylish-input-group input-append">
+            <form class="input-group stylish-input-group input-append" method="post">
                 <input value="<%=searchText%>" name="<%=Const.SEARCH_TEXT%>" class="form-control" placeholder="Buscar empleado" >
                 <span class="input-group-addon">
                     <button class="searchButton" name="search">

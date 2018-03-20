@@ -15,8 +15,9 @@
     <head>
         <title>Login Control</title>
         <link rel="icon" href="images/security_icon.png" />
-        <link rel="stylesheet" href="css/login.css" type="text/css">
         <%@include file="WEB-INF/partials-static/meta-bootstrap.html"%>
+        <link rel="stylesheet" href="css/login.css" type="text/css">
+
 
     </head>
     <body style="background: #6f9cc2">

@@ -66,18 +66,21 @@ public class LoginServlet extends HttpServlet {
             switch (user.getType()) {
                 case EMPRESA:
                     Empresa empresa = empresaDAO.findByRuc(user.getCedula());
+                    if (empresa == null) {req.getRequestDispatcher("no_match.jsp").include(req, resp);return;}
                     req.getSession().setAttribute(Const.DATA_USER, empresa);
                     req.getSession().setAttribute(Const.EMPRESA_ID, empresa.getId());
                     resp.sendRedirect("empresa");
                     break;
                 case CLIENTE:
                     Cliente cliente = clienteDAO.findByRuc(user.getCedula());
+                    if (cliente == null) {req.getRequestDispatcher("no_match.jsp").include(req, resp);return;}
                     req.getSession().setAttribute(Const.DATA_USER, cliente);
                     req.getSession().setAttribute(Const.CLIENTE_ID, cliente.getId());
                     resp.sendRedirect("rol/cliente");
                     break;
                 case EMPLEADO:
                     Usuario usuario = usuarioDAO.findByCedula(user.getCedula());
+                    if (usuario == null) {req.getRequestDispatcher("no_match.jsp").include(req, resp);return;}
                     req.getSession().setAttribute(Const.DATA_USER, usuario);
                     req.getSession().setAttribute(Const.EMPLEADO_ID, usuario.getId());
                     resp.sendRedirect("rol/individual");

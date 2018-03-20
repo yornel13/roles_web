@@ -296,60 +296,62 @@ public class AdminServlet extends HttpServlet {
             }
 
             // Password validator
-            if (!currentPassword.isEmpty()){
-                if (!newPassword.isEmpty()){
-                    if (!confirmPassword.isEmpty()) {
-                        if(newPassword.equals(confirmPassword)){
-                            System.out.println("Mi pass: "+userLogged.getPassword()+"  currentpass es: "+currentPassword);
-                            if (userLogged.getPassword().equals(currentPassword)){
+            if (currentPassword != null) {
+                if (!currentPassword.isEmpty()) {
+                    if (!newPassword.isEmpty()) {
+                        if (!confirmPassword.isEmpty()) {
+                            if (newPassword.equals(confirmPassword)) {
+                                System.out.println("Mi pass: " + userLogged.getPassword() + "  currentpass es: " + currentPassword);
+                                if (userLogged.getPassword().equals(currentPassword)) {
 
 
-                                userDAO.updateUserPassword(userLogged.getId(), newPassword);
-                                System.out.println("Cambio de contraseña exitoso save_pass");
-                                typeInfo = "save_pass";
-                                request.setAttribute("info_msg", typeInfo );
+                                    userDAO.updateUserPassword(userLogged.getId(), newPassword);
+                                    System.out.println("Cambio de contraseña exitoso save_pass");
+                                    typeInfo = "save_pass";
+                                    request.setAttribute("info_msg", typeInfo);
 
-                                request.setAttribute("user_logged_id", userLogged);
-                                request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
-                            }else {
-                                System.out.println("La contraseñas actual es invalida!");
-                                typeInfo = "wrong_pass2";
-                                request.setAttribute("info_msg", typeInfo );
+                                    request.setAttribute("user_logged_id", userLogged);
+                                    request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
+                                } else {
+                                    System.out.println("La contraseñas actual es invalida!");
+                                    typeInfo = "wrong_pass2";
+                                    request.setAttribute("info_msg", typeInfo);
+
+                                    request.setAttribute("user_logged_id", userLogged);
+                                    request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
+                                }
+                            } else {
+                                System.out.println("Las contraseñas no coincinden");
+                                typeInfo = "wrong_pass1";
+                                request.setAttribute("info_msg", typeInfo);
 
                                 request.setAttribute("user_logged_id", userLogged);
                                 request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
                             }
-                        }else {
-                            System.out.println("Las contraseñas no coincinden");
-                            typeInfo = "wrong_pass1";
-                            request.setAttribute("info_msg", typeInfo );
+                        } else {
+                            System.out.println("El campo de confirmacio es requerido");
+                            typeInfo = "empty_pass3";
+                            request.setAttribute("info_msg", typeInfo);
 
                             request.setAttribute("user_logged_id", userLogged);
                             request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
                         }
-                    }else{
-                        System.out.println("El campo de confirmacio es requerido");
-                        typeInfo = "empty_pass3";
-                        request.setAttribute("info_msg", typeInfo );
+                    } else {
+                        System.out.println("Debe especificar la nueva contraseña");
+                        typeInfo = "empty_pass2";
+                        request.setAttribute("info_msg", typeInfo);
 
                         request.setAttribute("user_logged_id", userLogged);
                         request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
                     }
-                }else{
-                    System.out.println("Debe especificar la nueva contraseña");
-                    typeInfo = "empty_pass2";
-                    request.setAttribute("info_msg", typeInfo );
+                } else {
+                    System.out.println("El campo de contraseña es requerido para el cambio de clave");
+                    typeInfo = "empty_pass1";
+                    request.setAttribute("info_msg", typeInfo);
 
                     request.setAttribute("user_logged_id", userLogged);
                     request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
                 }
-            }else{
-                System.out.println("El campo de contraseña es requerido para el cambio de clave");
-                typeInfo = "empty_pass1";
-                request.setAttribute("info_msg", typeInfo );
-
-                request.setAttribute("user_logged_id", userLogged);
-                request.getRequestDispatcher("change_username_pass.jsp").forward(request, response);
             }
         }
 
@@ -365,6 +367,24 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("info_msg", typeInfo );
             List<User> listaUsuario = userDAO.getUsers();
             request.setAttribute(Const.USERS, listaUsuario);
+            request.getRequestDispatcher("admin-user-table.jsp").forward(request, response);
+            return;
+        }
+
+        String search = request.getParameter("search");
+        if(search != null){
+            String searchDate = request.getParameter(Const.SEARCH_TEXT);
+
+            Predicate<User> namePredicate = p -> p.getNombre().toLowerCase().contains(searchDate.toLowerCase());
+            Predicate<User> lastNamePredicate = p -> p.getApellido().toLowerCase().contains(searchDate.toLowerCase());
+            Predicate<User> dniPredicate = p -> p.getCedula().toLowerCase().contains(searchDate.toLowerCase());
+            Predicate<User> usernamePredicate = p -> p.getUsername().toLowerCase().contains(searchDate.toLowerCase());
+            List<User> rolesFilter = new UserDAO().getUsers()
+                    .stream().filter(
+                            namePredicate.or(lastNamePredicate).or(dniPredicate).or(usernamePredicate)
+                    ).collect(Collectors.toList());
+            request.setAttribute(Const.USERS, rolesFilter);
+            request.setAttribute(Const.FILTER_DATA, searchDate);
             request.getRequestDispatcher("admin-user-table.jsp").forward(request, response);
             return;
         }
@@ -386,24 +406,6 @@ public class AdminServlet extends HttpServlet {
         /**Go to add user*/
         if(request.getParameter("add") != null){
             request.getRequestDispatcher("add-user.jsp").forward(request, response);
-            return;
-        }
-
-        String search = request.getParameter("search");
-        if(search != null){
-            String searchDate = request.getParameter(Const.SEARCH_TEXT);
-
-            Predicate<User> namePredicate = p -> p.getNombre().toLowerCase().contains(searchDate.toLowerCase());
-            Predicate<User> lastNamePredicate = p -> p.getApellido().toLowerCase().contains(searchDate.toLowerCase());
-            Predicate<User> dniPredicate = p -> p.getCedula().toLowerCase().contains(searchDate.toLowerCase());
-            Predicate<User> usernamePredicate = p -> p.getUsername().toLowerCase().contains(searchDate.toLowerCase());
-            List<User> rolesFilter = new UserDAO().getUsers()
-                    .stream().filter(
-                            namePredicate.or(lastNamePredicate).or(dniPredicate).or(usernamePredicate)
-                    ).collect(Collectors.toList());
-            request.setAttribute(Const.USERS, rolesFilter);
-            request.setAttribute(Const.FILTER_DATA, searchDate);
-            request.getRequestDispatcher("admin-user-table.jsp").forward(request, response);
             return;
         }
 

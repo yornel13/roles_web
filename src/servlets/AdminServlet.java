@@ -28,10 +28,6 @@ public class AdminServlet extends HttpServlet {
     private String deleteUserID;
     private UserDAO userDAO = new UserDAO();
 
-
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (SessionUtility.isExpiry(request, response)) return;
 
@@ -237,7 +233,7 @@ public class AdminServlet extends HttpServlet {
             if(username != null){
                 if(!username.isEmpty()){
                     User user = userDAO.getUserByUsername(username);
-                    if(user.getId() == null){ // puedo cambiar
+                    if(user.getId() == null){
                         if(!password.isEmpty()){
                             if(userLogged.getPassword().equals(password)){
                                 userDAO.updateUsername(userLogged.getId(), username);

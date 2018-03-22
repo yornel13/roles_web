@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="emptyTable" style="width: 60%">
-    <p><a href="">Su cedula no tiene coincidencias en la base de datos, pongase en contacto con el administador para resolver le problema.</a></p>
+    <p><a href="">Su cedula o RUC no tiene coincidencias en la base de datos, pongase en contacto con el administador para resolver el problema.</a></p>
 </div>
 </body>
 </html>

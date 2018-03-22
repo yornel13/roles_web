@@ -16,8 +16,6 @@ public class SessionUtility {
         loginCookie.setMaxAge(expiry);
         response.addCookie(loginCookie);
         request.getSession().setAttribute(Const.USER, user);
-
-        System.out.println(request.getServletContext().getSessionTimeout());
         return true;
     }
 
@@ -38,7 +36,7 @@ public class SessionUtility {
 
             if (user == null || !user.getUsername().equals(username)) user = null;
         }
-        if (user == null) response.sendRedirect("/roles_web/login?expiry");
+        if (user == null) response.sendRedirect("/login?expiry");
         else profile = user.getProfile();
 
         return profile;
@@ -60,7 +58,7 @@ public class SessionUtility {
             if (user == null || !user.getUsername().equals(username)) user = null;
         }
         if (user == null) {
-            response.sendRedirect("/roles_web/login?expiry");
+            response.sendRedirect("/login?expiry");
             return null;
         }
 
@@ -82,7 +80,7 @@ public class SessionUtility {
             user = (User) request.getSession().getAttribute(Const.USER);
             if (user == null || !user.getUsername().equals(username)) user = null;
         }
-        if (user == null) response.sendRedirect("/roles_web/login?expiry");
+        if (user == null) response.sendRedirect("/login?expiry");
         else return true;
 
         System.err.println("Session is expired");

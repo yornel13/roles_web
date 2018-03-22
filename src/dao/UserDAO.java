@@ -81,6 +81,7 @@ public class UserDAO {
     }
 
     public User getUser(String username) throws IOException{
+
         final String userRegistered = "SELECT * FROM user WHERE username = ?";
 
         User user = null;
@@ -106,9 +107,7 @@ public class UserDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println(e.getMessage());
-
-        }finally {
+        } finally {
             cerrarRecursos();
         }
         return user;

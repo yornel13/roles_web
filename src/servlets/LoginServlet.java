@@ -30,7 +30,16 @@ public class LoginServlet extends HttpServlet {
 
         if(!username.equals(Const.EMPTY) && !password.equals(Const.EMPTY)){
 
-            User user = userDAO.getUser(username);
+            User user = null;
+            try {
+                user = userDAO.getUser(username);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                request.setAttribute(Const.MESSAGE, "Problemas de conexion a base de datos!");
+                request.setAttribute(Const.USERNAME, username);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+                return;
+            }
             if(user != null){
                 if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                     SessionUtility.save(user, request, response);
@@ -42,81 +51,73 @@ public class LoginServlet extends HttpServlet {
                 } else {
                     request.setAttribute(Const.MESSAGE, "Contraseña incorrecta!");
                     request.setAttribute(Const.USERNAME, username);
-                    request.getRequestDispatcher("login.jsp").include(request, response);
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
                 }
             } else {
                 request.setAttribute(Const.MESSAGE, "El nombre de usuario no esta registrado!");
                 request.setAttribute(Const.USERNAME, username);
-                request.getRequestDispatcher("login.jsp").include(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
 
         } else {
             request.setAttribute(Const.MESSAGE, "Los campos son requeridos");
             request.setAttribute(Const.USERNAME, username);
-            request.getRequestDispatcher("login.jsp").include(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
-
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getParameter(Const.SUCCESSFUL) != null) {
-            User user = (User) req.getSession().getAttribute(Const.USER);
-            req.getSession().setAttribute(Const.FECHA, Fecha.getFechaActualInit());
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getParameter(Const.SUCCESSFUL) != null) {
+            User user = (User) request.getSession().getAttribute(Const.USER);
+            request.getSession().setAttribute(Const.FECHA, Fecha.getFechaActualInit());
             switch (user.getType()) {
                 case EMPRESA:
                     Empresa empresa = empresaDAO.findByRuc(user.getCedula());
-                    if (empresa == null) {req.getRequestDispatcher("no_match.jsp").include(req, resp);return;}
-                    req.getSession().setAttribute(Const.DATA_USER, empresa);
-                    req.getSession().setAttribute(Const.EMPRESA_ID, empresa.getId());
-                    resp.sendRedirect("empresa");
+                    if (empresa == null) {request.getRequestDispatcher("no_match.jsp").forward(request, response);return;}
+                    request.getSession().setAttribute(Const.DATA_USER, empresa);
+                    request.getSession().setAttribute(Const.EMPRESA_ID, empresa.getId());
+                    response.sendRedirect("empresa");
                     break;
                 case CLIENTE:
                     Cliente cliente = clienteDAO.findByRuc(user.getCedula());
-                    if (cliente == null) {req.getRequestDispatcher("no_match.jsp").include(req, resp);return;}
-                    req.getSession().setAttribute(Const.DATA_USER, cliente);
-                    req.getSession().setAttribute(Const.CLIENTE_ID, cliente.getId());
-                    resp.sendRedirect("rol/cliente");
+                    if (cliente == null) {request.getRequestDispatcher("no_match.jsp").forward(request, response);return;}
+                    request.getSession().setAttribute(Const.DATA_USER, cliente);
+                    request.getSession().setAttribute(Const.CLIENTE_ID, cliente.getId());
+                    response.sendRedirect("rol/cliente");
                     break;
                 case EMPLEADO:
                     Usuario usuario = usuarioDAO.findByCedula(user.getCedula());
-                    if (usuario == null) {req.getRequestDispatcher("no_match.jsp").include(req, resp);return;}
-                    req.getSession().setAttribute(Const.DATA_USER, usuario);
-                    req.getSession().setAttribute(Const.EMPLEADO_ID, usuario.getId());
-                    resp.sendRedirect("rol/individual");
+                    if (usuario == null) {request.getRequestDispatcher("no_match.jsp").forward(request, response);return;}
+                    request.getSession().setAttribute(Const.DATA_USER, usuario);
+                    request.getSession().setAttribute(Const.EMPLEADO_ID, usuario.getId());
+                    response.sendRedirect("rol/individual");
                     break;
             }
-        } else if (req.getParameter(Const.LOGOUT) != null) {
-            SessionUtility.remove(req, resp);
-            req.getRequestDispatcher("login.jsp").include(req, resp);
-        } else if (req.getParameter("profile") != null) {
-            resp.sendRedirect("/roles_web/admin?update_profile"); //
-        } else if (req.getParameter(Const.EXPIRY) != null) {
-            SessionUtility.remove(req, resp);
-            req.setAttribute(Const.MESSAGE, "La sesión ha expirado");
-            req.getRequestDispatcher("login.jsp").include(req, resp);
+        } else if (request.getParameter(Const.LOGOUT) != null) {
+            SessionUtility.remove(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        } else if (request.getParameter("profile") != null) {
+            response.sendRedirect("/admin?update_profile"); //
+        } else if (request.getParameter(Const.EXPIRY) != null) {
+            SessionUtility.remove(request, response);
+            request.setAttribute(Const.MESSAGE, "La sesión ha expirado");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         } else {
-            req.getRequestDispatcher("login.jsp").include(req, resp);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(req.getParameter("logout")!= null){
-
-            HttpSession session = req.getSession();
-            System.out.println("Logout con el usuario: "+ session.getAttributeNames().toString());
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(request.getParameter("logout")!= null){
+            HttpSession session = request.getSession();
             session.removeAttribute(session.getAttributeNames().toString());
             session.invalidate();
-            resp.sendRedirect("login");
+            response.sendRedirect("/login");
             return;
         }
+        processRequests(request, response);
 
-
-        if (req.getParameter("goLogin") != null) {
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
-        } else {
-            processRequests(req, resp);
-        }
     }
 }

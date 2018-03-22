@@ -24,8 +24,8 @@
                     <%=profile%>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a tabindex="-1" href="/roles_web/login?profile" target="_blank">Ir a perfil</a></li>
-                    <li><a tabindex="-1" href="/roles_web/login?logout">Salir</a></li>
+                    <li><a tabindex="-1" href="/login?profile" target="_blank">Ir a perfil</a></li>
+                    <li><a tabindex="-1" href="/login?logout">Salir</a></li>
                 </ul>
             </div>
         </div>

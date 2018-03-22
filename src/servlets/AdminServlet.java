@@ -101,7 +101,7 @@ public class AdminServlet extends HttpServlet {
 
                                     List<User> listaUsuario = userDAO.getUsers();
                                     request.setAttribute(Const.USERS, listaUsuario);
-                                    request.getRequestDispatcher("admin-user-table.jsp").include(request, response);
+                                    request.getRequestDispatcher("admin-user-table.jsp").forward(request, response);
 
                                     return;
                                 } else {

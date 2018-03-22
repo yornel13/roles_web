@@ -166,6 +166,11 @@
         setTimeout(function() {
             $("#saved_info_top").fadeOut(1500);
         },4000);
+
+        /**Close tab**/
+        setTimeout(function () {
+            window.top.close();
+        },4000);
     }
 
     if (!typeInfo.localeCompare("save_pass")) {

@@ -237,7 +237,7 @@ public class AdminServlet extends HttpServlet {
             if(username != null){
                 if(!username.isEmpty()){
                     User user = userDAO.getUserByUsername(username);
-                    if(user.getId() == null){ // puedo cambiar
+                    if(user.getId() == null){
                         if(!password.isEmpty()){
                             if(userLogged.getPassword().equals(password)){
                                 userDAO.updateUsername(userLogged.getId(), username);

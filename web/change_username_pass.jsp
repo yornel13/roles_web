@@ -151,13 +151,17 @@
 
 
     <span id="type_info" hidden><%=infoMsg%></span>
+    <span id="username" hidden><%=usernameReturned%></span>
+
 
 <script>
 
 
 
     var typeInfo = $("#type_info").text();
+    var usernameReturned = $("#username").text();
     console.log(typeInfo);
+
 
     if (!typeInfo.localeCompare("save_profile")) {
         $("#saved_info_top").removeClass("alert alert-success invisible")
@@ -165,6 +169,10 @@
         $("#msg_success_info_top").text("Su usuario ha sido actualizado con exito");
         setTimeout(function() {
             $("#saved_info_top").fadeOut(1500);
+        },4000);
+
+        setTimeout(function () {
+            window.top.close();
         },4000);
     }
 

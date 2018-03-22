@@ -31,6 +31,7 @@
 
 %>
 
+
 <div class="container">
     <div class="register-page">
 
@@ -191,10 +192,6 @@
                     <strong>Usuario existente!</strong> <p id="msg_wrong_info_cedula">El nombre de usuario <strong><%=username%></strong> se encuentra en uso</p>
                 </div>
 
-                <div id="saved_info" class="alert alert-success" hidden>
-                    <strong>Actualizado!</strong> <p id="msg_success_info"></p>
-                </div>
-
             </form>
         </div>
 </div>
@@ -253,8 +250,6 @@
                     $("#username").val(sameusername);
                 }
             }
-
-
 
             if(!typeInfo.localeCompare("empty_1")){
                 $("#glyphicon-span").addClass('glyphicon glyphicon-remove');

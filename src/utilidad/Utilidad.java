@@ -15,7 +15,7 @@ public class Utilidad {
     private Properties propidadesBaseDatos;
 
 
-    private Utilidad(){};
+    private Utilidad(){}
 
     public static Utilidad getIntancia(){
         return intancia;

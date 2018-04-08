@@ -11,5 +11,15 @@
       <user-name>root</user-name>
       <introspection-schemas>*:dbcontrol_web</introspection-schemas>
     </data-source>
+    <data-source name="dbcontrol@localhost" uuid="cd427a85-85f0-444e-9bed-7fbb65e2a9b1">
+      <database-info product="MySQL" version="5.7.20-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:dbcontrol</introspection-schemas>
+    </data-source>
   </component>
 </project>

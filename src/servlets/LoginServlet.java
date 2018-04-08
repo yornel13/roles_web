@@ -41,6 +41,7 @@ public class LoginServlet extends HttpServlet {
                 return;
             }
             if(user != null){
+                password = SessionUtility.MD5(password);
                 if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                     SessionUtility.save(user, request, response);
                     if (user.getType() == UserType.ADMINISTRADOR) {

@@ -70,7 +70,7 @@ public class AdminServlet extends HttpServlet {
             return;
         }
 
-        /**Save user*/
+        /**Save new user*/
         if(request.getParameter("save") != null){
 
             if(!nombre.isEmpty() && !apellido.isEmpty() && !cedula.isEmpty()){
@@ -89,8 +89,10 @@ public class AdminServlet extends HttpServlet {
                                     request.getRequestDispatcher("add-user.jsp").forward(request, response);
                                     return;
                                 }
+                                password = SessionUtility.MD5(password);
+                                confirmPassword = SessionUtility.MD5(confirmPassword);
                                 if(password.equals(confirmPassword)){
-                                    userDAO.addUser( nombre, apellido, cedula, username, password, tipo, Const.ACTIVE);
+                                    userDAO.addUser(nombre, apellido, cedula, username, password, tipo, Const.ACTIVE);
 
                                     typeInfo = "saved";
                                     request.setAttribute("info_msg", typeInfo);
@@ -101,21 +103,18 @@ public class AdminServlet extends HttpServlet {
 
                                     return;
                                 } else {
-                                    System.out.println("Los campos de contraseña y confirmacion no coinciden (save)");
                                     typeInfo = "empty_3";
                                     request.setAttribute("info_msg", typeInfo);
                                     request.getRequestDispatcher("add-user.jsp").forward(request, response);
                                     return;
                                 }
                             } else {
-                                System.out.println("Los campos de contraseña y confirmacion son requeridos (save)");
                                 typeInfo = "empty_4";
                                 request.setAttribute("info_msg", typeInfo);
                                 request.getRequestDispatcher("add-user.jsp").forward(request, response);
                                 return;
                             }
                         } else {
-                            System.out.println("El nombre de usuario "+username+" se encuentra en uso (save)");
                             typeInfo = "username_exists";
                             inputedUsername = username;
                             request.setAttribute("info_msg", typeInfo );
@@ -124,27 +123,23 @@ public class AdminServlet extends HttpServlet {
                             request.getRequestDispatcher("add-user.jsp").forward(request, response);
                         }
                     } else {
-                        System.out.println("EL campo Nombre usuario es requerido (save)");
                         typeInfo = "empty_2";
                         request.setAttribute("info_msg", typeInfo);
                         request.getRequestDispatcher("add-user.jsp").forward(request, response);
                         return;
                     }
                 } else {
-                    System.out.println("Existe un usuario registrado con esta cedula (save)");
                     typeInfo = "same_dni";
                     request.setAttribute("info_msg", typeInfo );
 
                     request.getRequestDispatcher("add-user.jsp").forward(request, response);
                 }
             } else {
-                System.out.println("Los campos de nombres y cedula son requeridos (save)");
                 typeInfo = "empty_1";
                 request.setAttribute("info_msg", typeInfo);
                 request.getRequestDispatcher("add-user.jsp").forward(request, response);
             }
         }
-
 
         /** update user*/
         if(request.getParameter("update_user") != null){
@@ -160,6 +155,9 @@ public class AdminServlet extends HttpServlet {
                             if(password.isEmpty() && confirmPassword.isEmpty()){
                                 password = user.getPassword();
                                 confirmPassword = user.getPassword();
+                            } else if (!password.isEmpty() && !confirmPassword.isEmpty()) {
+                                password = SessionUtility.MD5(password);
+                                confirmPassword = SessionUtility.MD5(confirmPassword);
                             }
                             if(!password.isEmpty() && confirmPassword.isEmpty()){
                                 System.out.println("Debe confirmar la contraseña (Update)");
@@ -235,6 +233,7 @@ public class AdminServlet extends HttpServlet {
                     User user = userDAO.getUserByUsername(username);
                     if(user.getId() == null){
                         if(!password.isEmpty()){
+                            password = SessionUtility.MD5(password);
                             if(userLogged.getPassword().equals(password)){
                                 userDAO.updateUsername(userLogged.getId(), username);
                                 userLogged = userDAO.getUserByID(userLogged.getId());
@@ -296,10 +295,13 @@ public class AdminServlet extends HttpServlet {
                 if (!currentPassword.isEmpty()) {
                     if (!newPassword.isEmpty()) {
                         if (!confirmPassword.isEmpty()) {
+                            password = SessionUtility.MD5(password);
+                            password = SessionUtility.MD5(password);
+                            newPassword = SessionUtility.MD5(newPassword);
+                            confirmPassword = SessionUtility.MD5(confirmPassword);
                             if (newPassword.equals(confirmPassword)) {
                                 System.out.println("Mi pass: " + userLogged.getPassword() + "  currentpass es: " + currentPassword);
                                 if (userLogged.getPassword().equals(currentPassword)) {
-
 
                                     userDAO.updateUserPassword(userLogged.getId(), newPassword);
                                     System.out.println("Cambio de contraseña exitoso save_pass");

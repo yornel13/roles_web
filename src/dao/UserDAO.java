@@ -288,7 +288,7 @@ public class UserDAO {
     }
 
     public User existCedula(String cedula){
-        String existUser ="SELECT id FROM user WHERE cedula=?";
+        String existUser ="SELECT * FROM user WHERE cedula=?";
         User user = new User();
         conn = new DBConnection().conectar();
         try {
@@ -299,6 +299,11 @@ public class UserDAO {
 
             while (resultSet.next()){
                 user.setId(resultSet.getInt("id"));
+                user.setNombre(resultSet.getString("nombre"));
+                user.setApellido(resultSet.getString("apellido"));
+                user.setCedula(resultSet.getString("cedula"));
+                user.setUsername(resultSet.getString("username"));
+                user.setTipo(resultSet.getString("tipo"));
             }
 
         } catch (SQLException e) {

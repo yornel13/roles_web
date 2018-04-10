@@ -27,4 +27,5 @@ public class Const {
     public static final String SEARCH_TEXT = "search_text";
     public static final Integer ACTIVE = 1;
     public static final String MESSAGE = "message";
+    public static final String EMPLEADO = "E";
 }

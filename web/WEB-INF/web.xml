@@ -10,7 +10,7 @@
     
     <context-param>
         <param-name>servidor</param-name>
-        <!--<param-value>userdbtest.cemdw4zpjobt.us-east-2.rds.amazonaws.com</param-value>-->
+       <!-- <param-value>userdbtest.cemdw4zpjobt.us-east-2.rds.amazonaws.com</param-value>-->
         <param-value>localhost</param-value>
     </context-param>
     
@@ -31,13 +31,13 @@
 
     <context-param>
         <param-name>password</param-name>
-        <!--<param-value>Arcadia2018</param-value>-->
         <param-value>1234</param-value>
-   </context-param>
+       <!-- <param-value>Arcadia2018</param-value> -->
+    </context-param>
 
-   <error-page>
-       <error-code>404</error-code>
-       <location>/error</location>
-   </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error</location>
+    </error-page>
 
 </web-app>

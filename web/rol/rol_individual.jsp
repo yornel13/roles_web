@@ -4,6 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     RolIndividual rolIndividual = (RolIndividual) request.getAttribute(Const.ROL_INDIVIDUAL);
+
 %>
 <html>
     <head>

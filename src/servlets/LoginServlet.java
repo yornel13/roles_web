@@ -28,11 +28,13 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter(Const.USERNAME);
         String password = request.getParameter(Const.PASSWORD);
 
+
         if(!username.equals(Const.EMPTY) && !password.equals(Const.EMPTY)){
 
             User user = null;
             try {
-                user = userDAO.getUser(username);
+                user = userDAO.getUser(username); // -> Validate on Web user table
+
             } catch (Exception ex) {
                 ex.printStackTrace();
                 request.setAttribute(Const.MESSAGE, "Problemas de conexion a base de datos!");
@@ -40,7 +42,7 @@ public class LoginServlet extends HttpServlet {
                 request.getRequestDispatcher("login.jsp").forward(request, response);
                 return;
             }
-            if(user != null){
+            if(user != null){ //Si es null no existe en user  Web o usuario o contraseña erronea (debe crearce)
                 password = SessionUtility.MD5(password);
                 if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                     SessionUtility.save(user, request, response);
@@ -55,11 +57,40 @@ public class LoginServlet extends HttpServlet {
                     request.getRequestDispatcher("login.jsp").forward(request, response);
                 }
             } else {
+                System.out.println("verificar usuario en desktop DB");
+                //Verifico en la desk DB si existe el usuario y esta relacionado a una empresa
+
+                Usuario usuario = usuarioDAO.findByCedula(username);
+
+                if(usuario != null){
+                    if(usuario.getDetallesEmpleado() != null){
+                        if(password.equals(username)){
+                            password = SessionUtility.MD5(password);
+                            //Crea usuario de nuevo ingreso a web
+                            userDAO.addUser(usuario.getNombre(), usuario.getApellido(), usuario.getCedula(), username, password,
+                                    Const.EMPLEADO, Const.ACTIVE);
+                            User userSaved = userDAO.existCedula(usuario.getCedula());
+                            SessionUtility.save(userSaved, request, response);
+                            response.sendRedirect("login?successful");
+                            return;
+                        } else {
+                            request.setAttribute(Const.MESSAGE, "La contraseña debe coincidir con el usuario!");
+                            request.setAttribute(Const.USERNAME, username);
+                            request.getRequestDispatcher("login.jsp").forward(request, response);
+                        }
+
+                    }else {
+                        request.getRequestDispatcher("login.jsp").forward(request, response);
+                    }
+                }else{
+                    request.setAttribute(Const.MESSAGE, "El nombre de usuario no esta registrado o no coincide!");
+                    request.setAttribute(Const.USERNAME, username);
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                }
                 request.setAttribute(Const.MESSAGE, "El nombre de usuario no esta registrado!");
                 request.setAttribute(Const.USERNAME, username);
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-
         } else {
             request.setAttribute(Const.MESSAGE, "Los campos son requeridos");
             request.setAttribute(Const.USERNAME, username);
@@ -93,6 +124,7 @@ public class LoginServlet extends HttpServlet {
                     request.getSession().setAttribute(Const.DATA_USER, usuario);
                     request.getSession().setAttribute(Const.EMPLEADO_ID, usuario.getId());
                     response.sendRedirect("rol/individual");
+                    System.out.println("Empleado loggeado con exito");
                     break;
             }
         } else if (request.getParameter(Const.LOGOUT) != null) {
@@ -121,4 +153,14 @@ public class LoginServlet extends HttpServlet {
         processRequests(request, response);
 
     }
+
+
+    private void employeeValidator(Usuario usuario){
+
+    }
+
+
+
+
 }
+

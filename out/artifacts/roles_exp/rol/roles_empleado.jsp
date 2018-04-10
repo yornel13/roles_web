@@ -44,28 +44,28 @@
                         <th colspan="22" style="background: white">Cliente: <%=rol.getClienteNombre()%></th>
                     </tr>
                     <tr class="table-info">
-                        <th class="th-size-p1"></th>
+                        <th class="th-size-0"></th>
                         <th class="th-size-1">Dias</th>
-                        <th class="th-size-1">Horas (N)</th>
-                        <th class="th-size-1">Horas (ST)</th>
-                        <th class="th-size-1">Horas (RC)</th>
-                        <th class="th-size-1-2">Horas (ST+RC)</th>
-                        <th class="th-size-1">Salario</th>
-                        <th class="th-size-1">Sobre Tiempo</th>
-                        <th class="th-size-1">Recargo</th>
-                        <th class="th-size-1">Bono</th>
-                        <th class="th-size-1">Transporte</th>
-                        <th class="th-size-1">Total Bonos</th>
-                        <th class="th-size-1">Subtotal</th>
-                        <th class="th-size-1">Vacaciones</th>
-                        <th class="th-size-1">Decimo 3ro</th>
-                        <th class="th-size-1">Decimo 4to</th>
-                        <th class="th-size-1">F. Reserva</th>
-                        <th class="th-size-1">Jub. Patronal</th>
-                        <th class="th-size-1">Ap. Patronal</th>
-                        <th class="th-size-1">Seguros</th>
-                        <th class="th-size-1">Uniformes</th>
-                        <th class="th-size-1">Total Ingresos</th>
+                        <th class="th-size-3">Horas(N)</th>
+                        <th class="th-size-3">Horas(ST)</th>
+                        <th class="th-size-3">Horas(RC)</th>
+                        <th class="th-size-3">(ST+RC)</th>
+                        <th class="th-size-2">Salario</th>
+                        <th class="th-size-4">Sobre Tiempo</th>
+                        <th class="th-size-2">Recargo</th>
+                        <th class="th-size-2">Bono</th>
+                        <th class="th-size-2">Transporte</th>
+                        <th class="th-size-4">Total Bonos</th>
+                        <th class="th-size-2">Subtotal</th>
+                        <th class="th-size-3">Vacaciones</th>
+                        <th class="th-size-4">Decimo 3ro</th>
+                        <th class="th-size-4">Decimo 4to</th>
+                        <th class="th-size-3">F. Reserva</th>
+                        <th class="th-size-4">Jub. Patronal</th>
+                        <th class="th-size-4">Ap. Patronal</th>
+                        <th class="th-size-2">Seguros</th>
+                        <th class="th-size-2">Uniformes</th>
+                        <th class="th-size-4">Total Ingresos</th>
                     </tr>
                     <tr>
                         <td>
@@ -108,28 +108,28 @@
                         <th colspan="22" style="background: white">Totales (Rol Empleado)</th>
                     </tr>
                     <tr style="background: sandybrown">
-                        <th class="th-size-p1"></th>
+                        <th class="th-size-0"></th>
                         <th class="th-size-1">Dias</th>
-                        <th class="th-size-1">Horas (N)</th>
-                        <th class="th-size-1">Horas (ST)</th>
-                        <th class="th-size-1">Horas (RC)</th>
-                        <th class="th-size-1-2">Horas (ST+RC)</th>
-                        <th class="th-size-1">Salario</th>
-                        <th class="th-size-1">Sobre Tiempo</th>
-                        <th class="th-size-1">Recargo</th>
-                        <th class="th-size-1">Bono</th>
-                        <th class="th-size-1">Transporte</th>
-                        <th class="th-size-1">Total Bonos</th>
-                        <th class="th-size-1">Subtotal</th>
-                        <th class="th-size-1">Vacaciones</th>
-                        <th class="th-size-1">Decimo 3ro</th>
-                        <th class="th-size-1">Decimo 4to</th>
-                        <th class="th-size-1">F. Reserva</th>
-                        <th class="th-size-1">Jub. Patronal</th>
-                        <th class="th-size-1">Ap. Patronal</th>
-                        <th class="th-size-1">Seguros</th>
-                        <th class="th-size-1">Uniformes</th>
-                        <th class="th-size-1">Total Ingresos</th>
+                        <th class="th-size-3">Horas(N)</th>
+                        <th class="th-size-3">Horas(ST)</th>
+                        <th class="th-size-3">Horas(RC)</th>
+                        <th class="th-size-3">(ST+RC)</th>
+                        <th class="th-size-2">Salario</th>
+                        <th class="th-size-4">Sobre Tiempo</th>
+                        <th class="th-size-2">Recargo</th>
+                        <th class="th-size-2">Bono</th>
+                        <th class="th-size-2">Transporte</th>
+                        <th class="th-size-4">Total Bonos</th>
+                        <th class="th-size-2">Subtotal</th>
+                        <th class="th-size-3">Vacaciones</th>
+                        <th class="th-size-4">Decimo 3ro</th>
+                        <th class="th-size-4">Decimo 4to</th>
+                        <th class="th-size-3">F. Reserva</th>
+                        <th class="th-size-4">Jub. Patronal</th>
+                        <th class="th-size-4">Ap. Patronal</th>
+                        <th class="th-size-2">Seguros</th>
+                        <th class="th-size-2">Uniformes</th>
+                        <th class="th-size-4">Total Ingresos</th>
                     </tr>
                     <tr>
                         <td>

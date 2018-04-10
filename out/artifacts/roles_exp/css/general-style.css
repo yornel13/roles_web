@@ -9,26 +9,28 @@
 .table-responsive{
     overflow: auto;
 }
-.th-size-p1{
-    min-width: 20px;
-    max-width: 20px;
-}
 .th-size-0{
-    min-width: 100px;
+    min-width: 20px;
 }
 .th-size-1{
-    min-width: 130px;
-}
-.th-size-1-2{
-    min-width: 140px;
+    min-width: 50px;
 }
 .th-size-2{
-    min-width: 200px;
+    min-width: 80px;
 }
 .th-size-3{
-    min-width: 300px;
+    min-width: 100px;
 }
 .th-size-4{
+    min-width: 130px;
+}
+.th-size-5{
+    min-width: 200px;
+}
+.th-size-6{
+    min-width: 300px;
+}
+.th-size-7{
     min-width: 400px;
 }
 .container-filter{

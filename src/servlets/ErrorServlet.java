@@ -12,8 +12,8 @@ public class ErrorServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.err.println("ErrorServlet --> Redirecting to: /roles_web/index");
-        resp.sendRedirect("/roles_web/index");
+        System.err.println("ErrorServlet --> Redirecting to: /index");
+        resp.sendRedirect("/index");
     }
 
     @Override

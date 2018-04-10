@@ -34,8 +34,12 @@ public class RolClienteServlet extends HttpServlet {
         if (searchId != null) {
             Integer rolId = Integer.valueOf(searchId);
             RolCliente rolCliente = rolClienteDAO.findById(rolId);
-            req.setAttribute(Const.ROL_CLIENTE, rolCliente);
-            req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+            if (rolCliente == null) {
+                resp.sendRedirect("/error");
+            } else {
+                req.setAttribute(Const.ROL_CLIENTE, rolCliente);
+                req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+            }
             return;
         }
 
@@ -135,7 +139,7 @@ public class RolClienteServlet extends HttpServlet {
         }
         if (rolesCliente == null) {
             System.err.println("user invalid");
-            resp.sendRedirect("/roles_web/login");
+            resp.sendRedirect("/login");
         }
         return rolesCliente;
     }

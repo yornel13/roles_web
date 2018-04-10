@@ -6,6 +6,6 @@ public enum  UserType {
     EMPRESA,
     CLIENTE,
     EMPLEADO,
-    NONE;
+    NONE
 
 }

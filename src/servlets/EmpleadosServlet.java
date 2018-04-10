@@ -124,7 +124,7 @@ public class EmpleadosServlet  extends HttpServlet {
         }
         if (rolesIndividual == null) {
             System.err.println("user invalid");
-            resp.sendRedirect("/roles_web/login");
+            resp.sendRedirect("/login");
         }
         return rolesIndividual;
     }

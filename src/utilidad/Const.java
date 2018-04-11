@@ -14,7 +14,6 @@ public class Const {
     public static final String EXPIRY = "expiry";
     public static final String EMPRESA_ID = "empresaId";
     public static final String CLIENTE_ID = "clienteId";
-    public static final String CLIENTE = "cliente";
     public static final String CLIENTES = "clientes";
     public static final String EMPLEADO_ID = "empleadoId";
     public static final String FILTER_MONTH = "filter_month";
@@ -28,4 +27,6 @@ public class Const {
     public static final Integer ACTIVE = 1;
     public static final String MESSAGE = "message";
     public static final String EMPLEADO = "E";
+    public static final String EMPRESA = "M";
+    public static final String CLIENTE = "C";
 }

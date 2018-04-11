@@ -6,6 +6,7 @@ import models.User;
 import utilidad.Const;
 import utilidad.Fecha;
 import utilidad.SessionUtility;
+import utilidad.UserType;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -60,7 +61,6 @@ public class AdminServlet extends HttpServlet {
 
 
         /**Selected user from table*/
-
         userToUpdateID = request.getParameter("user_id");
         if(userToUpdateID != null){
             Integer id = Integer.valueOf(userToUpdateID);
@@ -70,13 +70,73 @@ public class AdminServlet extends HttpServlet {
             return;
         }
 
-        /**Save new user*/
+        /**Create new user (save)*/
         if(request.getParameter("save") != null){
 
             if(!nombre.isEmpty() && !apellido.isEmpty() && !cedula.isEmpty()){
                 User userCedula = userDAO.existCedula(cedula);
-                System.out.println("nombre del usuario: "+userCedula.getId());
+                System.out.println("tipo de usuario: "+tipo);
+
+                    //EMPRESA - CLIENTE
+                    if(tipo.equals(Const.EMPRESA)  || tipo.equals(Const.CLIENTE)){
+                        System.out.println("Entro usurio tipo: "+tipo+" 1if");
+                        if(!username.isEmpty()){
+                            User usernameExists = userDAO.getUserByUsername(username);
+                            if(usernameExists.getId() == null){
+                               if(!password.isEmpty()){
+                                   if(confirmPassword.isEmpty()){
+                                       System.out.println("Debe confirmar la contraseña (save)");
+                                       typeInfo = "empty_confirm";
+                                       request.setAttribute("info_msg", typeInfo );
+
+                                       request.getRequestDispatcher("add-user.jsp").forward(request, response);
+                                       return;
+                                   }
+                                   password = SessionUtility.MD5(password);
+                                   confirmPassword = SessionUtility.MD5(confirmPassword);
+                                   if(password.equals(confirmPassword)){
+                                       userDAO.addUser(nombre, apellido, cedula, username, password, tipo, Const.ACTIVE);
+
+                                       typeInfo = "saved";
+                                       request.setAttribute("info_msg", typeInfo);
+
+                                       List<User> listaUsuario = userDAO.getUsers();
+                                       request.setAttribute(Const.USERS, listaUsuario);
+                                       request.getRequestDispatcher("admin-user-table.jsp").forward(request, response);
+                                       return;
+                                   } else {
+                                       typeInfo = "empty_3";
+                                       request.setAttribute("info_msg", typeInfo);
+                                       request.getRequestDispatcher("add-user.jsp").forward(request, response);
+                                       return;
+                                   }
+                               }else{
+                                   typeInfo = "empty_4";
+                                   request.setAttribute("info_msg", typeInfo);
+                                   request.getRequestDispatcher("add-user.jsp").forward(request, response);
+                                   return;
+                               }
+                            }else{
+                                typeInfo = "username_exists";
+                                inputedUsername = username;
+
+                                request.setAttribute("info_msg", typeInfo );
+                                request.setAttribute("username", inputedUsername);
+                                request.getRequestDispatcher("add-user.jsp").forward(request, response);
+                                return;
+                            }
+                        }else{
+                            typeInfo = "empty_2";
+                            request.setAttribute("info_msg", typeInfo);
+                            request.getRequestDispatcher("add-user.jsp").forward(request, response);
+                            return;
+                        }
+                    }
+
+
+                //ADMIN - EMPLEADO = unicos
                 if(userCedula.getId() == null ){
+                    System.out.println("Entro usurio tipo: "+tipo+" 2if");
                     if(!username.isEmpty()){
                         User usernameExists = userDAO.getUserByUsername(username);
                         if(usernameExists.getId() == null){
@@ -100,7 +160,6 @@ public class AdminServlet extends HttpServlet {
                                     List<User> listaUsuario = userDAO.getUsers();
                                     request.setAttribute(Const.USERS, listaUsuario);
                                     request.getRequestDispatcher("admin-user-table.jsp").forward(request, response);
-
                                     return;
                                 } else {
                                     typeInfo = "empty_3";
@@ -131,7 +190,6 @@ public class AdminServlet extends HttpServlet {
                 } else {
                     typeInfo = "same_dni";
                     request.setAttribute("info_msg", typeInfo );
-
                     request.getRequestDispatcher("add-user.jsp").forward(request, response);
                 }
             } else {
@@ -144,7 +202,78 @@ public class AdminServlet extends HttpServlet {
         /** update user*/
         if(request.getParameter("update_user") != null){
             User user = userDAO.getUserByID(id);
+
             if(!nombre.isEmpty() && !apellido.isEmpty() && !cedula.isEmpty()){
+
+                //EMPRESA - CLIENTE
+                if(tipo.equals(Const.EMPRESA) || tipo.equals(Const.CLIENTE)){
+                    System.out.println("usuario tipo: "+tipo);
+                    if(!username.isEmpty()){
+                        User compareUsername = userDAO.getUserByUsername(username);
+                        if(user.getId().equals(compareUsername.getId()) ||
+                                compareUsername.getId() == null){
+                            if(password.isEmpty() && confirmPassword.isEmpty()){
+                                password = user.getPassword();
+                                confirmPassword = user.getPassword();
+                            } else if (!password.isEmpty() && !confirmPassword.isEmpty()) {
+                                password = SessionUtility.MD5(password);
+                                confirmPassword = SessionUtility.MD5(confirmPassword);
+                            }
+                            if(!password.isEmpty() && confirmPassword.isEmpty()){
+                                System.out.println("Debe confirmar la contraseña (Update)");
+                                typeInfo = "empty_confirm";
+                                request.setAttribute("info_msg", typeInfo );
+
+                                request.setAttribute("user", user);
+                                request.getRequestDispatcher("admin.jsp").forward(request, response);
+                                return;
+                            }
+                            if(password.equals(confirmPassword)){
+
+                                UserDAO updateUserDAO = new UserDAO();
+                                updateUserDAO.updateUser(id, nombre, apellido, cedula, username, password, tipo, activo);
+
+                                System.out.println("Usuario Actualizado con exito! con ID: "+id);
+                                typeInfo = "updated";
+                                request.setAttribute("info_msg", typeInfo );
+
+                                request.setAttribute("user", user);
+                                List<User> listaUsuario = new UserDAO().getUsers();
+                                request.setAttribute(Const.USERS, listaUsuario);
+                                request.getRequestDispatcher("admin-user-table.jsp").forward(request, response);
+                                return;
+                            } else {
+                                System.out.println("Los campos de contraseña y confirmacion no coinciden (Update)");
+                                typeInfo = "empty_3";
+                                request.setAttribute("info_msg", typeInfo );
+
+                                request.setAttribute("user", user);
+                                request.getRequestDispatcher("admin.jsp").forward(request, response);
+                            }
+                        }else{
+                            System.out.println("El nombre de usuario "+username+" se encuentra en uso (Update)");
+                            typeInfo = "username_exists";
+                            inputedUsername = username;
+                            request.setAttribute("info_msg", typeInfo );
+                            request.setAttribute("username", inputedUsername);
+
+                            request.setAttribute("user", user);
+                            request.getRequestDispatcher("admin.jsp").forward(request, response);
+                        }
+
+                    }else{
+                        System.out.println("El campo de nombre usuario es requerido (Update)");
+                        typeInfo = "empty_2";
+                        request.setAttribute("info_msg", typeInfo );
+
+                        request.setAttribute("user", user);
+                        request.getRequestDispatcher("admin.jsp").forward(request, response);
+                    }
+                return;
+                }
+
+
+                //ADMINISTRADOR - EMPLEADO
                 User compareUserCedula = userDAO.existCedula(cedula);
                 if(user.getId().equals(compareUserCedula.getId()) ||
                         compareUserCedula.getId() == null  ){

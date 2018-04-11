@@ -17,7 +17,8 @@
     String infoMsg = (String) request.getAttribute("info_msg");
     String username = (String) request.getAttribute("username");
 
-    String tipoReturned = user.getTipo();
+
+    String tipoReturned = (String) request.getAttribute("tipo");
     String nameReturned = (String) request.getAttribute("nombre");
     String lastnameReturned = (String) request.getAttribute("apellido");
     String cedulaReturned = (String) request.getAttribute("cedula");
@@ -55,39 +56,45 @@
                     String cliVal = "C";
                     String eVal = "E";
 
-                    if(user.getTipo().equals("M") || tipoReturned.equals("M")){
-                        level1 = "Empresa";
-                        level2 = "Administrador";
-                        level3 = "Cliente";
-                        level4 = "Empleado";
+                        if(tipoReturned == null){
+                            tipoReturned = user.getTipo();
+                        }
+                       // System.out.println("envio de tipo user jsp "+user.getTipo());
+                        System.out.println("tiporeturned en jsp "+tipoReturned);
+                        if (tipoReturned.equals("M")) {
+                            level1 = "Empresa";
+                            level2 = "Administrador";
+                            level3 = "Cliente";
+                            level4 = "Empleado";
 
-                        adminVal = "M";
-                        empVal = "A";
-                        cliVal = "C";
-                        eVal = "E";
-                    }
-                    if(user.getTipo().equals("C") || tipoReturned.equals("C")){
-                        level1 = "Cliente";
-                        level2 = "Administrador";
-                        level3 = "Empresa";
-                        level4 = "Empleado";
+                            adminVal = "M";
+                            empVal = "A";
+                            cliVal = "C";
+                            eVal = "E";
+                        }
+                        if (tipoReturned.equals("C")) {
+                            level1 = "Cliente";
+                            level2 = "Administrador";
+                            level3 = "Empresa";
+                            level4 = "Empleado";
 
-                        adminVal = "C";
-                        empVal = "A";
-                        cliVal = "M";
-                        eVal = "E";
-                    }
-                    if(user.getTipo().equals("E") || tipoReturned.equals("E")){
-                        level1 = "Empleado";
-                        level2 = "Administrador";
-                        level3 = "Empresa";
-                        level4 = "Cliente";
+                            adminVal = "C";
+                            empVal = "A";
+                            cliVal = "M";
+                            eVal = "E";
+                        }
+                        if (tipoReturned.equals("E")) {
+                            level1 = "Empleado";
+                            level2 = "Administrador";
+                            level3 = "Empresa";
+                            level4 = "Cliente";
 
-                        adminVal = "E";
-                        empVal = "A";
-                        cliVal = "M";
-                        eVal = "C";
-                    }
+                            adminVal = "E";
+                            empVal = "A";
+                            cliVal = "M";
+                            eVal = "C";
+                        }
+
                 %>
 
                 <br>
@@ -111,7 +118,7 @@
                 <br>
                 <input id="lastname" class="form-control" name="apellido"  value="<%=user.getApellido()%>" placeholder="Apellido" disabled/>
                 <br>
-                <input id="cedula" class="form-control" type="number" name="cedula" value="<%=user.getCedula()%>" placeholder="cedula" disabled/>
+                <input id="cedula" class="form-control" type="number" name="cedula" value="<%=user.getCedula()%>" placeholder="cedula/ruc" disabled/>
 
                 <br>
 

@@ -42,22 +42,27 @@ public class UsuarioDAO {
                 usuario.setSexo(rs.getString("sexo"));
             }
 
-            q = "SELECT * FROM detalles_empleado WHERE id = "+usuario.getDetallesEmpleadoId();
-            rs = stat.executeQuery(q);
+            try {
+                q = "SELECT * FROM detalles_empleado WHERE id = "+usuario.getDetallesEmpleadoId();
+                rs = stat.executeQuery(q);
 
-            while (rs.next()) {
-                DetallesEmpleado detallesEmpleado = new DetallesEmpleado();
-                detallesEmpleado.setId(rs.getInt("id"));
-                detallesEmpleado.setEmpresaId(rs.getInt("empresa_id"));
-                detallesEmpleado.setFechaInicio(rs.getTimestamp("fecha_inicio"));
-                detallesEmpleado.setFechaContrato(rs.getTimestamp("fecha_contrato"));
-                detallesEmpleado.setCargoId(rs.getInt("cargo_id"));
-                detallesEmpleado.setSueldo(rs.getDouble("sueldo"));
-                detallesEmpleado.setQuincena(rs.getDouble("quincena"));
-                detallesEmpleado.setAcumulaDecimos(rs.getBoolean("acumula_decimos"));
-                detallesEmpleado.setNroCuenta(rs.getString("nro_cuenta"));
-                usuario.setDetallesEmpleado(detallesEmpleado);
+                while (rs.next()) {
+                    DetallesEmpleado detallesEmpleado = new DetallesEmpleado();
+                    detallesEmpleado.setId(rs.getInt("id"));
+                    detallesEmpleado.setEmpresaId(rs.getInt("empresa_id"));
+                    detallesEmpleado.setFechaInicio(rs.getTimestamp("fecha_inicio"));
+                    detallesEmpleado.setFechaContrato(rs.getTimestamp("fecha_contrato"));
+                    detallesEmpleado.setCargoId(rs.getInt("cargo_id"));
+                    detallesEmpleado.setSueldo(rs.getDouble("sueldo"));
+                    detallesEmpleado.setQuincena(rs.getDouble("quincena"));
+                    detallesEmpleado.setAcumulaDecimos(rs.getBoolean("acumula_decimos"));
+                    detallesEmpleado.setNroCuenta(rs.getString("nro_cuenta"));
+                    usuario.setDetallesEmpleado(detallesEmpleado);
+                }
+            }catch (NullPointerException npe){
+                npe.printStackTrace();
             }
+
 
         } catch (Exception e) {
             e.printStackTrace();

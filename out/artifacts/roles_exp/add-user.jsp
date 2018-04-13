@@ -107,7 +107,7 @@
                 <br>
                 <input id="lastname" class="form-control" name="apellido" value="" placeholder="Apellido" />
                 <br>
-                <input id="cedula" class="form-control" type="number" name="cedula" value="" placeholder="cedula" />
+                <input id="cedula" class="form-control" type="number" name="cedula" value="" placeholder="cedula/ruc" />
 
                 <br>
 

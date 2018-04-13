@@ -3,6 +3,7 @@ package utilidad;
 public class Const {
 
     public static final String ID = "id";
+    public static final String ROL_CLIENTE_ID = "rol_cliente_id";
     public static final String DATA_USER = "data_user";
     public static final String USER = "user";
     public static final String FECHA = "fecha";
@@ -24,6 +25,7 @@ public class Const {
     public static final String ROL_CLIENTE = "rol_cliente";
     public static final String ROLES_INDIVIDUAL = "roles_individual";
     public static final String ROL_INDIVIDUAL = "rol_individual";
+    public static final String PAGO_MES = "pago_mes";
     public static final String SEARCH_TEXT = "search_text";
     public static final Integer ACTIVE = 1;
     public static final String MESSAGE = "message";

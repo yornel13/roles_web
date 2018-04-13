@@ -1,6 +1,8 @@
 package servlets;
 
+import dao.PagoMesDAO;
 import dao.RolClienteDAO;
+import dao.RolIndividualDAO;
 import models.*;
 import utilidad.Const;
 import utilidad.Fecha;
@@ -20,7 +22,9 @@ import java.util.stream.Collectors;
 @WebServlet("/rol/cliente")
 public class RolClienteServlet extends HttpServlet {
 
+    private RolIndividualDAO rolIndividualDAO = new RolIndividualDAO();
     private RolClienteDAO rolClienteDAO = new RolClienteDAO();
+    private PagoMesDAO pagoMesDAO = new PagoMesDAO();
     private HttpServletRequest req;
     private HttpServletResponse resp;
 
@@ -31,8 +35,27 @@ public class RolClienteServlet extends HttpServlet {
         if (SessionUtility.isExpiry(req, resp)) return;
 
         String searchId = req.getParameter(Const.ID);
+        String rolClienteId = req.getParameter(Const.ROL_CLIENTE_ID);
         if (searchId != null) {
             Integer rolId = Integer.valueOf(searchId);
+            RolCliente rolCliente = rolClienteDAO.findById(rolId);
+            if (rolCliente == null) {
+                resp.sendRedirect("/error");
+            } else {
+                List<RolCliente> rolesClients = rolClienteDAO.findAllByFechaAndUsuarioId(rolCliente.getInicio(), rolCliente.getUsuarioId());
+                RolIndividual rolIndividual = rolIndividualDAO.findByFechaAndUsuarioId(rolCliente.getInicio(), rolCliente.getUsuarioId());
+                if (rolIndividual != null) {
+                    PagoMes pagoMes = pagoMesDAO.findByRolIndividualId(rolIndividual.getId());
+                    req.setAttribute(Const.PAGO_MES, pagoMes);
+                }
+                req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
+                req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
+                req.setAttribute(Const.ROL_CLIENTE, rolCliente);
+                req.getRequestDispatcher("rol_empleado.jsp").forward(req, resp);
+            }
+            return;
+        } else if (rolClienteId != null) {
+            Integer rolId = Integer.valueOf(rolClienteId);
             RolCliente rolCliente = rolClienteDAO.findById(rolId);
             if (rolCliente == null) {
                 resp.sendRedirect("/error");

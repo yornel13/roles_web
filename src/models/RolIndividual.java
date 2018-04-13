@@ -2,6 +2,8 @@ package models;
 
 // default package
 
+import utilidad.Numeros;
+
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
@@ -326,5 +328,9 @@ public class RolIndividual implements java.io.Serializable {
 
 	public void setUsuarioId(Integer usuarioId) {
 		this.usuarioId = usuarioId;
+	}
+
+	public Double getMontoHorasExtras() {
+		return Numeros.round(montoHorasSobreTiempo+montoHorasSuplementarias);
 	}
 }

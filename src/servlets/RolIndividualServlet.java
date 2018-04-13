@@ -1,7 +1,9 @@
 package servlets;
 
+import dao.PagoMesDAO;
 import dao.RolClienteDAO;
 import dao.RolIndividualDAO;
+import models.PagoMes;
 import models.RolCliente;
 import models.RolIndividual;
 import utilidad.Const;
@@ -19,8 +21,9 @@ import java.util.List;
 @WebServlet("/rol/individual")
 public class RolIndividualServlet extends HttpServlet {
 
-    RolClienteDAO rolClienteDAO = new RolClienteDAO();
-    RolIndividualDAO rolIndividualDAO = new RolIndividualDAO();
+    private RolClienteDAO rolClienteDAO = new RolClienteDAO();
+    private RolIndividualDAO rolIndividualDAO = new RolIndividualDAO();
+    private PagoMesDAO pagoMesDAO = new PagoMesDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -40,6 +43,10 @@ public class RolIndividualServlet extends HttpServlet {
 
         List<RolCliente> rolesClients = rolClienteDAO.findAllByFechaAndUsuarioId(fecha, empleadoId);
         RolIndividual rolIndividual = rolIndividualDAO.findByFechaAndUsuarioId(fecha, empleadoId);
+        if (rolIndividual != null) {
+            PagoMes pagoMes = pagoMesDAO.findByRolIndividualId(rolIndividual.getId());
+            req.setAttribute(Const.PAGO_MES, pagoMes);
+        }
         req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
         req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
         req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
@@ -61,6 +68,10 @@ public class RolIndividualServlet extends HttpServlet {
             Integer empleadoId = (Integer) req.getSession().getAttribute(Const.EMPLEADO_ID);
             List<RolCliente> rolesClients = rolClienteDAO.findAllByFechaAndUsuarioId(fecha, empleadoId);
             RolIndividual rolIndividual = rolIndividualDAO.findByFechaAndUsuarioId(fecha, empleadoId);
+            if (rolIndividual != null) {
+                PagoMes pagoMes = pagoMesDAO.findByRolIndividualId(rolIndividual.getId());
+                req.setAttribute(Const.PAGO_MES, pagoMes);
+            }
             req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
             req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
             req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
@@ -75,6 +86,10 @@ public class RolIndividualServlet extends HttpServlet {
             Integer empleadoId = (Integer) req.getSession().getAttribute(Const.EMPLEADO_ID);
             List<RolCliente> rolesClients = rolClienteDAO.findAllByFechaAndUsuarioId(fecha, empleadoId);
             RolIndividual rolIndividual = rolIndividualDAO.findByFechaAndUsuarioId(fecha, empleadoId);
+            if (rolIndividual != null) {
+                PagoMes pagoMes = pagoMesDAO.findByRolIndividualId(rolIndividual.getId());
+                req.setAttribute(Const.PAGO_MES, pagoMes);
+            }
             req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
             req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
             req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));

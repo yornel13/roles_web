@@ -1,10 +1,6 @@
 package dao;
 
-import models.DetallesEmpleado;
-import models.Empresa;
-import models.RolIndividual;
-import models.Usuario;
-import models.Cargo;
+import models.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -64,7 +60,7 @@ public class RolIndividualDAO {
                 rol.setCedula(rs.getString("cedula"));
                 rol.setEmpresa(rs.getString("empresa"));
             }
-            q = "SELECT * FROM usuario WHERE id = "+usuarioId;
+            q = "SELECT * FROM usuario WHERE id = "+rol.getUsuarioId();
             rs = stat.executeQuery(q);
 
             while (rs.next()) {
@@ -82,9 +78,47 @@ public class RolIndividualDAO {
                 usuario.setActivo(rs.getBoolean("activo"));
                 usuario.setNacimiento(rs.getTimestamp("nacimiento"));
                 usuario.setSexo(rs.getString("sexo"));
+                rol.setUsuario(usuario);
+            }
 
-                if (rol != null)
-                    rol.setUsuario(usuario);
+            q = "SELECT * FROM detalles_empleado WHERE id = "+rol.getUsuario().getDetallesEmpleadoId();
+            rs = stat.executeQuery(q);
+
+            while (rs.next()) {
+                DetallesEmpleado detallesEmpleado = new DetallesEmpleado();
+                detallesEmpleado.setId(rs.getInt("id"));
+                detallesEmpleado.setEmpresaId(rs.getInt("empresa_id"));
+                detallesEmpleado.setFechaInicio(rs.getTimestamp("fecha_inicio"));
+                detallesEmpleado.setFechaContrato(rs.getTimestamp("fecha_contrato"));
+                detallesEmpleado.setCargoId(rs.getInt("cargo_id"));
+                detallesEmpleado.setSueldo(rs.getDouble("sueldo"));
+                detallesEmpleado.setQuincena(rs.getDouble("quincena"));
+                detallesEmpleado.setAcumulaDecimos(rs.getBoolean("acumula_decimos"));
+                detallesEmpleado.setNroCuenta(rs.getString("nro_cuenta"));
+                rol.getUsuario().setDetallesEmpleado(detallesEmpleado);
+            }
+
+            q = "SELECT * FROM empresa WHERE id = "+rol.getUsuario().getDetallesEmpleado().getEmpresaId();
+            rs = stat.executeQuery(q);
+
+            while (rs.next()) {
+                Empresa empresa = new Empresa();
+                empresa.setId(rs.getInt("id"));
+                empresa.setNombre(rs.getString("nombre"));
+                empresa.setSiglas(rs.getString("siglas"));
+                empresa.setNumeracion(rs.getString("numeracion"));
+                rol.getUsuario().getDetallesEmpleado().setEmpresa(empresa);
+            }
+
+            q = "SELECT * FROM cargo WHERE id = "+rol.getUsuario().getDetallesEmpleado().getCargoId();
+            rs = stat.executeQuery(q);
+
+            while (rs.next()) {
+                Cargo cargo = new Cargo();
+                cargo.setId(rs.getInt("id"));
+                cargo.setNombre(rs.getString("nombre"));
+                cargo.setActivo(rs.getBoolean("activo"));
+                rol.getUsuario().getDetallesEmpleado().setCargo(cargo);
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -25,13 +25,16 @@
     min-width: 130px;
 }
 .th-size-5{
-    min-width: 200px;
+    min-width: 150px;
 }
 .th-size-6{
-    min-width: 300px;
+    min-width: 200px;
 }
 .th-size-7{
-    min-width: 400px;
+    min-width: 300px !important;
+}
+.th-size-8{
+    min-width: 400px !important;
 }
 .container-filter{
     position:relative;

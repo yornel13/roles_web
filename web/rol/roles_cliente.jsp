@@ -2,6 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="models.RolCliente" %>
 <%@ page import="utilidad.Const" %>
+<%@ page import="utilidad.Numeros" %>
 <%
     List<RolCliente> roles = (List<RolCliente>) request.getAttribute(Const.ROLES_CLIENTE);
 %>
@@ -37,16 +38,13 @@
                 if (roles != null && !roles.isEmpty()) {
             %>
             <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover" >
+                <table class="table table-striped table-bordered table-hover">
                     <thead>
-                        <tr class="table-info">
-                            <%@include file="../WEB-INF/partials-static/header_list.html" %>
-                        </tr>
+                        <%@include file="../WEB-INF/partials-static/header_table_empleado.html" %>
                     </thead>
                     <tbody>
                         <%
-                            for (RolCliente rolCliente :
-                                    roles) {
+                            for (RolCliente rolCliente : roles) {
                         %>
                         <tr>
                             <td>
@@ -87,6 +85,100 @@
                     </tbody>
                 </table>
             </div>
+            <br>
+            <h1>Totales</h1>
+            <%
+                Double diasTextValor = 0d;
+                Double normalesTextValor = 0d;
+                Double suplementariasTextValor = 0d;
+                Double sobreTiempoTextValor = 0d;
+                Double extraTextValor = 0d;
+                Double sueldoTotalTextValor = 0d;
+                Double montoSuplementariasTextValor = 0d;
+                Double montoSobreTiempoTextValor = 0d;
+                Double montoBonoTextValor = 0d;
+                Double montoTransporteTextValor = 0d;
+                Double totalBonosTextValor = 0d;
+                Double subTotalTextValor = 0d;
+                Double vacacionesTextValor = 0d;
+                Double decimosTotalTextValor = 0d;
+                Double decimoTerceroTotalTextValor = 0d;
+                Double decimoCuartoTotalTextValor = 0d;
+                Double montoReservaTextValor = 0d;
+                Double montoJubilacionTextValor = 0d;
+                Double montoAportePatronalTextValor = 0d;
+                Double montoSegurosTextValor = 0d;
+                Double montoUniformasTextValor = 0d;
+                Double montoTotalIngresos = 0d;
+
+                for (RolCliente pago: roles) {
+
+                    diasTextValor += pago.getDias();
+                    normalesTextValor += pago.getHorasNormales();
+                    suplementariasTextValor += pago.getHorasSuplementarias();
+                    sobreTiempoTextValor += pago.getHorasSobreTiempo();
+                    sueldoTotalTextValor += pago.getSalario();
+                    extraTextValor += (pago.getMontoHorasSuplementarias()
+                            + pago.getMontoHorasSobreTiempo());
+                    totalBonosTextValor += pago.getTotalBonos();
+                    vacacionesTextValor += pago.getVacaciones();
+                    subTotalTextValor += pago.getSubtotal();
+                    decimosTotalTextValor += (pago.getDecimoCuarto()
+                            + pago.getDecimoTercero());
+                    decimoTerceroTotalTextValor += pago.getDecimoTercero();
+                    decimoCuartoTotalTextValor += pago.getDecimoCuarto();
+                    montoReservaTextValor += pago.getDecimoTercero();
+                    montoSuplementariasTextValor += pago.getMontoHorasSuplementarias();
+                    montoSobreTiempoTextValor += pago.getMontoHorasSobreTiempo();
+                    montoBonoTextValor += pago.getBono();
+                    montoTransporteTextValor += pago.getTransporte();
+                    montoJubilacionTextValor += pago.getJubilacionPatronal();
+                    montoAportePatronalTextValor += pago.getAportePatronal();
+                    montoSegurosTextValor += pago.getSeguros();
+                    montoUniformasTextValor += pago.getUniformes();
+                    montoTotalIngresos += pago.getTotalIngreso();
+                }
+            %>
+            <table class="table table-striped table-bordered table-hover" style="max-width: 800px; position: relative;left:0;right:0;margin: auto;">
+                <%@include file="../WEB-INF/partials-static/header_info_total_rol_cliente_1.html" %>
+                <tr>
+                    <td><%=Numeros.round(diasTextValor)%></td>
+                    <td><%=Numeros.round(normalesTextValor)%></td>
+                    <td><%=Numeros.round(suplementariasTextValor)%></td>
+                    <td><%=Numeros.round(sobreTiempoTextValor)%></td>
+                    <td><%=Numeros.round(extraTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(sueldoTotalTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoSuplementariasTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoSobreTiempoTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoBonoTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoTransporteTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(totalBonosTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(subTotalTextValor)%></td>
+                </tr>
+            </table>
+            <br>
+            <table class="table table-striped table-bordered table-hover" style="max-width: 800px; position: relative;left:0;right:0;margin: auto">
+                <%@include file="../WEB-INF/partials-static/header_info_total_rol_cliente_2.html" %>
+                <tr>
+                    <td><small>$</small><%=Numeros.round(vacacionesTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(decimoTerceroTotalTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(decimoCuartoTotalTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoReservaTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoJubilacionTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoAportePatronalTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoSegurosTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoUniformasTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoTotalIngresos)%></td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <%
                 } else {
             %>

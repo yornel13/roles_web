@@ -6,53 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd981e8-69b9-4bf4-bcd4-40f8b464ec74" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dao/PagoMesDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/PagoMes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/PagoMesItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/partials-static/header_info_empleado_detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/partials-static/header_info_total_rol_cliente_1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/partials-static/header_info_total_rol_cliente_2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/partials-static/header_table_empleado.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/partials-static/header_table_empleado_empresa.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/rol/rol_empleado.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-static/header_list.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_empleado2.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/partials-static/header_list.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/rol/roles_empleado2.jsp" afterPath="$PROJECT_DIR$/web/rol/roles_empleado-old.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/RolIndividualDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/RolIndividualDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/RolIndividual.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/RolIndividual.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/EmpleadosServlet$1.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/EmpleadosServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/EmpleadosServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/EmpleadosServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteServlet$1.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolIndividualServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolIndividualServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/Const.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/Const.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/RolIndividualDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/RolIndividualDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/RolIndividual.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/RolIndividual.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpleadosServlet$1.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpleadosServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpleadosServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpleadosServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet$1.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolIndividualServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolIndividualServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Const.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Const.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Yornel.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Yornel.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/general-style.css" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/css/general-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/empleados.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/empleados.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_cliente.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_cliente.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_empleado.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_empleado.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/RolIndividualDAO.java" afterPath="$PROJECT_DIR$/src/dao/RolIndividualDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/RolIndividual.java" afterPath="$PROJECT_DIR$/src/models/RolIndividual.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/EmpleadosServlet.java" afterPath="$PROJECT_DIR$/src/servlets/EmpleadosServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/RolClienteServlet.java" afterPath="$PROJECT_DIR$/src/servlets/RolClienteServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/RolIndividualServlet.java" afterPath="$PROJECT_DIR$/src/servlets/RolIndividualServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utilidad/Const.java" afterPath="$PROJECT_DIR$/src/utilidad/Const.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/general-style.css" afterPath="$PROJECT_DIR$/web/css/general-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/empleados.jsp" afterPath="$PROJECT_DIR$/web/rol/empleados.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/roles_cliente.jsp" afterPath="$PROJECT_DIR$/web/rol/roles_cliente.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/roles_empleado.jsp" afterPath="$PROJECT_DIR$/web/rol/roles_empleado.jsp" />
-    </list>
+    <list default="true" id="0dd981e8-69b9-4bf4-bcd4-40f8b464ec74" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -114,8 +68,8 @@
       <file leaf-file-name="empleados.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/rol/empleados.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-792">
-              <caret line="112" column="34" lean-forward="false" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
+            <state relative-caret-position="415">
+              <caret line="183" column="77" lean-forward="true" selection-start-line="183" selection-start-column="77" selection-end-line="183" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -453,12 +407,12 @@
       <workItem from="1523392135597" duration="12592000" />
       <workItem from="1523460099685" duration="15067000" />
       <workItem from="1523496688711" duration="9061000" />
-      <workItem from="1523572229070" duration="9253000" />
+      <workItem from="1523572229070" duration="9407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78221000" />
+    <option name="totallyTimeSpent" value="78375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -483,7 +437,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25652173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14925373" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14925373" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -949,8 +903,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/rol/empleados.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-792">
-          <caret line="112" column="34" lean-forward="false" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
+        <state relative-caret-position="415">
+          <caret line="183" column="77" lean-forward="true" selection-start-line="183" selection-start-column="77" selection-end-line="183" selection-end-column="77" />
           <folding />
         </state>
       </provider>

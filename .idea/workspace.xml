@@ -7,80 +7,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dd981e8-69b9-4bf4-bcd4-40f8b464ec74" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/servlets/RolClienteReport.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/fonts/Raleway-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fonts/Raleway-Regular.ttf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/RolClienteDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/RolClienteDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/RolIndividualDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/RolIndividualDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/UserDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/UserDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Cargo.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Cargo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Departamento.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Departamento.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/DetallesEmpleado.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/DetallesEmpleado.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Empresa.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Empresa.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/RolIndividual.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/RolIndividual.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Usuario.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Usuario.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/AdminServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/AdminServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/ClientesServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/ClientesServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/IndexServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/IndexServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/LoginServlet$1.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/LoginServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/LoginServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/LoginServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteServlet$1.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/Fecha.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/Fecha.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/Numeros.class" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/Numeros.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/RolClienteDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/RolClienteDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/RolIndividualDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/RolIndividualDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/UserDAO.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/UserDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/Cargo.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/Cargo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/Departamento.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/Departamento.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/DetallesEmpleado.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/DetallesEmpleado.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/Empresa.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/Empresa.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/RolIndividual.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/RolIndividual.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/Usuario.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/Usuario.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/AdminServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/AdminServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/ClientesServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/ClientesServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/IndexServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/IndexServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/LoginServlet$1.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/LoginServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/LoginServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/LoginServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet$1.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Fecha.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Fecha.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Numeros.class" afterPath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Numeros.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/com.jaspersoft.studio/dataAdapters/dataAdapter_0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/com.jaspersoft.studio/dataAdapters/dataAdapter_1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.history/52/1058a127404000181fe09a7e4ac8da5a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.history/7e/e035a827404000181fe09a7e4ac8da5a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.indexes/history.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.indexes/properties.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.markers.snap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.syncinfo.snap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/org.eclipse.egit.core/GitProjectData.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/0.snap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/com.jaspersoft.studio.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.egit.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.gef.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.team.ui.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.editors.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1041972481.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/140984992.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1425782372.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1644171541.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1758116917.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1857135811.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1913899033.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2004886485.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2073830732.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2142118396.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2243289815.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2298525636.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2363124510.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2841897899.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2980392686.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/3009457644.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/3039040218.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/3155617568.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/3639589522.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/3710865565.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/4096254182.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/4140740932.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/4287537471.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/464061410.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/47785700.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/51110055.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/562135175.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.launching/.install.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/MyReports/.classpath" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/MyReports/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/MyReports/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/MyReports/route_details.jrxml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/add-user.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/add-user.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/admin-user-table.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/admin-user-table.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/admin.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/clientes.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/clientes.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/empleados.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/empleados.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/rol_cliente.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/rol_cliente.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/rol_individual.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/rol_individual.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_cliente.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_cliente.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_empleado.jsp" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_empleado.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/RolClienteDAO.java" afterPath="$PROJECT_DIR$/src/dao/RolClienteDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/RolIndividualDAO.java" afterPath="$PROJECT_DIR$/src/dao/RolIndividualDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/dao/UserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/Cargo.java" afterPath="$PROJECT_DIR$/src/models/Cargo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/Departamento.java" afterPath="$PROJECT_DIR$/src/models/Departamento.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/DetallesEmpleado.java" afterPath="$PROJECT_DIR$/src/models/DetallesEmpleado.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/Empresa.java" afterPath="$PROJECT_DIR$/src/models/Empresa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/RolIndividual.java" afterPath="$PROJECT_DIR$/src/models/RolIndividual.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/Usuario.java" afterPath="$PROJECT_DIR$/src/models/Usuario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/AdminServlet.java" afterPath="$PROJECT_DIR$/src/servlets/AdminServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/ClientesServlet.java" afterPath="$PROJECT_DIR$/src/servlets/ClientesServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/IndexServlet.java" afterPath="$PROJECT_DIR$/src/servlets/IndexServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/LoginServlet.java" afterPath="$PROJECT_DIR$/src/servlets/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/RolClienteServlet.java" afterPath="$PROJECT_DIR$/src/servlets/RolClienteServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utilidad/Fecha.java" afterPath="$PROJECT_DIR$/src/utilidad/Fecha.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utilidad/Numeros.java" afterPath="$PROJECT_DIR$/src/utilidad/Numeros.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/add-user.jsp" afterPath="$PROJECT_DIR$/web/add-user.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin-user-table.jsp" afterPath="$PROJECT_DIR$/web/admin-user-table.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin.jsp" afterPath="$PROJECT_DIR$/web/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/clientes.jsp" afterPath="$PROJECT_DIR$/web/clientes.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/empleados.jsp" afterPath="$PROJECT_DIR$/web/rol/empleados.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/rol_cliente.jsp" afterPath="$PROJECT_DIR$/web/rol/rol_cliente.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/rol_individual.jsp" afterPath="$PROJECT_DIR$/web/rol/rol_individual.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/roles_cliente.jsp" afterPath="$PROJECT_DIR$/web/rol/roles_cliente.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/roles_empleado.jsp" afterPath="$PROJECT_DIR$/web/rol/roles_empleado.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -418,12 +415,12 @@
       <workItem from="1523911482769" duration="19592000" />
       <workItem from="1523974664037" duration="4635000" />
       <workItem from="1523986901014" duration="28882000" />
-      <workItem from="1524062775533" duration="15776000" />
+      <workItem from="1524062775533" duration="15971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213594000" />
+    <option name="totallyTimeSpent" value="213789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />

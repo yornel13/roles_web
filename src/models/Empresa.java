@@ -3,8 +3,6 @@ package models;
 // default package
 
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Empresa entity. @author MyEclipse Persistence Tools

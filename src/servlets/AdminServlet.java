@@ -1,12 +1,9 @@
 package servlets;
 
 import dao.UserDAO;
-import models.RolCliente;
 import models.User;
 import utilidad.Const;
-import utilidad.Fecha;
 import utilidad.SessionUtility;
-import utilidad.UserType;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -543,4 +540,6 @@ public class AdminServlet extends HttpServlet {
         request.getRequestDispatcher("admin-user-table.jsp").forward(request,response);
 
     }
+
+
 }

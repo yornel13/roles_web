@@ -1,10 +1,6 @@
 package dao;
 
-import models.DetallesEmpleado;
-import models.Empresa;
-import models.RolIndividual;
-import models.Usuario;
-import models.Cargo;
+import models.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

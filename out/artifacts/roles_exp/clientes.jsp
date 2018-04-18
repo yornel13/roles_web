@@ -1,6 +1,6 @@
-<%@ page import="java.util.List" %>
 <%@ page import="models.Cliente" %>
 <%@ page import="utilidad.Const" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     List<Cliente> clientes = (List<Cliente>) request.getAttribute(Const.CLIENTES);

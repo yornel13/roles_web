@@ -1,8 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="java.util.List" %>
 <%@ page import="models.RolCliente" %>
 <%@ page import="utilidad.Const" %>
+<%@ page import="java.util.List" %>
 <%
+    String infoMsg = (String) request.getAttribute("info_msg");
     List<RolCliente> roles = (List<RolCliente>) request.getAttribute(Const.ROLES_CLIENTE);
 %>
 <html>
@@ -25,6 +26,10 @@
             <section>
                 <h2 class="content-title">Roles Cliente</h2>
             </section>
+
+            <form action="rol_cliente" method="post" target="_blank" >
+                <button name="print">Print report</button>
+            </form>
 
             <div class="container-filter">
 
@@ -95,6 +100,34 @@
                 }
             %>
         </div>
+
+        <!--MODAL-->
+        <div id="modal_no_date_pdf" class="modal fade"  >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Eliminar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Esta seguro que desea eliminar el usuario?.</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <form method="post" >
+                            <button name=""  class="btn btn-primary" id="delete_modal_button" value="">Aceptar</button>
+                        </form>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <span id="type_info" hidden><%=infoMsg%></span>
+
     </body>
 </html>
 

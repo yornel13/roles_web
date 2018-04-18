@@ -2,7 +2,6 @@ package servlets;
 
 import dao.ClienteDAO;
 import models.Cliente;
-import models.RolCliente;
 import utilidad.Const;
 import utilidad.Fecha;
 import utilidad.SessionUtility;

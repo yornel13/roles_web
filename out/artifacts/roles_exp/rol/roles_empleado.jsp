@@ -1,7 +1,7 @@
 <%@ page import="models.RolCliente" %>
-<%@ page import="java.util.List" %>
 <%@ page import="models.RolIndividual" %>
 <%@ page import="utilidad.Const" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     List<RolCliente> roles = (List<RolCliente>) request.getAttribute(Const.ROLES_CLIENTE);

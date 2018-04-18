@@ -59,8 +59,7 @@
                         if(tipoReturned == null){
                             tipoReturned = user.getTipo();
                         }
-                       // System.out.println("envio de tipo user jsp "+user.getTipo());
-                        System.out.println("tiporeturned en jsp "+tipoReturned);
+
                         if (tipoReturned.equals("M")) {
                             level1 = "Empresa";
                             level2 = "Administrador";

@@ -1,9 +1,7 @@
 package dao;
 
-import com.sun.org.apache.regexp.internal.RE;
 import models.User;
 
-import javax.jws.soap.SOAPBinding;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 <%@ page import="models.RolCliente" %>
-<%@ page import="utilidad.Fecha" %>
 <%@ page import="utilidad.Const" %>
+<%@ page import="utilidad.Fecha" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     RolCliente rolCliente = (RolCliente) request.getAttribute(Const.ROL_CLIENTE);
@@ -135,5 +135,6 @@
 
             </div>
         </div>
+
     </body>
 </html>

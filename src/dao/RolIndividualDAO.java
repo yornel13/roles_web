@@ -51,6 +51,7 @@ public class RolIndividualDAO {
                 rol.setSubtotal(rs.getDouble("subtotal"));
                 rol.setDecimoTercero(rs.getDouble("decimo_tercero"));
                 rol.setDecimoCuarto(rs.getDouble("decimo_cuarto"));
+                rol.setReserva(rs.getDouble("reserva"));
                 rol.setJubilacionPatronal(rs.getDouble("jubilacion_patronal"));
                 rol.setAportePatronal(rs.getDouble("aporte_patronal"));
                 rol.setSeguros(rs.getDouble("seguros"));
@@ -178,6 +179,7 @@ public class RolIndividualDAO {
                 rol.setSubtotal(rs.getDouble("subtotal"));
                 rol.setDecimoTercero(rs.getDouble("decimo_tercero"));
                 rol.setDecimoCuarto(rs.getDouble("decimo_cuarto"));
+                rol.setReserva(rs.getDouble("reserva"));
                 rol.setJubilacionPatronal(rs.getDouble("jubilacion_patronal"));
                 rol.setAportePatronal(rs.getDouble("aporte_patronal"));
                 rol.setSeguros(rs.getDouble("seguros"));
@@ -241,6 +243,7 @@ public class RolIndividualDAO {
                 rolIndividual.setSubtotal(rs.getDouble("subtotal"));
                 rolIndividual.setDecimoTercero(rs.getDouble("decimo_tercero"));
                 rolIndividual.setDecimoCuarto(rs.getDouble("decimo_cuarto"));
+                rolIndividual.setReserva(rs.getDouble("reserva"));
                 rolIndividual.setJubilacionPatronal(rs.getDouble("jubilacion_patronal"));
                 rolIndividual.setAportePatronal(rs.getDouble("aporte_patronal"));
                 rolIndividual.setSeguros(rs.getDouble("seguros"));

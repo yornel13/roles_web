@@ -1,8 +1,6 @@
 package models;
 
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Usuario entity. @author MyEclipse Persistence Tools

@@ -1,6 +1,6 @@
 <%@ page import="models.RolIndividual" %>
-<%@ page import="utilidad.Fecha" %>
 <%@ page import="utilidad.Const" %>
+<%@ page import="utilidad.Fecha" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     RolIndividual rolIndividual = (RolIndividual) request.getAttribute(Const.ROL_INDIVIDUAL);
@@ -23,9 +23,19 @@
 
         <div class="container">
 
-            <a href="javascript:history.back()" name="return" class="return">
-                ❮ Volver
-            </a>
+            <div class="container-buttons-top">
+                <a href="javascript:history.back()" name="return" class="return">
+                    ❮ Volver
+                </a>
+                <button onclick="printPage()" class="print">
+                    <img src="../images/bt_reportes.png">
+                </button>
+                <script>
+                    function printPage() {
+                        window.print();
+                    }
+                </script>
+            </div>
 
             <section>
                 <h2 class="content-title">Rol Individual</h2>

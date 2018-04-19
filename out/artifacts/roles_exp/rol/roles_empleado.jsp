@@ -28,6 +28,17 @@
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
         <div class="container">
 
+            <div class="container-buttons-top">
+                <button onclick="printPage()" class="print">
+                    <img src="../images/bt_reportes.png">
+                </button>
+                <script>
+                    function printPage() {
+                        window.print();
+                    }
+                </script>
+            </div>
+
             <section>
                 <h2 class="content-title">Roles Empleado</h2>
             </section>

@@ -1,4 +1,4 @@
-<%@ page import="models.User" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Joshuan Marval
   Date: 5/3/2018

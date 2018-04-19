@@ -24,9 +24,11 @@
 
         <div class="container">
 
-            <a href="javascript:history.back()" name="return" class="return">
-                ❮ Volver
-            </a>
+            <div class="container-buttons-top">
+                <a href="javascript:history.back()" name="return" class="return">
+                    ❮ Volver
+                </a>
+            </div>
 
             <section>
                 <h2 class="content-title">Rol Empleado</h2>

@@ -59,7 +59,7 @@
                         if(tipoReturned == null){
                             tipoReturned = user.getTipo();
                         }
-                    
+
                         if (tipoReturned.equals("M")) {
                             level1 = "Empresa";
                             level2 = "Administrador";

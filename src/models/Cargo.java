@@ -2,9 +2,6 @@ package models;
 
 // default package
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Cargo entity. @author MyEclipse Persistence Tools
  */

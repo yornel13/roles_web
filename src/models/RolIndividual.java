@@ -5,8 +5,6 @@ package models;
 import utilidad.Numeros;
 
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * RolIndividual entity. @author MyEclipse Persistence Tools

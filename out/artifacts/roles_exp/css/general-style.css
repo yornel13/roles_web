@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+@page {
+    size: auto;
+    margin: 15mm 0mm;
+}
 .custom-container {
     padding-top: 5px;
 }
@@ -86,7 +90,7 @@
 }
 .content-title{
     margin: 24px auto auto;
-    width: 60%;
+    width: 600px;
     color: white;
     text-align: center;
     background: #6f9cc2;

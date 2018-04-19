@@ -21,6 +21,7 @@ public class Const {
     public static final String FILTER_MONTH = "filter_month";
     public static final String FILTER_DATA = "filter_data";
     public static final String ROLES_CLIENTE = "roles_cliente";
+    public static final String ROLES_CLIENTE_FILTER = "roles_cliente_filter";
     public static final String PRINT = "print";
     public static final String USERS = "user_list";
     public static final String ROL_CLIENTE = "rol_cliente";

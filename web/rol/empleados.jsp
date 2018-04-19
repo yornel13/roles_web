@@ -5,6 +5,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     List<RolIndividual> roles = (List<RolIndividual>) request.getAttribute(Const.ROLES_INDIVIDUAL);
+    request.getSession().setAttribute(Const.PRINT, roles);
 %>
 <html>
     <head>
@@ -22,9 +23,19 @@
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
         <div class="container">
 
-            <a href="/empresa" name="return" class="return">
-                ❮ Volver
-            </a>
+            <div class="container-buttons-top">
+                <div class="container-buttons-top">
+                    <a href="/empresa" name="return" class="return">
+                        ❮ Volver
+                    </a>
+                </div>
+                <form action="rol_individual" method="post" target="_blank" class="container-print">
+                    <button name="print" class="print">
+                        <img src="../images/bt_reportes.png">
+                        <span class="tooltiptext">Imprimir Reporte</span>
+                    </button>
+                </form>
+            </div>
 
             <section>
                 <h2 class="content-title">Roles Individual</h2>

@@ -1,11 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="java.util.List" %>
 <%@ page import="models.RolCliente" %>
 <%@ page import="utilidad.Const" %>
+<%@ page import="java.util.List" %>
 <%@ page import="utilidad.Numeros" %>
 <%@ page import="utilidad.UserType" %>
 <%
+    String infoMsg = (String) request.getAttribute("info_msg");
     List<RolCliente> roles = (List<RolCliente>) request.getAttribute(Const.ROLES_CLIENTE);
+    request.getSession().setAttribute(Const.PRINT, roles);
 %>
 <html>
     <head>
@@ -23,19 +25,29 @@
 
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
 
+
+
         <div class="container">
 
-            <%
-                if (SessionUtility.getUser(request, response).getType() == UserType.EMPRESA) {
-            %>
-            <a href="/clientes" name="return" class="return">
-                ❮ Volver
-            </a>
-            <%
-                }
-            %>
+            <div class="container-buttons-top">
+                <%
+                    if (SessionUtility.getUser(request, response).getType() == UserType.EMPRESA) {
+                %>
+                <a href="/clientes" name="return" class="return">
+                    ❮ Volver
+                </a>
+                <%
+                    }
+                %>
+                <form action="rol_cliente" method="post" target="_blank" class="container-print">
+                    <button name="print" class="print">
+                        <img src="../images/bt_reportes.png">
+                        <span class="tooltiptext">Imprimir Reporte</span>
+                    </button>
+                </form>
+            </div>
 
-            <section>
+            <section style="display: block">
                 <h2 class="content-title">Roles Cliente</h2>
             </section>
 
@@ -199,6 +211,34 @@
                 }
             %>
         </div>
+
+        <!--MODAL-->
+        <div id="modal_no_date_pdf" class="modal fade"  >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Eliminar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Esta seguro que desea eliminar el usuario?.</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <form method="post" >
+                            <button name=""  class="btn btn-primary" id="delete_modal_button" value="">Aceptar</button>
+                        </form>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <span id="type_info" hidden><%=infoMsg%></span>
+
     </body>
 </html>
 

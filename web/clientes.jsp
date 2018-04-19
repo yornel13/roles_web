@@ -1,6 +1,6 @@
-<%@ page import="java.util.List" %>
 <%@ page import="models.Cliente" %>
 <%@ page import="utilidad.Const" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     List<Cliente> clientes = (List<Cliente>) request.getAttribute(Const.CLIENTES);
@@ -22,9 +22,11 @@
 
         <div class="container">
 
-            <a href="/empresa" name="return" class="return">
-                ❮ Volver
-            </a>
+            <div class="container-buttons-top">
+                <a href="/empresa" name="return" class="return">
+                    ❮ Volver
+                </a>
+            </div>
 
             <section>
                 <h2 class="content-title">Clientes</h2>

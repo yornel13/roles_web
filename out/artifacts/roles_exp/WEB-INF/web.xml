@@ -10,29 +10,29 @@
     
     <context-param>
         <param-name>servidor</param-name>
-        <param-value>userdbtest.cemdw4zpjobt.us-east-2.rds.amazonaws.com</param-value>
-        <!--  <param-value>localhost</param-value>-->
-      </context-param>
+       <!-- <param-value>userdbtest.cemdw4zpjobt.us-east-2.rds.amazonaws.com</param-value>-->
+        <param-value>localhost</param-value>
+    </context-param>
 
-      <context-param>
-          <param-name>puerto</param-name>
-          <param-value>3306</param-value>
-      </context-param>
+    <context-param>
+        <param-name>puerto</param-name>
+        <param-value>3306</param-value>
+    </context-param>
 
-      <context-param>
-          <param-name>basededatos</param-name>
-          <param-value>dbcontrol_web</param-value>
-      </context-param>
+    <context-param>
+        <param-name>basededatos</param-name>
+        <param-value>dbcontrol_web</param-value>
+    </context-param>
 
-      <context-param>
-          <param-name>user</param-name>
-          <param-value>root</param-value>
-      </context-param>
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>root</param-value>
+    </context-param>
 
-      <context-param>
-          <param-name>password</param-name>
-          <!--  <param-value>1234</param-value> -->
-        <param-value>Arcadia2018</param-value>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>1234</param-value>
+       <!-- <param-value>Arcadia2018</param-value> -->
     </context-param>
 
     <error-page>

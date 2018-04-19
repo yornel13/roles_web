@@ -179,7 +179,7 @@
                 }
             %>
             <!-- Empleado Table --------------------------------------------------------------------------------------->
-            <div class="content-table" style="padding-top: 30px">
+            <div class="content-table">
 
                 <%
                     Double decimo3 = null;

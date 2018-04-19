@@ -34,6 +34,8 @@ public class EmpleadosServlet  extends HttpServlet {
         this.resp = resp;
         if (SessionUtility.isExpiry(req, resp)) return;
 
+        System.out.println("get");
+
         String empleadoId = req.getParameter(Const.ID);
         String rolClienteId = req.getParameter(Const.ROL_CLIENTE_ID);
         if (empleadoId != null) {
@@ -63,7 +65,7 @@ public class EmpleadosServlet  extends HttpServlet {
         String fecha = (String) req.getSession().getAttribute(Const.FECHA);
         List<RolIndividual> rolesIndividual = getRolesIndividual(fecha);
         req.setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
-        req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+        req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
         req.getSession().setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
         req.getSession().setAttribute(Const.FECHA, fecha);
         req.getRequestDispatcher("empleados.jsp").forward(req, resp);
@@ -75,16 +77,19 @@ public class EmpleadosServlet  extends HttpServlet {
         this.resp = resp;
         if (SessionUtility.isExpiry(req, resp)) return;
 
+        System.out.println("post");
+
         String next = req.getParameter("next");
         String previous = req.getParameter("previous");
         String search = req.getParameter("search");
+        String monthSelect = req.getParameter("month");
 
         if (next != null) {
             String fecha = (String) req.getSession().getAttribute(Const.FECHA);
             fecha = new Fecha(fecha).plusMonths(1).toString();
             List<RolIndividual> rolesIndividual = getRolesIndividual(fecha);
             req.setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.getSession().setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
             req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("empleados.jsp").forward(req, resp);
@@ -94,7 +99,7 @@ public class EmpleadosServlet  extends HttpServlet {
             fecha = new Fecha(fecha).minusMonths(1).toString();
             List<RolIndividual> rolesIndividual = getRolesIndividual(fecha);
             req.setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.getSession().setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
             req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("empleados.jsp").forward(req, resp);
@@ -109,9 +114,17 @@ public class EmpleadosServlet  extends HttpServlet {
             List<RolIndividual> rolesFilter = ((List<RolIndividual>) req.getSession().getAttribute(Const.ROLES_INDIVIDUAL))
                     .stream().filter(fullNamePredicate.or(dniPredicate)).collect(Collectors.toList());
 
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.setAttribute(Const.ROLES_INDIVIDUAL, rolesFilter);
             req.setAttribute(Const.FILTER_DATA, searchDate);
+            req.getRequestDispatcher("empleados.jsp").forward(req, resp);
+        } else if (monthSelect != null) {
+            String fecha = Fecha.fromMonthSelect(monthSelect).getFecha();
+            List<RolIndividual> rolesIndividual = getRolesIndividual(fecha);
+            req.setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
+            req.getSession().setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
+            req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("empleados.jsp").forward(req, resp);
         }
     }

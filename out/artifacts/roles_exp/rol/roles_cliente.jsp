@@ -3,6 +3,7 @@
 <%@ page import="models.RolCliente" %>
 <%@ page import="utilidad.Const" %>
 <%@ page import="utilidad.Numeros" %>
+<%@ page import="utilidad.UserType" %>
 <%
     List<RolCliente> roles = (List<RolCliente>) request.getAttribute(Const.ROLES_CLIENTE);
 %>
@@ -19,9 +20,20 @@
         <%@include file="../WEB-INF/partials-static/meta-bootstrap.html"%>
     </head>
     <body>
+
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
 
         <div class="container">
+
+            <%
+                if (SessionUtility.getUser(request, response).getType() == UserType.EMPRESA) {
+            %>
+            <a href="/clientes" name="return" class="return">
+                ❮ Volver
+            </a>
+            <%
+                }
+            %>
 
             <section>
                 <h2 class="content-title">Roles Cliente</h2>

@@ -7,6 +7,7 @@ public class Const {
     public static final String DATA_USER = "data_user";
     public static final String USER = "user";
     public static final String FECHA = "fecha";
+    public static final String MONTH_SELECT = "month_select";
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
     public static final String EMPTY = "";
@@ -20,6 +21,7 @@ public class Const {
     public static final String FILTER_MONTH = "filter_month";
     public static final String FILTER_DATA = "filter_data";
     public static final String ROLES_CLIENTE = "roles_cliente";
+    public static final String PRINT = "print";
     public static final String USERS = "user_list";
     public static final String ROL_CLIENTE = "rol_cliente";
     public static final String ROLES_INDIVIDUAL = "roles_individual";

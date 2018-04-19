@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="../css/table-style.css">
         <link rel="stylesheet" href="../css/general-style.css">
         <link rel="stylesheet" href="../css/header-style.css">
+        <link rel="stylesheet" href="../css/date-search-style.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <%@include file="../WEB-INF/partials-static/meta-bootstrap.html"%>
@@ -22,6 +23,10 @@
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
 
         <div class="container">
+
+            <a href="javascript:history.back()" name="return" class="return">
+                ❮ Volver
+            </a>
 
             <section>
                 <h2 class="content-title">Rol Empleado</h2>

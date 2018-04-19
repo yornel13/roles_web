@@ -5,7 +5,7 @@
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-    margin-right: 16px;
+    margin-right: 8px;
     border: none;
     cursor:pointer;
     overflow: hidden;
@@ -41,7 +41,7 @@
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-    margin-left: 16px;
+    margin-left: 8px;
     border: none;
     cursor:pointer;
     overflow: hidden;
@@ -72,6 +72,22 @@
 .container-range{
     position:relative;
     top: 24px;
-    left: 24px;
+    display: flex;
+}
+.return {
+    background-color: #fAfAfA;
+    color: dimgray;
+    font-size: 15px;
     display: inline-block;
+    padding: 6px 12px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none; float: left!important;
+    margin-top: 24px;
+    cursor: pointer;
+    white-space: nowrap
+}
+.return:hover {
+    background-color: #f1f1f1;
+    color: black;
 }

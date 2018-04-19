@@ -37,6 +37,7 @@
     min-width: 400px !important;
 }
 .container-filter{
+    top: 16px;
     position:relative;
     padding-bottom: 16px;
 }
@@ -55,7 +56,7 @@
     position: relative;
     left: 0;
     right: 0;
-    top: 0;
+    top: 30px;
     bottom: 0;
     margin: auto;
 }
@@ -93,7 +94,5 @@
     font-weight: bold;
     letter-spacing: 2px;
     font-family: rale;
-
 }
-
 

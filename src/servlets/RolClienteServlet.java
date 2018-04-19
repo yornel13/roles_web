@@ -70,7 +70,7 @@ public class RolClienteServlet extends HttpServlet {
         Integer clienteId = (Integer) req.getSession().getAttribute(Const.CLIENTE_ID);
         List<RolCliente> rolesCliente = getRolesCliente(fecha, clienteId);
         req.setAttribute(Const.ROLES_CLIENTE, rolesCliente);
-        req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+        req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
         req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesCliente);
         req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
     }
@@ -92,7 +92,7 @@ public class RolClienteServlet extends HttpServlet {
             Integer clienteId = (Integer) req.getSession().getAttribute(Const.CLIENTE_ID);
             List<RolCliente> rolesCliente = getRolesCliente(fecha, clienteId);
             req.setAttribute(Const.ROLES_CLIENTE, rolesCliente);
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesCliente);
             req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
@@ -104,7 +104,7 @@ public class RolClienteServlet extends HttpServlet {
             Integer clienteId = (Integer) req.getSession().getAttribute(Const.CLIENTE_ID);
             List<RolCliente> rolesCliente = getRolesCliente(fecha, clienteId);
             req.setAttribute(Const.ROLES_CLIENTE, rolesCliente);
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesCliente);
             req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
@@ -123,7 +123,7 @@ public class RolClienteServlet extends HttpServlet {
                             fullNamePredicate.or(dniPredicate).or(companyPredicate)
             ).collect(Collectors.toList());
 
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.setAttribute(Const.ROLES_CLIENTE, rolesFilter);
             req.setAttribute(Const.FILTER_DATA, searchDate);
             req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
@@ -166,5 +166,4 @@ public class RolClienteServlet extends HttpServlet {
         }
         return rolesCliente;
     }
-
 }

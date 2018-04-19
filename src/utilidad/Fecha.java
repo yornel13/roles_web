@@ -489,4 +489,21 @@ public class Fecha {
     public static String getFechaCorta(String fecha) {
         return new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAno();
     }
+
+    public static Fecha fromMonthSelect(String monthSelect) {
+        String yearString = monthSelect.substring(0, Math.min(monthSelect.length(), 4));
+        String monthString = monthSelect.substring(5, Math.min(monthSelect.length(), 7));
+        return new Fecha("01", monthString, yearString);
+    }
+
+    public static String getMonthSelect(String monthSelect) {
+        String yearString = monthSelect.substring(0, Math.min(monthSelect.length(), 4));
+        String monthString = monthSelect.substring(5, Math.min(monthSelect.length(), 7));
+        Fecha fechaSelect = new Fecha("01", monthString, yearString);
+        return fechaSelect.getAno()+"-"+fechaSelect.getMes();
+    }
+
+    public String getMonthSelect() {
+        return ano+"-"+mes;
+    }
 }

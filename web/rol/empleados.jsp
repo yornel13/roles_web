@@ -22,6 +22,10 @@
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
         <div class="container">
 
+            <a href="/empresa" name="return" class="return">
+                ❮ Volver
+            </a>
+
             <section>
                 <h2 class="content-title">Roles Individual</h2>
             </section>

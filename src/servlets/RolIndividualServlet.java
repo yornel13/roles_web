@@ -49,7 +49,7 @@ public class RolIndividualServlet extends HttpServlet {
         }
         req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
         req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
-        req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+        req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
         req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesClients);
         req.getRequestDispatcher("roles_empleado.jsp").forward(req, resp);
     }
@@ -74,7 +74,7 @@ public class RolIndividualServlet extends HttpServlet {
             }
             req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
             req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesClients);
             req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("roles_empleado.jsp").forward(req, resp);
@@ -92,7 +92,7 @@ public class RolIndividualServlet extends HttpServlet {
             }
             req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
             req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesClients);
             req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("roles_empleado.jsp").forward(req, resp);

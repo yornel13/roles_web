@@ -7,76 +7,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dd981e8-69b9-4bf4-bcd4-40f8b464ec74" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/com.jaspersoft.studio/dataAdapters/dataAdapter_0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/com.jaspersoft.studio/dataAdapters/dataAdapter_1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.history/52/1058a127404000181fe09a7e4ac8da5a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.history/7e/e035a827404000181fe09a7e4ac8da5a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.indexes/history.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.indexes/properties.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.markers.snap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.syncinfo.snap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/org.eclipse.egit.core/GitProjectData.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.resources/0.snap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/com.jaspersoft.studio.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.egit.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.gef.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.team.ui.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.editors.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1041972481.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/140984992.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1425782372.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1644171541.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1758116917.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1857135811.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/1913899033.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2004886485.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2073830732.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2142118396.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2243289815.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2298525636.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2363124510.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2841897899.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/2980392686.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/3009457644.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/3039040218.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/3155617568.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/3639589522.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/3710865565.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/4096254182.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/4140740932.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/4287537471.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/464061410.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/47785700.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/51110055.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/562135175.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.launching/.install.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/MyReports/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/MyReports/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/MyReports/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reportes/MyReports/route_details.jrxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/com.jaspersoft.studio/dataAdapters/dataAdapter_0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/com.jaspersoft.studio/dataAdapters/dataAdapter_1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.history/52/1058a127404000181fe09a7e4ac8da5a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.history/7e/e035a827404000181fe09a7e4ac8da5a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.indexes/history.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.indexes/properties.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.markers.snap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/.syncinfo.snap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.projects/MyReports/org.eclipse.egit.core/GitProjectData.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.resources/0.snap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/com.jaspersoft.studio.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.egit.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.gef.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.team.ui.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.editors.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/1041972481.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/140984992.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/1425782372.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/1644171541.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/1758116917.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/1857135811.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/1913899033.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/2004886485.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/2073830732.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/2142118396.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/2243289815.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/2298525636.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/2363124510.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/2841897899.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/2980392686.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/3009457644.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/3039040218.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/3155617568.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/3639589522.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/3710865565.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/4096254182.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/4140740932.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/4287537471.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/464061410.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/47785700.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/51110055.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/562135175.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.launching/.install.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/MyReports/.classpath" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/MyReports/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/MyReports/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/reportes/MyReports/route_details.jrxml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -99,7 +99,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -186,12 +186,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="roles_web" type="b2602c69:ProjectViewProjectNode" />
               <item name="roles_web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="roles_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="roles_web" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="roles_web" type="b2602c69:ProjectViewProjectNode" />
@@ -211,10 +219,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -415,19 +420,19 @@
       <workItem from="1523911482769" duration="19592000" />
       <workItem from="1523974664037" duration="4635000" />
       <workItem from="1523986901014" duration="28882000" />
-      <workItem from="1524062775533" duration="15971000" />
+      <workItem from="1524062775533" duration="17560000" />
+      <workItem from="1524101160835" duration="240000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213789000" />
+    <option name="totallyTimeSpent" value="215618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -436,11 +441,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27006173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.77469134" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1785174" sideWeight="0.4926004" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18078668" sideWeight="0.4926004" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1785174" sideWeight="0.50739956" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11422088" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -453,6 +458,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -541,9 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="860">
           <caret line="43" column="35" lean-forward="false" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -726,7 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,7 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2400">
           <caret line="138" column="65" lean-forward="false" selection-start-line="138" selection-start-column="65" selection-end-line="138" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -742,21 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
           <caret line="93" column="10" lean-forward="false" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
-          <folding>
-            <marker date="1524026754394" expanded="true" signature="498:872" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1524026754394" expanded="true" signature="4171:4196" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1524026754394" expanded="true" signature="4171:4222" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1524026754394" expanded="true" signature="4171:4223" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1524026754394" expanded="true" signature="7568:7946" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1524026754394" expanded="true" signature="11281:11351" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1524026754394" expanded="true" signature="14135:14168" ph="SELECT * FRO... usuario" />
-            <marker date="1524026754394" expanded="true" signature="15852:15889" ph="SELECT * FRO... rol_cliente" />
-            <marker date="1524026754394" expanded="true" signature="18618:18651" ph="SELECT * FRO... usuario" />
-            <marker date="1524026754394" expanded="true" signature="19715:19758" ph="SELECT * FRO... detalles_empleado" />
-            <marker date="1524026754394" expanded="true" signature="20734:20767" ph="SELECT * FRO... empresa" />
-            <marker date="1524026754394" expanded="true" signature="21300:21331" ph="SELECT * FRO... cargo" />
-            <marker date="1524026754394" expanded="true" signature="21780:21813" ph="SELECT * FRO... cliente" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,14 +767,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/RolClienteTotalReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/RolClienteTotalReport.java" />
     <entry file="file://$PROJECT_DIR$/web/admin-user-table.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
@@ -817,9 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2281">
           <caret line="128" column="19" lean-forward="true" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -827,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="473" column="63" lean-forward="true" selection-start-line="472" selection-start-column="18" selection-end-line="473" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -835,12 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#mainHeader#0;class#RolClienteReport#0" expanded="false" />
-            <element signature="method#descriptionFixedHeader#0;class#RolClienteReport#0" expanded="false" />
-            <element signature="method#showTotal#0;class#RolClienteReport#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -848,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-80">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="31" column="15" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>

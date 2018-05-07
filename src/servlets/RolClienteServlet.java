@@ -84,6 +84,7 @@ public class RolClienteServlet extends HttpServlet {
         String next = req.getParameter("next");
         String previous = req.getParameter("previous");
         String search = req.getParameter("search");
+        String monthSelect = req.getParameter("month");
 
         if (next != null) {
 
@@ -126,6 +127,16 @@ public class RolClienteServlet extends HttpServlet {
             req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.setAttribute(Const.ROLES_CLIENTE, rolesFilter);
             req.setAttribute(Const.FILTER_DATA, searchDate);
+            req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
+        } else if (monthSelect != null) {
+
+            String fecha = Fecha.fromMonthSelect(monthSelect).getFecha();
+            Integer clienteId = (Integer) req.getSession().getAttribute(Const.CLIENTE_ID);
+            List<RolCliente> rolesCliente = getRolesCliente(fecha, clienteId);
+            req.setAttribute(Const.ROLES_CLIENTE, rolesCliente);
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
+            req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesCliente);
+            req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("roles_cliente.jsp").forward(req, resp);
         }
     }

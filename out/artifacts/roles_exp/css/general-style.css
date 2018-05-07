@@ -11,6 +11,7 @@
 }
 
 .table-responsive{
+    padding-top: 30px;
     overflow: auto;
 }
 .th-size-0{
@@ -41,9 +42,9 @@
     min-width: 400px !important;
 }
 .container-filter{
-    top: 16px;
+    top: 32px;
     position:relative;
-    padding-bottom: 16px;
+    display: block;
 }
 .container{
     padding-top: 70px;
@@ -56,11 +57,10 @@
     outline:none;
 }
 .emptyTable{
-    padding-top: 100px;
     position: relative;
     left: 0;
     right: 0;
-    top: 30px;
+    top: 180px;
     bottom: 0;
     margin: auto;
 }

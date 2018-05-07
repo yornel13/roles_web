@@ -6,7 +6,7 @@
         &#8249;
         <span class="tooltiptext">Mes Anterior</span>
     </button>
-    <div style="margin-top: 5px">
+    <div style="margin-top: 5px; float: left !important;">
         <input style="max-width: 180px" id="month" type="month" name="month"
                value="<%=mes%>" required>
         <span class="validity"></span>

@@ -10,6 +10,7 @@
     cursor:pointer;
     overflow: hidden;
     outline:none;
+    float: left !important;
 }
 .previous:hover {
     background-color: #ddd;
@@ -46,6 +47,7 @@
     cursor:pointer;
     overflow: hidden;
     outline:none;
+    float: left !important;
 }
 .next:hover {
     background-color: #ddd;
@@ -70,9 +72,8 @@
     visibility: visible;
 }
 .container-range{
-    position:relative;
-    top: 24px;
-    display: flex;
+    display: block;
+    float: left !important;
 }
 .return {
     float: left !important;

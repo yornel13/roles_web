@@ -23,6 +23,9 @@ public class Const {
     public static final String ROLES_CLIENTE = "roles_cliente";
     public static final String ROLES_CLIENTE_FILTER = "roles_cliente_filter";
     public static final String PRINT = "print";
+    public static final String PRINT_RL = "print_rl";
+    public static final String PRINT_PM = "print_pm";
+    public static final String PRINT_RI = "print_li";
     public static final String USERS = "user_list";
     public static final String ROL_CLIENTE = "rol_cliente";
     public static final String ROLES_INDIVIDUAL = "roles_individual";

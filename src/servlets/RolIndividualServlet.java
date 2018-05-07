@@ -60,6 +60,7 @@ public class RolIndividualServlet extends HttpServlet {
 
         String next = req.getParameter("next");
         String previous = req.getParameter("previous");
+        String monthSelect = req.getParameter("month");
 
         if (next != null) {
 
@@ -83,6 +84,23 @@ public class RolIndividualServlet extends HttpServlet {
 
             String fecha = (String) req.getSession().getAttribute(Const.FECHA);
             fecha = new Fecha(fecha).minusMonths(1).toString();
+            Integer empleadoId = (Integer) req.getSession().getAttribute(Const.EMPLEADO_ID);
+            List<RolCliente> rolesClients = rolClienteDAO.findAllByFechaAndUsuarioId(fecha, empleadoId);
+            RolIndividual rolIndividual = rolIndividualDAO.findByFechaAndUsuarioId(fecha, empleadoId);
+            if (rolIndividual != null) {
+                PagoMes pagoMes = pagoMesDAO.findByRolIndividualId(rolIndividual.getId());
+                req.setAttribute(Const.PAGO_MES, pagoMes);
+            }
+            req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
+            req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
+            req.getSession().setAttribute(Const.ROLES_CLIENTE, rolesClients);
+            req.getSession().setAttribute(Const.FECHA, fecha);
+            req.getRequestDispatcher("roles_empleado.jsp").forward(req, resp);
+
+        } else if (monthSelect != null) {
+
+            String fecha = Fecha.fromMonthSelect(monthSelect).getFecha();
             Integer empleadoId = (Integer) req.getSession().getAttribute(Const.EMPLEADO_ID);
             List<RolCliente> rolesClients = rolClienteDAO.findAllByFechaAndUsuarioId(fecha, empleadoId);
             RolIndividual rolIndividual = rolIndividualDAO.findByFechaAndUsuarioId(fecha, empleadoId);

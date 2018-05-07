@@ -26,6 +26,7 @@
     </head>
     <body>
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
+
         <div class="container">
 
             <div class="container-buttons-top">

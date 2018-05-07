@@ -6,6 +6,10 @@
     List<RolCliente> roles = (List<RolCliente>) request.getAttribute(Const.ROLES_CLIENTE);
     RolIndividual rolIndividual = (RolIndividual) request.getAttribute(Const.ROL_INDIVIDUAL);
     PagoMes pagoMes = (PagoMes) request.getAttribute(Const.PAGO_MES);
+
+    request.getSession().setAttribute(Const.PRINT_RL, roles);
+    request.getSession().setAttribute(Const.PRINT_RI, rolIndividual);
+    request.getSession().setAttribute(Const.PRINT_PM, pagoMes);
 %>
 <html>
     <head>
@@ -28,6 +32,12 @@
                 <a href="javascript:history.back()" name="return" class="return">
                     ❮ Volver
                 </a>
+                <form action="rol_empleado" method="post" target="_blank" class="container-print">
+                    <button name="print" class="print">
+                        <img src="../images/bt_reportes.png">
+                        <span class="tooltiptext">Imprimir Reporte</span>
+                    </button>
+                </form>
             </div>
 
             <section>
@@ -104,6 +114,15 @@
                 deducciones = Numeros.round(deducciones);
                 recibido = Numeros.round(recibido);
             %>
+            <div class="table-responsive" style="padding-top: 30px; display: block">
+                <button style="background-color: lightgreen; padding: 5px; border-radius: 5px; border: none; overflow: hidden;">
+                    RECIBIDO
+                </button>
+                <button style="background-color: lightcoral; padding: 5px; border-radius: 5px; border: none; overflow: hidden;">
+                    RETENIDO
+                </button>
+            </div>
+
             <div class="table-responsive" style="padding-top: 30px">
                 <%
                     for (RolCliente rol : roles) {
@@ -137,7 +156,7 @@
                         <%
                             if (showClienteName) {
                         %>
-                        <th class="th-size-0"></th>
+                        <th style="background: white" class="th-size-0"></th>
                         <%
                             }
                         %>
@@ -145,43 +164,43 @@
                         <th class="th-size-3">Horas(N)</th>
                         <th class="th-size-3">Horas(ST)</th>
                         <th class="th-size-3">Horas(RC)</th>
-                        <th class="th-size-2">Salario</th>
-                        <th class="th-size-4">Sobre Tiempo</th>
-                        <th class="th-size-2">Recargo</th>
-                        <th class="th-size-2">Bonos</th>
-                        <th class="th-size-2">Subtotal</th>
+                        <th style="background: lightgreen" class="th-size-2">Salario</th>
+                        <th style="background: lightgreen" class="th-size-4">Sobre Tiempo</th>
+                        <th style="background: lightgreen" class="th-size-2">Recargo</th>
+                        <th style="background: lightgreen" class="th-size-2">Bonos</th>
+                        <th style="background: lightgreen" class="th-size-2">Subtotal</th>
                         <%
                             if (decimo3 != null) {
                                 totalRecibido += rol.getDecimoTercero();
                         %>
-                        <th class="th-size-4">Decimo 3ro</th>
+                        <th style="background: lightgreen" class="th-size-4">Decimo 3ro</th>
                         <%
                             } else {
                                 totalRetenido += rol.getDecimoTercero();
                         %>
-                        <th style="background: rosybrown"  class="th-size-4">Decimo 3ro</th>
+                        <th style="background: indianred"  class="th-size-4">Decimo 3ro</th>
                         <%
                             }
                             if (decimo4 != null) {
                                 totalRecibido += rol.getDecimoCuarto();
                         %>
-                        <th class="th-size-4">Decimo 4to</th>
+                        <th style="background: lightgreen" class="th-size-4">Decimo 4to</th>
                         <%
                             } else {
                                 totalRetenido += rol.getDecimoCuarto();
                         %>
-                        <th style="background: rosybrown"  class="th-size-4">Decimo 4to</th>
+                        <th style="background: indianred"  class="th-size-4">Decimo 4to</th>
                         <%
                             }
                         %>
-                        <th style="background: rosybrown" class="th-size-1">Vacaciones</th>
-                        <th style="background: rosybrown"  class="th-size-4">F. Reserva</th>
-                        <th style="background: rosybrown"  class="th-size-4">Jub. Patronal</th>
-                        <th style="background: rosybrown"  class="th-size-4">Ap. Patronal</th>
-                        <th style="background: rosybrown"  class="th-size-1">Seguros</th>
-                        <th style="background: rosybrown"  class="th-size-1">Uniformes</th>
+                        <th style="background: indianred" class="th-size-1">Vacaciones</th>
+                        <th style="background: indianred"  class="th-size-4">F. Reserva</th>
+                        <th style="background: indianred"  class="th-size-4">Jub. Patronal</th>
+                        <th style="background: indianred"  class="th-size-4">Ap. Patronal</th>
+                        <th style="background: indianred"  class="th-size-1">Seguros</th>
+                        <th style="background: indianred"  class="th-size-1">Uniformes</th>
                         <th style="background: lightgreen"  class="th-size-4">Total Recibido</th>
-                        <th style="background: rosybrown"  class="th-size-5">Total Retencion</th>
+                        <th style="background: indianred"  class="th-size-5">Total Retencion</th>
                         <th style="background: sandybrown"  class="th-size-4">Total Ingresos</th>
                     </tr>
                     <tr>

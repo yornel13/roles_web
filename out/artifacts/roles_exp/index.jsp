@@ -1,7 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%
-  response.sendRedirect("/login.jsp");
-%>
 <html>
   <head>
     <title>::HOME::</title>
@@ -9,7 +6,9 @@
   </head>
   <body>
     <div>
+      <%
+        response.sendRedirect("/login");
+      %>
     </div>
-
   </body>
 </html>

@@ -108,13 +108,13 @@ public class RolClienteReport extends HttpServlet{
 
                     if (firstPageLoop) {
                         showTotal(document);
-                    }
-
-                    if (counterLoop < 5) {
-                        showTotal(document);
                     } else {
-                        document.newPage();
-                        showTotal(document);
+                        if (counterLoop < 5) {
+                            showTotal(document);
+                        } else {
+                            document.newPage();
+                            showTotal(document);
+                        }
                     }
 
                     document.close();

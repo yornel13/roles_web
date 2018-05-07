@@ -1,7 +1,8 @@
 .row{
     position:relative;
-    top: -10px;
+    top: -16px !important;
     left: 285px;
+    float: right !important;
 }
 .stylish-input-group .input-group-addon{
     background: white !important;

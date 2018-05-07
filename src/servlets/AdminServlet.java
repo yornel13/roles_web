@@ -422,7 +422,7 @@ public class AdminServlet extends HttpServlet {
                     if (!newPassword.isEmpty()) {
                         if (!confirmPassword.isEmpty()) {
                             password = SessionUtility.MD5(password);
-                            password = SessionUtility.MD5(password);
+                            //password = SessionUtility.MD5(password);
                             newPassword = SessionUtility.MD5(newPassword);
                             confirmPassword = SessionUtility.MD5(confirmPassword);
                             if (newPassword.equals(confirmPassword)) {

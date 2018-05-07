@@ -32,7 +32,7 @@ public class RolClienteReport extends HttpServlet{
         String fecha = (String) request.getSession().getAttribute(Const.FECHA);
         List<RolCliente> rolesCliente = rolClienteDAO.findAllByFecha(fecha);
 
-        System.out.println("roles cliente viene"+rolesCliente.size());
+
         if(request.getParameter("print") != null){
 
             if(rolesCliente.size() != 0) {
@@ -174,6 +174,7 @@ public class RolClienteReport extends HttpServlet{
         PdfPTable table = new PdfPTable(columnWith);
         table.setSpacingBefore(10);
         table.setWidthPercentage(100);
+
 
         PdfPCell empleado = new PdfPCell(new Phrase("Empleado", tableFont));
         PdfPCell dias = new PdfPCell(new Phrase("Dias", tableFont));

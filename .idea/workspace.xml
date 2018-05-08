@@ -7,161 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dd981e8-69b9-4bf4-bcd4-40f8b464ec74" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/ClienteDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/DBConnection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/DBConnectionGuardias.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/EmpresaDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/RolClienteDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/RolIndividualDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/UserDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/UsuarioDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Cargo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Cliente.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Departamento.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/DetallesEmpleado.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Empresa.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/RolCliente.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/RolIndividual.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Usuario.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/AdminServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/ApplicationListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/ClientesServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/EmpleadosServlet$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/EmpleadosServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/EmpresaServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/ErrorServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/IndexServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/LoginServlet$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/LoginServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteReport.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteServlet$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolClienteServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/servlets/RolIndividualServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/Const.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/Fecha.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/Numeros.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/SessionUtility.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/UserType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/utilidad/Utilidad.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/FastInoset.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/gmbal-api-only.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/ha-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/javax.annotation.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/jaxb-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/jaxb-impl.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/jaxb-xjc.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/jaxws-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/jaxws-rt.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/jaxws-tools.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/jsr181-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/mail.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/management-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/mimepull.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/mysql-connector-java-5.1.42-bin.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/policy.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/saaj-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/saaj-impl.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/stax-ex.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/stax2-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/streambuffer.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/woodstox-core-asl.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-dynamic/bar_search.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-dynamic/date_search.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-dynamic/header_principal.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-static/empty_search.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-static/header_list.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-static/meta-bootstrap.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-static/modal.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-static/scripts-bootstrap.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/add-user.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/admin-user-table.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/admin.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/change_username_pass.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/clientes.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/admin-form.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/admin.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bar-search-style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap-grid.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap-grid.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap-grid.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap-grid.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap-msg.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap-reboot.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap-reboot.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap-reboot.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap-reboot.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/bootstrap.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/date-search-style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/general-style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/header-style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/material-button.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/css/table-style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/empresa.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/images/add-user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/images/security_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/img/user_32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/index.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/js/bootstrap-msg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/js/form-control.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/js/jquery-3.3.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/js/jquery.confirm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/js/jquery.confirm.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/js/popper.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/login.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/no_match.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/empleados.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/rol_cliente.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/rol_individual.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_cliente.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_empleado.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/ClienteDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/DBConnection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/DBConnectionGuardias.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/EmpresaDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/RolClienteDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/RolIndividualDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/UserDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/dao/UsuarioDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/Cargo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/Cliente.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/Departamento.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/DetallesEmpleado.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/Empresa.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/RolCliente.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/RolIndividual.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/models/Usuario.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/AdminServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/ApplicationListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/ClientesServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpleadosServlet$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpleadosServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/EmpresaServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/ErrorServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/IndexServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/LoginServlet$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/LoginServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteReport.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolClienteServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/servlets/RolIndividualServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Const.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Fecha.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Numeros.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/utilidad/SessionUtility.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/utilidad/UserType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Utilidad.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/AdminServlet.java" afterPath="$PROJECT_DIR$/src/servlets/AdminServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/RolClienteReport.java" afterPath="$PROJECT_DIR$/src/servlets/RolClienteReport.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -187,7 +33,7 @@
       <file leaf-file-name="AdminServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/AdminServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7720">
+            <state relative-caret-position="0">
               <caret line="386" column="78" lean-forward="false" selection-start-line="386" selection-start-column="58" selection-end-line="386" selection-end-column="78" />
               <folding />
             </state>
@@ -197,8 +43,8 @@
       <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/servlets/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="67" column="68" lean-forward="false" selection-start-line="67" selection-start-column="68" selection-end-line="67" selection-end-column="68" />
+            <state relative-caret-position="140">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -302,7 +148,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -336,6 +181,7 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -546,12 +392,14 @@
       <workItem from="1524436085388" duration="2257000" />
       <workItem from="1524626847615" duration="21000" />
       <workItem from="1525534337151" duration="1688000" />
-      <workItem from="1525731420869" duration="555000" />
+      <workItem from="1525731420869" duration="783000" />
+      <workItem from="1525732258377" duration="780000" />
+      <workItem from="1525762000113" duration="1042000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223265000" />
+    <option name="totallyTimeSpent" value="225315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -565,12 +413,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34567901" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1762481" sideWeight="0.4926004" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18078668" sideWeight="0.4926004" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1785174" sideWeight="0.50739956" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.054462936" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -633,13 +481,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/52d96ce3/cd427a85-85f0-444e-9bed-7fbb65e2a9b1/dbcontrol.usuario">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1640">
@@ -918,13 +759,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="28" column="0" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/AdminServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7720">
+        <state relative-caret-position="0">
           <caret line="386" column="78" lean-forward="false" selection-start-line="386" selection-start-column="58" selection-end-line="386" selection-end-column="78" />
           <folding />
         </state>
@@ -938,10 +778,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/no_match.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="67" column="68" lean-forward="false" selection-start-line="67" selection-start-column="68" selection-end-line="67" selection-end-column="68" />
+        <state relative-caret-position="140">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>

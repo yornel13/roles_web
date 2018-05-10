@@ -1,0 +1,18 @@
+.content-table{
+    padding-top: 70px;
+}
+.table-data {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-data th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.table-data tr, th {
+    text-align: left;
+}
+
+.table-data tr:nth-child(even){background-color: #f2f2f2}

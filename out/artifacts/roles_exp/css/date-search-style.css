@@ -5,11 +5,12 @@
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-    margin-right: 16px;
+    margin-right: 8px;
     border: none;
     cursor:pointer;
     overflow: hidden;
     outline:none;
+    float: left !important;
 }
 .previous:hover {
     background-color: #ddd;
@@ -41,11 +42,12 @@
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-    margin-left: 16px;
+    margin-left: 8px;
     border: none;
     cursor:pointer;
     overflow: hidden;
     outline:none;
+    float: left !important;
 }
 .next:hover {
     background-color: #ddd;
@@ -70,8 +72,66 @@
     visibility: visible;
 }
 .container-range{
-    position:relative;
-    top: 24px;
-    left: 24px;
+    display: block;
+    float: left !important;
+}
+.return {
+    float: left !important;
+    background-color: #fAfAfA;
+    color: dimgray;
+    font-size: 15px;
+    padding: 6px 12px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;;
+    cursor: pointer;
+    white-space: nowrap
+}
+.return:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+.container-buttons-top{
+    margin-top: 24px;
+    display: block;
+}
+.container-print{
+    float: right !important;
+    width: 36px !important;
+}
+
+.print {
+    float: right !important;
+    border-radius: 4px;
+    background-color: #ddd;
+    color: white;
+    text-decoration: none;
     display: inline-block;
+    padding: 6px 6px;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+.print:hover {
+    background-color: #6f9cc2;
+    color: black;
+}
+.print .tooltiptext {
+    font-size: 16px;
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.print:hover .tooltiptext {
+    visibility: visible;
 }

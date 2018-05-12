@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="../css/table-style.css">
         <link rel="stylesheet" href="../css/general-style.css">
         <link rel="stylesheet" href="../css/header-style.css">
+        <link rel="stylesheet" href="../css/date-search-style.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <%@include file="../WEB-INF/partials-static/meta-bootstrap.html"%>
@@ -21,6 +22,20 @@
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
 
         <div class="container">
+
+            <div class="container-buttons-top">
+                <a href="javascript:history.back()" name="return" class="return">
+                    ❮ Volver
+                </a>
+                <button onclick="printPage()" class="print">
+                    <img src="../images/bt_reportes.png">
+                </button>
+                <script>
+                    function printPage() {
+                        window.print();
+                    }
+                </script>
+            </div>
 
             <section>
                 <h2 class="content-title">Rol Individual</h2>

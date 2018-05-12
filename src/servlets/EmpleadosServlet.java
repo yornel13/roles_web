@@ -1,9 +1,9 @@
 package servlets;
 
+import dao.PagoMesDAO;
+import dao.RolClienteDAO;
 import dao.RolIndividualDAO;
-import models.Empresa;
-import models.RolIndividual;
-import models.User;
+import models.*;
 import utilidad.Const;
 import utilidad.Fecha;
 import utilidad.SessionUtility;
@@ -23,6 +23,8 @@ import java.util.stream.Collectors;
 public class EmpleadosServlet  extends HttpServlet {
 
     private RolIndividualDAO rolIndividualDAO = new RolIndividualDAO();
+    private RolClienteDAO rolClienteDAO = new RolClienteDAO();
+    private PagoMesDAO pagoMesDAO = new PagoMesDAO();
     private HttpServletRequest req;
     private HttpServletResponse resp;
 
@@ -32,20 +34,40 @@ public class EmpleadosServlet  extends HttpServlet {
         this.resp = resp;
         if (SessionUtility.isExpiry(req, resp)) return;
 
+        System.out.println("get");
+
         String empleadoId = req.getParameter(Const.ID);
+        String rolClienteId = req.getParameter(Const.ROL_CLIENTE_ID);
         if (empleadoId != null) {
             String fecha = (String) req.getSession().getAttribute(Const.FECHA);
-            req.getSession().setAttribute(Const.FECHA, fecha);
-            req.getSession().setAttribute(Const.EMPLEADO_ID, Integer.valueOf(empleadoId));
-            resp.sendRedirect("individual");
+            List<RolCliente> rolesClients = rolClienteDAO.findAllByFechaAndUsuarioId(fecha, Integer.valueOf(empleadoId));
+            RolIndividual rolIndividual = rolIndividualDAO.findByFechaAndUsuarioId(fecha, Integer.valueOf(empleadoId));
+            if (rolIndividual != null) {
+                PagoMes pagoMes = pagoMesDAO.findByRolIndividualId(rolIndividual.getId());
+                req.setAttribute(Const.PAGO_MES, pagoMes);
+            }
+            req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
+            req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
+            req.getRequestDispatcher("rol_empleado.jsp").forward(req, resp);
+            return;
+        } else if (rolClienteId != null) {
+            Integer rolId = Integer.valueOf(rolClienteId);
+            RolCliente rolCliente = rolClienteDAO.findById(rolId);
+            if (rolCliente == null) {
+                resp.sendRedirect("/error");
+            } else {
+                req.setAttribute(Const.ROL_CLIENTE, rolCliente);
+                req.getRequestDispatcher("rol_cliente.jsp").forward(req, resp);
+            }
             return;
         }
 
         String fecha = (String) req.getSession().getAttribute(Const.FECHA);
         List<RolIndividual> rolesIndividual = getRolesIndividual(fecha);
         req.setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
-        req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+        req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
         req.getSession().setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
+        req.getSession().setAttribute(Const.FECHA, fecha);
         req.getRequestDispatcher("empleados.jsp").forward(req, resp);
     }
 
@@ -55,16 +77,19 @@ public class EmpleadosServlet  extends HttpServlet {
         this.resp = resp;
         if (SessionUtility.isExpiry(req, resp)) return;
 
+        System.out.println("post");
+
         String next = req.getParameter("next");
         String previous = req.getParameter("previous");
         String search = req.getParameter("search");
+        String monthSelect = req.getParameter("month");
 
         if (next != null) {
             String fecha = (String) req.getSession().getAttribute(Const.FECHA);
             fecha = new Fecha(fecha).plusMonths(1).toString();
             List<RolIndividual> rolesIndividual = getRolesIndividual(fecha);
             req.setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.getSession().setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
             req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("empleados.jsp").forward(req, resp);
@@ -74,7 +99,7 @@ public class EmpleadosServlet  extends HttpServlet {
             fecha = new Fecha(fecha).minusMonths(1).toString();
             List<RolIndividual> rolesIndividual = getRolesIndividual(fecha);
             req.setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.getSession().setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
             req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("empleados.jsp").forward(req, resp);
@@ -89,9 +114,17 @@ public class EmpleadosServlet  extends HttpServlet {
             List<RolIndividual> rolesFilter = ((List<RolIndividual>) req.getSession().getAttribute(Const.ROLES_INDIVIDUAL))
                     .stream().filter(fullNamePredicate.or(dniPredicate)).collect(Collectors.toList());
 
-            req.setAttribute(Const.FILTER_MONTH,  Fecha.getFechaCorta(fecha));
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
             req.setAttribute(Const.ROLES_INDIVIDUAL, rolesFilter);
             req.setAttribute(Const.FILTER_DATA, searchDate);
+            req.getRequestDispatcher("empleados.jsp").forward(req, resp);
+        } else if (monthSelect != null) {
+            String fecha = Fecha.fromMonthSelect(monthSelect).getFecha();
+            List<RolIndividual> rolesIndividual = getRolesIndividual(fecha);
+            req.setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
+            req.setAttribute(Const.FILTER_MONTH,  new Fecha(fecha).getMonthSelect());
+            req.getSession().setAttribute(Const.ROLES_INDIVIDUAL, rolesIndividual);
+            req.getSession().setAttribute(Const.FECHA, fecha);
             req.getRequestDispatcher("empleados.jsp").forward(req, resp);
         }
     }

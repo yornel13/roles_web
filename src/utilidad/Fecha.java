@@ -7,10 +7,13 @@ package utilidad;
 
 import javafx.scene.control.ChoiceBox;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
+
 
 /**
  *
@@ -487,4 +490,35 @@ public class Fecha {
     public static String getFechaCorta(String fecha) {
         return new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAno();
     }
+
+    public static Fecha fromMonthSelect(String monthSelect) {
+        String yearString = monthSelect.substring(0, Math.min(monthSelect.length(), 4));
+        String monthString = monthSelect.substring(5, Math.min(monthSelect.length(), 7));
+        return new Fecha("01", monthString, yearString);
+    }
+
+    public static String getMonthSelect(String monthSelect) {
+        String yearString = monthSelect.substring(0, Math.min(monthSelect.length(), 4));
+        String monthString = monthSelect.substring(5, Math.min(monthSelect.length(), 7));
+        Fecha fechaSelect = new Fecha("01", monthString, yearString);
+        return fechaSelect.getAno()+"-"+fechaSelect.getMes();
+    }
+
+    public String getMonthSelect() {
+        return ano+"-"+mes;
+    }
+
+    public java.sql.Date getDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date;
+        try {
+            date = sdf.parse(getAno()+"-"+getMes()+"-"+getDia());
+            return new java.sql.Date(date.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
 }

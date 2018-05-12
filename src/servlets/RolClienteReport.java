@@ -1,14 +1,16 @@
 package servlets;
 
 import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.PdfName;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.VerticalPositionMark;
-import dao.RolClienteDAO;
+import dao.ClienteDAO;
+import models.Cliente;
 import models.RolCliente;
 import utilidad.Const;
+import utilidad.Fecha;
+import utilidad.Numeros;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,18 +26,29 @@ import java.util.List;
 @WebServlet ("/rol/rol_cliente")
 public class RolClienteReport extends HttpServlet{
 
-    private RolClienteDAO rolClienteDAO = new RolClienteDAO();
+    private ClienteDAO clienteDAO = new ClienteDAO();
+    private List<RolCliente> rolesCliente;
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        process(req, resp);
+    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        process(req, resp);
+    }
 
-        String fecha = (String) request.getSession().getAttribute(Const.FECHA);
-        List<RolCliente> rolesCliente = rolClienteDAO.findAllByFecha(fecha);
+    protected void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        rolesCliente = (List<RolCliente>) request.getSession().getAttribute(Const.PRINT);
 
         if(request.getParameter("print") != null){
 
             if(rolesCliente.size() != 0) {
+
+                Cliente cliente = clienteDAO.findById(rolesCliente.get(0).getClienteId());
+                String fechaRango =  "del "+ Fecha.toTextRangeNormalized(rolesCliente.get(0).getInicio());
+
                 response.setContentType("application/pdf");
 
                 OutputStream outputStream = response.getOutputStream();
@@ -55,13 +68,13 @@ public class RolClienteReport extends HttpServlet{
                         if (firstPageLoop) {
                             if (counterLoop == 0) {
                                 mainHeader(document);
-                                descriptionFixedHeader(document, rolCliente.getClienteNombre(), null, null);
+                                descriptionFixedHeader(document, cliente.getNombre(), cliente.getRuc(), fechaRango);
                             }
 
                             tableValues(document, rolCliente.getCedula(), rolCliente.getDias().toString(), rolCliente.getSalario().toString(), rolCliente.getHorasSobreTiempo().toString(), rolCliente.getHorasSuplementarias().toString(),
-                                    rolCliente.getTransporte().toString(), rolCliente.getVacaciones().toString(), rolCliente.getSubtotal().toString(), rolCliente.getDecimoTercero().toString(), rolCliente.getDecimoCuarto().toString(),
+                                    rolCliente.getTotalBonos().toString(), rolCliente.getVacaciones().toString(), rolCliente.getSubtotal().toString(), rolCliente.getDecimoTercero().toString(), rolCliente.getDecimoCuarto().toString(),
                                     rolCliente.getDecimoTercero().toString(), rolCliente.getJubilacionPatronal().toString(), rolCliente.getAportePatronal().toString(), rolCliente.getSeguros().toString(), rolCliente.getUniformes().toString(),
-                                    rolCliente.getTotalIngreso().toString(), rolCliente.getEmpleado(), rolCliente.getHorasNormales().toString(), rolCliente.getMontoHorasSobreTiempo().toString(), rolCliente.getMontoHorasSuplementarias().toString(), "", "A PILLAJO");
+                                    rolCliente.getTotalIngreso().toString(), rolCliente.getEmpleado(), rolCliente.getHorasNormales().toString(), rolCliente.getMontoHorasSobreTiempo().toString(), rolCliente.getMontoHorasSuplementarias().toString(), "", "");
 
                             if (counterLoop < 4) {
                                 firstPageLoop = true;
@@ -74,14 +87,14 @@ public class RolClienteReport extends HttpServlet{
 
                             if (headerPermission) {
                                 document.newPage();
-                                descriptionFixedHeader(document, rolCliente.getClienteNombre(), null, null);
+                                descriptionFixedHeader(document, cliente.getNombre(), cliente.getRuc(), fechaRango);
                                 counterLoop = 0;
                             }
                             if (counterLoop < 6) {
                                 tableValues(document, rolCliente.getCedula(), rolCliente.getDias().toString(), rolCliente.getSalario().toString(), rolCliente.getHorasSobreTiempo().toString(), rolCliente.getHorasSuplementarias().toString(),
-                                        rolCliente.getTransporte().toString(), rolCliente.getVacaciones().toString(), rolCliente.getSubtotal().toString(), rolCliente.getDecimoTercero().toString(), rolCliente.getDecimoCuarto().toString(),
+                                        rolCliente.getTotalBonos().toString(), rolCliente.getVacaciones().toString(), rolCliente.getSubtotal().toString(), rolCliente.getDecimoTercero().toString(), rolCliente.getDecimoCuarto().toString(),
                                         rolCliente.getDecimoTercero().toString(), rolCliente.getJubilacionPatronal().toString(), rolCliente.getAportePatronal().toString(), rolCliente.getSeguros().toString(), rolCliente.getUniformes().toString(),
-                                        rolCliente.getTotalIngreso().toString(), rolCliente.getEmpleado(), rolCliente.getHorasNormales().toString(), rolCliente.getMontoHorasSobreTiempo().toString(), rolCliente.getMontoHorasSuplementarias().toString(), "", "A PILLAJO");
+                                        rolCliente.getTotalIngreso().toString(), rolCliente.getEmpleado(), rolCliente.getHorasNormales().toString(), rolCliente.getMontoHorasSobreTiempo().toString(), rolCliente.getMontoHorasSuplementarias().toString(), "", "");
 
                                 headerPermission = false;
                             } else {
@@ -95,13 +108,13 @@ public class RolClienteReport extends HttpServlet{
 
                     if (firstPageLoop) {
                         showTotal(document);
-                    }
-
-                    if (counterLoop < 5) {
-                        showTotal(document);
                     } else {
-                        document.newPage();
-                        showTotal(document);
+                        if (counterLoop < 5) {
+                            showTotal(document);
+                        } else {
+                            document.newPage();
+                            showTotal(document);
+                        }
                     }
 
                     document.close();
@@ -175,13 +188,12 @@ public class RolClienteReport extends HttpServlet{
         table.setSpacingBefore(10);
         table.setWidthPercentage(100);
 
-
         PdfPCell empleado = new PdfPCell(new Phrase("Empleado", tableFont));
         PdfPCell dias = new PdfPCell(new Phrase("Dias", tableFont));
         PdfPCell salario = new PdfPCell(new Phrase("Salario", tableFont));
         PdfPCell stHoras = new PdfPCell(new Phrase("ST Horas", tableFont));
         PdfPCell rcHoras = new PdfPCell(new Phrase("RC Horas", tableFont));
-        PdfPCell transporte = new PdfPCell(new Phrase("Transporte", tableFont));
+        PdfPCell bonos = new PdfPCell(new Phrase("Bonos", tableFont));
         PdfPCell vacacion = new PdfPCell(new Phrase("Vacacion", tableFont));
         PdfPCell subTotal = new PdfPCell(new Phrase("Subtotal", tableFont));
         PdfPCell decimoTercero = new PdfPCell(new Phrase("Decimo\nTercero", tableFont));
@@ -199,7 +211,7 @@ public class RolClienteReport extends HttpServlet{
         salario.setPaddingTop(10);
         stHoras.setPaddingTop(10);
         rcHoras.setPaddingTop(10);
-        transporte.setPaddingTop(10);
+        bonos.setPaddingTop(10);
         vacacion.setPaddingTop(10);
         subTotal.setPaddingTop(10);
         decimoTercero.setPaddingTop(5);
@@ -216,7 +228,7 @@ public class RolClienteReport extends HttpServlet{
         salario.setHorizontalAlignment(Element.ALIGN_CENTER);
         stHoras.setHorizontalAlignment(Element.ALIGN_CENTER);
         rcHoras.setHorizontalAlignment(Element.ALIGN_CENTER);
-        transporte.setHorizontalAlignment(Element.ALIGN_CENTER);
+        bonos.setHorizontalAlignment(Element.ALIGN_CENTER);
         vacacion.setHorizontalAlignment(Element.ALIGN_CENTER);
         subTotal.setHorizontalAlignment(Element.ALIGN_CENTER);
         decimoTercero.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -233,7 +245,7 @@ public class RolClienteReport extends HttpServlet{
         salario.setBackgroundColor(BaseColor.CYAN);
         stHoras.setBackgroundColor(BaseColor.CYAN);
         rcHoras.setBackgroundColor(BaseColor.CYAN);
-        transporte.setBackgroundColor(BaseColor.CYAN);
+        bonos.setBackgroundColor(BaseColor.CYAN);
         vacacion.setBackgroundColor(BaseColor.CYAN);
         subTotal.setBackgroundColor(BaseColor.CYAN);
         decimoTercero.setBackgroundColor(BaseColor.CYAN);
@@ -250,7 +262,7 @@ public class RolClienteReport extends HttpServlet{
         table.addCell(salario);
         table.addCell(stHoras);
         table.addCell(rcHoras);
-        table.addCell(transporte);
+        table.addCell(bonos);
         table.addCell(vacacion);
         table.addCell(subTotal);
         table.addCell(decimoTercero);
@@ -272,7 +284,7 @@ public class RolClienteReport extends HttpServlet{
         }
     }
 
-    private void tableValues(Document document, String cedula, String dias, String salario, String stHoras, String rcHoras, String transporte,
+    private void tableValues(Document document, String cedula, String dias, String salario, String stHoras, String rcHoras, String bonos,
     String vacacion, String subTotal, String decimTercero, String decimCuarto, String fondoRecerva, String jubilaPatronal, String aportPatronal,
     String seguros, String uniformes, String totalIngresos, String nombreEmpl, String salario2, String stHoras2, String rcHoras2, String ctaAhorro, String cargo) {
 
@@ -286,20 +298,20 @@ public class RolClienteReport extends HttpServlet{
 
         PdfPCell cedulaCell = new PdfPCell(new Phrase(cedula, tableFont));
         PdfPCell diasCell = new PdfPCell(new Phrase(dias, tableFont));
-        PdfPCell salarioCell = new PdfPCell(new Phrase(salario, tableFont));
-        PdfPCell stHorasCell = new PdfPCell(new Phrase(stHoras, tableFont));
-        PdfPCell rcHorasCell = new PdfPCell(new Phrase(rcHoras, tableFont));
-        PdfPCell transporteCell = new PdfPCell(new Phrase(transporte, tableFont));
-        PdfPCell vacacionCell = new PdfPCell(new Phrase(vacacion, tableFont));
-        PdfPCell subTotalCell = new PdfPCell(new Phrase(subTotal, tableFont));
-        PdfPCell decimoTerceroCell = new PdfPCell(new Phrase(decimTercero, tableFont));
-        PdfPCell decimoCuartoCell = new PdfPCell(new Phrase(decimCuarto, tableFont));
-        PdfPCell fondoRecervaCell = new PdfPCell(new Phrase(fondoRecerva, tableFont));
-        PdfPCell jubilacionPatronalCell = new PdfPCell(new Phrase(jubilaPatronal, tableFont));
-        PdfPCell aportePatronalCell = new PdfPCell(new Phrase(aportPatronal, tableFont));
-        PdfPCell segurosCell = new PdfPCell(new Phrase(seguros, tableFont));
-        PdfPCell uniformesGuardiasCell = new PdfPCell(new Phrase(uniformes, tableFont));
-        PdfPCell totalIngresosCell = new PdfPCell(new Phrase(totalIngresos, tableFont));
+        PdfPCell salarioCell = new PdfPCell(new Phrase("$"+salario, tableFont));
+        PdfPCell stHorasCell = new PdfPCell(new Phrase("$"+stHoras, tableFont));
+        PdfPCell rcHorasCell = new PdfPCell(new Phrase("$"+rcHoras, tableFont));
+        PdfPCell transporteCell = new PdfPCell(new Phrase("$"+bonos, tableFont));
+        PdfPCell vacacionCell = new PdfPCell(new Phrase("$"+vacacion, tableFont));
+        PdfPCell subTotalCell = new PdfPCell(new Phrase("$"+subTotal, tableFont));
+        PdfPCell decimoTerceroCell = new PdfPCell(new Phrase("$"+decimTercero, tableFont));
+        PdfPCell decimoCuartoCell = new PdfPCell(new Phrase("$"+decimCuarto, tableFont));
+        PdfPCell fondoRecervaCell = new PdfPCell(new Phrase("$"+fondoRecerva, tableFont));
+        PdfPCell jubilacionPatronalCell = new PdfPCell(new Phrase("$"+jubilaPatronal, tableFont));
+        PdfPCell aportePatronalCell = new PdfPCell(new Phrase("$"+aportPatronal, tableFont));
+        PdfPCell segurosCell = new PdfPCell(new Phrase("$"+seguros, tableFont));
+        PdfPCell uniformesGuardiasCell = new PdfPCell(new Phrase("$"+uniformes, tableFont));
+        PdfPCell totalIngresosCell = new PdfPCell(new Phrase("$"+totalIngresos, tableFont));
 
         PdfPCell nombreEmpleadoCell = new PdfPCell(new Phrase(nombreEmpl, tableFont));
         PdfPCell salarioSecondRow = new PdfPCell(new Phrase(salario2, tableFont));
@@ -384,10 +396,62 @@ public class RolClienteReport extends HttpServlet{
         }catch (DocumentException docEx ) {
             docEx.printStackTrace();
         }
-
     }
 
     private void showTotal(Document document){
+
+        Double diasTextValor = 0d;
+        Double normalesTextValor = 0d;
+        Double suplementariasTextValor = 0d;
+        Double sobreTiempoTextValor = 0d;
+        Double extraTextValor = 0d;
+        Double sueldoTotalTextValor = 0d;
+        Double montoSuplementariasTextValor = 0d;
+        Double montoSobreTiempoTextValor = 0d;
+        Double montoBonoTextValor = 0d;
+        Double montoTransporteTextValor = 0d;
+        Double totalBonosTextValor = 0d;
+        Double subTotalTextValor = 0d;
+        Double vacacionesTextValor = 0d;
+        Double decimosTotalTextValor = 0d;
+        Double decimoTerceroTotalTextValor = 0d;
+        Double decimoCuartoTotalTextValor = 0d;
+        Double montoReservaTextValor = 0d;
+        Double montoJubilacionTextValor = 0d;
+        Double montoAportePatronalTextValor = 0d;
+        Double montoSegurosTextValor = 0d;
+        Double montoUniformasTextValor = 0d;
+        Double montoTotalIngresos = 0d;
+
+        for (RolCliente pago: rolesCliente) {
+
+            diasTextValor += pago.getDias();
+            normalesTextValor += pago.getHorasNormales();
+            suplementariasTextValor += pago.getHorasSuplementarias();
+            sobreTiempoTextValor += pago.getHorasSobreTiempo();
+            sueldoTotalTextValor += pago.getSalario();
+            extraTextValor += (pago.getMontoHorasSuplementarias()
+                    + pago.getMontoHorasSobreTiempo());
+            totalBonosTextValor += pago.getTotalBonos();
+            vacacionesTextValor += pago.getVacaciones();
+            subTotalTextValor += pago.getSubtotal();
+            decimosTotalTextValor += (pago.getDecimoCuarto()
+                    + pago.getDecimoTercero());
+            decimoTerceroTotalTextValor += pago.getDecimoTercero();
+            decimoCuartoTotalTextValor += pago.getDecimoCuarto();
+            montoReservaTextValor += pago.getDecimoTercero();
+            montoSuplementariasTextValor += pago.getMontoHorasSuplementarias();
+            montoSobreTiempoTextValor += pago.getMontoHorasSobreTiempo();
+            montoBonoTextValor += pago.getBono();
+            montoTransporteTextValor += pago.getTransporte();
+            montoJubilacionTextValor += pago.getJubilacionPatronal();
+            montoAportePatronalTextValor += pago.getAportePatronal();
+            montoSegurosTextValor += pago.getSeguros();
+            montoUniformasTextValor += pago.getUniformes();
+            montoTotalIngresos += pago.getTotalIngreso();
+        }
+
+
         Font totalesFont = new Font(Font.FontFamily.HELVETICA, 12);
         Font tableFont = new Font(Font.FontFamily.HELVETICA, 10);
 
@@ -402,7 +466,7 @@ public class RolClienteReport extends HttpServlet{
         totales.setSpacingBefore(15);
 
         //TABLE HEADER
-        float[] columnWith = {1.1f, 1.4f, 1.4f, 1.4f, 1.3f, 1.2f, 1.1f, 1.1f, 1.3f, 1.3f, 1.1f, 1.5f, 1.4f, 1.2f};
+        float[] columnWith = {1.1f, 1.4f, 1.4f, 1.4f, 1.2f, 1.3f, 1.1f, 1.1f, 1.3f, 1.3f, 1.1f, 1.3f, 1.4f, 1.4f};
         PdfPTable table = new PdfPTable(columnWith);
         table.setSpacingBefore(5);
         table.setWidthPercentage(100);
@@ -410,7 +474,7 @@ public class RolClienteReport extends HttpServlet{
         PdfPCell salario = new PdfPCell(new Phrase("Salario", tableFont));
         PdfPCell stHoras = new PdfPCell(new Phrase("ST Horas", tableFont));
         PdfPCell rcHoras = new PdfPCell(new Phrase("RC Horas", tableFont));
-        PdfPCell transporte = new PdfPCell(new Phrase("Transporte", tableFont));
+        PdfPCell bonos = new PdfPCell(new Phrase("Bonos", tableFont));
         PdfPCell vacacion = new PdfPCell(new Phrase("Vacacion", tableFont));
         PdfPCell subTotal = new PdfPCell(new Phrase("Subtotal", tableFont));
         PdfPCell decimoTercero = new PdfPCell(new Phrase("Decimo\nTercero", tableFont));
@@ -422,25 +486,25 @@ public class RolClienteReport extends HttpServlet{
         PdfPCell uniformesGuardias = new PdfPCell(new Phrase("Uniformes\nGuardias", tableFont));
         PdfPCell totalIngresos = new PdfPCell(new Phrase("Total\nIngresos", tableFont));
 
-        PdfPCell salarioCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell stHorasCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell rcHorasCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell transporteCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell vacacionCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell subTotalCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell decimoTerceroCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell decimoCuartoCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell fondoRecervaCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell jubilacionPatronalCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell aportePatronalCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell segurosCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell uniformesGuardiasCell = new PdfPCell(new Phrase("*", tableFont));
-        PdfPCell totalIngresosCell = new PdfPCell(new Phrase("*", tableFont));
+        PdfPCell salarioCell = new PdfPCell(new Phrase(Numeros.round(sueldoTotalTextValor).toString(), tableFont));
+        PdfPCell stHorasCell = new PdfPCell(new Phrase(Numeros.round(montoSobreTiempoTextValor).toString(), tableFont));
+        PdfPCell rcHorasCell = new PdfPCell(new Phrase(Numeros.round(montoSuplementariasTextValor).toString(), tableFont));
+        PdfPCell bonosCell = new PdfPCell(new Phrase(Numeros.round(totalBonosTextValor).toString(), tableFont));
+        PdfPCell vacacionCell = new PdfPCell(new Phrase(Numeros.round(vacacionesTextValor).toString(), tableFont));
+        PdfPCell subTotalCell = new PdfPCell(new Phrase(Numeros.round(subTotalTextValor).toString(), tableFont));
+        PdfPCell decimoTerceroCell = new PdfPCell(new Phrase(Numeros.round(decimoTerceroTotalTextValor).toString(), tableFont));
+        PdfPCell decimoCuartoCell = new PdfPCell(new Phrase(Numeros.round(decimoCuartoTotalTextValor).toString(), tableFont));
+        PdfPCell fondoRecervaCell = new PdfPCell(new Phrase(Numeros.round(montoReservaTextValor).toString(), tableFont));
+        PdfPCell jubilacionPatronalCell = new PdfPCell(new Phrase(Numeros.round(montoJubilacionTextValor).toString(), tableFont));
+        PdfPCell aportePatronalCell = new PdfPCell(new Phrase(Numeros.round(montoAportePatronalTextValor).toString(), tableFont));
+        PdfPCell segurosCell = new PdfPCell(new Phrase(Numeros.round(montoSegurosTextValor).toString(), tableFont));
+        PdfPCell uniformesGuardiasCell = new PdfPCell(new Phrase(Numeros.round(montoUniformasTextValor).toString(), tableFont));
+        PdfPCell totalIngresosCell = new PdfPCell(new Phrase(Numeros.round(montoTotalIngresos).toString(), tableFont));
 
         salario.setPaddingTop(5);
         stHoras.setPaddingTop(5);
         rcHoras.setPaddingTop(5);
-        transporte.setPaddingTop(5);
+        bonos.setPaddingTop(5);
         vacacion.setPaddingTop(5);
         subTotal.setPaddingTop(5);
         decimoTercero.setPaddingBottom(5);
@@ -455,7 +519,7 @@ public class RolClienteReport extends HttpServlet{
         salario.setHorizontalAlignment(Element.ALIGN_CENTER);
         stHoras.setHorizontalAlignment(Element.ALIGN_CENTER);
         rcHoras.setHorizontalAlignment(Element.ALIGN_CENTER);
-        transporte.setHorizontalAlignment(Element.ALIGN_CENTER);
+        bonos.setHorizontalAlignment(Element.ALIGN_CENTER);
         vacacion.setHorizontalAlignment(Element.ALIGN_CENTER);
         subTotal.setHorizontalAlignment(Element.ALIGN_CENTER);
         decimoTercero.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -470,7 +534,7 @@ public class RolClienteReport extends HttpServlet{
         salario.setBackgroundColor(BaseColor.CYAN);
         stHoras.setBackgroundColor(BaseColor.CYAN);
         rcHoras.setBackgroundColor(BaseColor.CYAN);
-        transporte.setBackgroundColor(BaseColor.CYAN);
+        bonos.setBackgroundColor(BaseColor.CYAN);
         vacacion.setBackgroundColor(BaseColor.CYAN);
         subTotal.setBackgroundColor(BaseColor.CYAN);
         decimoTercero.setBackgroundColor(BaseColor.CYAN);
@@ -482,10 +546,25 @@ public class RolClienteReport extends HttpServlet{
         uniformesGuardias.setBackgroundColor(BaseColor.CYAN);
         totalIngresos.setBackgroundColor(BaseColor.YELLOW);
 
+        salarioCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        stHorasCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        rcHorasCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        bonosCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        vacacionCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        subTotalCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        decimoTerceroCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        decimoCuartoCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        fondoRecervaCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        jubilacionPatronalCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        aportePatronalCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        segurosCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        uniformesGuardiasCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        totalIngresosCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+
         table.addCell(salario);
         table.addCell(stHoras);
         table.addCell(rcHoras);
-        table.addCell(transporte);
+        table.addCell(bonos);
         table.addCell(vacacion);
         table.addCell(subTotal);
         table.addCell(decimoTercero);
@@ -500,7 +579,7 @@ public class RolClienteReport extends HttpServlet{
         table.addCell(salarioCell);
         table.addCell(stHorasCell);
         table.addCell(rcHorasCell);
-        table.addCell(transporteCell);
+        table.addCell(bonosCell);
         table.addCell(vacacionCell);
         table.addCell(subTotalCell);
         table.addCell(decimoTerceroCell);
@@ -519,6 +598,4 @@ public class RolClienteReport extends HttpServlet{
             e.printStackTrace();
         }
     }
-
-
 }

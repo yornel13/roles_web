@@ -1,9 +1,11 @@
 <%@ page import="models.RolIndividual" %>
-<%@ page import="utilidad.Const" %>
 <%@ page import="java.util.List" %>
+<%@ page import="utilidad.Const" %>
+<%@ page import="utilidad.Numeros" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     List<RolIndividual> roles = (List<RolIndividual>) request.getAttribute(Const.ROLES_INDIVIDUAL);
+    request.getSession().setAttribute(Const.PRINT, roles);
 %>
 <html>
     <head>
@@ -20,6 +22,20 @@
     <body>
         <%@include file="../WEB-INF/partials-dynamic/header_principal.jsp" %>
         <div class="container">
+
+            <div class="container-buttons-top">
+                <div class="container-buttons-top">
+                    <a href="/empresa" name="return" class="return">
+                        ❮ Volver
+                    </a>
+                </div>
+                <form action="rol_individual" method="post" target="_blank" class="container-print">
+                    <button name="print" class="print">
+                        <img src="../images/bt_reportes.png">
+                        <span class="tooltiptext">Imprimir Reporte</span>
+                    </button>
+                </form>
+            </div>
 
             <section>
                 <h2 class="content-title">Roles Individual</h2>
@@ -38,32 +54,7 @@
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover" >
                     <thead>
-                        <tr class="table-info">
-                            <th class="th-size-p1"></th>
-                            <th class="th-size-0">Cedula</th>
-                            <th class="th-size-4">Empleado</th>
-                            <th class="th-size-1">Dias</th>
-                            <th class="th-size-1">Horas (N)</th>
-                            <th class="th-size-1">Horas (ST)</th>
-                            <th class="th-size-1">Horas (RC)</th>
-                            <th class="th-size-1-2">Horas (ST+RC)</th>
-                            <th class="th-size-1">Salario</th>
-                            <th class="th-size-1">Sobre Tiempo</th>
-                            <th class="th-size-1">Recargo</th>
-                            <th class="th-size-1">Bono</th>
-                            <th class="th-size-1">Transporte</th>
-                            <th class="th-size-1">Total Bonos</th>
-                            <th class="th-size-1">Subtotal</th>
-                            <th class="th-size-1">Vacaciones</th>
-                            <th class="th-size-1">Decimo 3ro</th>
-                            <th class="th-size-1">Decimo 4to</th>
-                            <th class="th-size-1">F. Reserva</th>
-                            <th class="th-size-1">Jub. Patronal</th>
-                            <th class="th-size-1">Ap. Patronal</th>
-                            <th class="th-size-1">Seguros</th>
-                            <th class="th-size-1">Uniformes</th>
-                            <th class="th-size-1">Total Ingresos</th>
-                        </tr>
+                        <%@include file="../WEB-INF/partials-static/header_table_empleado_empresa.html" %>
                     </thead>
                     <tbody>
                         <%
@@ -108,6 +99,100 @@
                     </tbody>
                 </table>
             </div>
+            <br>
+            <h1>Totales</h1>
+            <%
+                Double diasTextValor = 0d;
+                Double normalesTextValor = 0d;
+                Double suplementariasTextValor = 0d;
+                Double sobreTiempoTextValor = 0d;
+                Double extraTextValor = 0d;
+                Double sueldoTotalTextValor = 0d;
+                Double montoSuplementariasTextValor = 0d;
+                Double montoSobreTiempoTextValor = 0d;
+                Double montoBonoTextValor = 0d;
+                Double montoTransporteTextValor = 0d;
+                Double totalBonosTextValor = 0d;
+                Double subTotalTextValor = 0d;
+                Double vacacionesTextValor = 0d;
+                Double decimosTotalTextValor = 0d;
+                Double decimoTerceroTotalTextValor = 0d;
+                Double decimoCuartoTotalTextValor = 0d;
+                Double montoReservaTextValor = 0d;
+                Double montoJubilacionTextValor = 0d;
+                Double montoAportePatronalTextValor = 0d;
+                Double montoSegurosTextValor = 0d;
+                Double montoUniformasTextValor = 0d;
+                Double montoTotalIngresos = 0d;
+
+                for (RolIndividual pago: roles) {
+
+                    diasTextValor += pago.getDias();
+                    normalesTextValor += pago.getHorasNormales();
+                    suplementariasTextValor += pago.getHorasSuplementarias();
+                    sobreTiempoTextValor += pago.getHorasSobreTiempo();
+                    sueldoTotalTextValor += pago.getSalario();
+                    extraTextValor += (pago.getMontoHorasSuplementarias()
+                            + pago.getMontoHorasSobreTiempo());
+                    totalBonosTextValor += pago.getTotalBonos();
+                    vacacionesTextValor += pago.getVacaciones();
+                    subTotalTextValor += pago.getSubtotal();
+                    decimosTotalTextValor += (pago.getDecimoCuarto()
+                            + pago.getDecimoTercero());
+                    decimoTerceroTotalTextValor += pago.getDecimoTercero();
+                    decimoCuartoTotalTextValor += pago.getDecimoCuarto();
+                    montoReservaTextValor += pago.getDecimoTercero();
+                    montoSuplementariasTextValor += pago.getMontoHorasSuplementarias();
+                    montoSobreTiempoTextValor += pago.getMontoHorasSobreTiempo();
+                    montoBonoTextValor += pago.getBono();
+                    montoTransporteTextValor += pago.getTransporte();
+                    montoJubilacionTextValor += pago.getJubilacionPatronal();
+                    montoAportePatronalTextValor += pago.getAportePatronal();
+                    montoSegurosTextValor += pago.getSeguros();
+                    montoUniformasTextValor += pago.getUniformes();
+                    montoTotalIngresos += pago.getTotalIngreso();
+                }
+            %>
+            <table class="table table-striped table-bordered table-hover" style="max-width: 800px; position: relative;left:0;right:0;margin: auto;">
+                <%@include file="../WEB-INF/partials-static/header_info_total_rol_cliente_1.html" %>
+                <tr>
+                    <td><%=Numeros.round(diasTextValor)%></td>
+                    <td><%=Numeros.round(normalesTextValor)%></td>
+                    <td><%=Numeros.round(suplementariasTextValor)%></td>
+                    <td><%=Numeros.round(sobreTiempoTextValor)%></td>
+                    <td><%=Numeros.round(extraTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(sueldoTotalTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoSuplementariasTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoSobreTiempoTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoBonoTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoTransporteTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(totalBonosTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(subTotalTextValor)%></td>
+                </tr>
+            </table>
+            <br>
+            <table class="table table-striped table-bordered table-hover" style="max-width: 800px; position: relative;left:0;right:0;margin: auto">
+                <%@include file="../WEB-INF/partials-static/header_info_total_rol_cliente_2.html" %>
+                <tr>
+                    <td><small>$</small><%=Numeros.round(vacacionesTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(decimoTerceroTotalTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(decimoCuartoTotalTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoReservaTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoJubilacionTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoAportePatronalTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoSegurosTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoUniformasTextValor)%></td>
+                    <td><small>$</small><%=Numeros.round(montoTotalIngresos)%></td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <%
                 } else {
             %>

@@ -13,6 +13,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/DBConnectionGuardias.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/EmpresaDAO.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/PagoMesDAO.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/PagoVacacionesDAO.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/RolClienteDAO.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/RolIndividualDAO.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/dao/UserDAO.class" />
@@ -25,6 +26,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/Empresa.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/PagoMes.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/PagoMesItem.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/PagoVacaciones.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/RolCliente.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/RolIndividual.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/classes/models/User.class" />
@@ -54,6 +56,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/FastInoset.jar" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/gmbal-api-only.jar" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/ha-api.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/itextpdf-5.5.4.jar" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/javax.annotation.jar" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/jaxb-api.jar" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/lib/jaxb-impl.jar" />
@@ -85,6 +88,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/DBConnectionGuardias.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/EmpresaDAO.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/PagoMesDAO.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/PagoVacacionesDAO.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/RolClienteDAO.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/RolIndividualDAO.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/dao/UserDAO.class" />
@@ -97,6 +101,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/Empresa.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/PagoMes.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/PagoMesItem.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/PagoVacaciones.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/RolCliente.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/RolIndividual.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/models/User.class" />
@@ -123,7 +128,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/utilidad/SessionUtility.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/utilidad/UserType.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Roles Web/utilidad/Utilidad.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/schedule.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-dynamic/bar_search.jsp" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-dynamic/date_search.jsp" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/WEB-INF/partials-dynamic/header_principal.jsp" />
@@ -184,27 +188,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_cliente.jsp" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_empleado-old.jsp" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/roles_exp/rol/roles_empleado.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dao/ControlExtraDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dao/PagoVacacionesDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/ControlExtras.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/PagoVacaciones.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/rol/horario.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/roles.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/roles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/roles_exp.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/roles_exp.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ea9dc6b5-f5e7-4c41-a4f0-df3091014f1e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/ea9dc6b5-f5e7-4c41-a4f0-df3091014f1e.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Yornel.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Yornel.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/RolIndividualDAO.java" afterPath="$PROJECT_DIR$/src/dao/RolIndividualDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/AdminServlet.java" afterPath="$PROJECT_DIR$/src/servlets/AdminServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/EmpleadosServlet.java" afterPath="$PROJECT_DIR$/src/servlets/EmpleadosServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/RolClienteServlet.java" afterPath="$PROJECT_DIR$/src/servlets/RolClienteServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/RolIndividualServlet.java" afterPath="$PROJECT_DIR$/src/servlets/RolIndividualServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utilidad/Const.java" afterPath="$PROJECT_DIR$/src/utilidad/Const.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utilidad/Fecha.java" afterPath="$PROJECT_DIR$/src/utilidad/Fecha.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/rol_empleado.jsp" afterPath="$PROJECT_DIR$/web/rol/rol_empleado.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/rol/roles_empleado.jsp" afterPath="$PROJECT_DIR$/web/rol/roles_empleado.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -600,12 +584,20 @@
       <workItem from="1526058850685" duration="1985000" />
       <workItem from="1526155387566" duration="898000" />
       <workItem from="1526219259300" duration="27000" />
-      <workItem from="1526219365204" duration="8454000" />
+      <workItem from="1526219365204" duration="8579000" />
     </task>
+    <task id="LOCAL-00001" summary="Merge branch 'Joshuan' of https://github.com/yornel13/roles_web into yornel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1526228018786</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1526228018786</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259893000" />
+    <option name="totallyTimeSpent" value="260018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -680,6 +672,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge branch 'Joshuan' of https://github.com/yornel13/roles_web into yornel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'Joshuan' of https://github.com/yornel13/roles_web into yornel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

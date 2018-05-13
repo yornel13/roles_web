@@ -37,4 +37,7 @@ public class Const {
     public static final String EMPLEADO = "E";
     public static final String EMPRESA = "M";
     public static final String CLIENTE = "C";
+    public static final String VACATION_DATE = "vacationDate";
+    public static final String CONTROL_EXTRA = "extra";
+
 }

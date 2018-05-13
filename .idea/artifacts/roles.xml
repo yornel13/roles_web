@@ -6,18 +6,6 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="lib">
           <element id="library" level="project" name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/core-3.1.1.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/groovy-2.4.5.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/AbsoluteLayout.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/itextpdf-5.5.4.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/itext-pdfa-5.5.4.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/commons-logging-1.2.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/jasperreports-6.0.0.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/commons-digester-2.1.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/commons-beanutils-1.8.0.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/commons-collections-3.2.1.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/jasper-compiler-jdt-5.5.23.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/jasperSoft/mysql-connector-java-5.1.24-bin.jar" />
         </element>
       </element>
     </root>

@@ -61,65 +61,67 @@ public class RolIndividualDAO {
                 rol.setCedula(rs.getString("cedula"));
                 rol.setEmpresa(rs.getString("empresa"));
             }
-            q = "SELECT * FROM usuario WHERE id = "+rol.getUsuarioId();
-            rs = stat.executeQuery(q);
+            if (rol != null) {
+                q = "SELECT * FROM usuario WHERE id = " + rol.getUsuarioId();
+                rs = stat.executeQuery(q);
 
-            while (rs.next()) {
-                Usuario usuario = new Usuario();
-                usuario.setId(rs.getInt("id"));
-                usuario.setNombre(rs.getString("nombre"));
-                usuario.setApellido(rs.getString("apellido"));
-                usuario.setCedula(rs.getString("cedula"));
-                usuario.setEmail(rs.getString("email"));
-                usuario.setDireccion(rs.getString("direccion"));
-                usuario.setTelefono(rs.getString("telefono"));
-                usuario.setDetallesEmpleadoId(rs.getInt("detalles_empleado_id"));
-                usuario.setCreacion(rs.getTimestamp("creacion"));
-                usuario.setUltimaModificacion(rs.getTimestamp("ultima_modificacion"));
-                usuario.setActivo(rs.getBoolean("activo"));
-                usuario.setNacimiento(rs.getTimestamp("nacimiento"));
-                usuario.setSexo(rs.getString("sexo"));
-                rol.setUsuario(usuario);
-            }
+                while (rs.next()) {
+                    Usuario usuario = new Usuario();
+                    usuario.setId(rs.getInt("id"));
+                    usuario.setNombre(rs.getString("nombre"));
+                    usuario.setApellido(rs.getString("apellido"));
+                    usuario.setCedula(rs.getString("cedula"));
+                    usuario.setEmail(rs.getString("email"));
+                    usuario.setDireccion(rs.getString("direccion"));
+                    usuario.setTelefono(rs.getString("telefono"));
+                    usuario.setDetallesEmpleadoId(rs.getInt("detalles_empleado_id"));
+                    usuario.setCreacion(rs.getTimestamp("creacion"));
+                    usuario.setUltimaModificacion(rs.getTimestamp("ultima_modificacion"));
+                    usuario.setActivo(rs.getBoolean("activo"));
+                    usuario.setNacimiento(rs.getTimestamp("nacimiento"));
+                    usuario.setSexo(rs.getString("sexo"));
+                    rol.setUsuario(usuario);
+                }
 
-            q = "SELECT * FROM detalles_empleado WHERE id = "+rol.getUsuario().getDetallesEmpleadoId();
-            rs = stat.executeQuery(q);
+                q = "SELECT * FROM detalles_empleado WHERE id = " + rol.getUsuario().getDetallesEmpleadoId();
+                rs = stat.executeQuery(q);
 
-            while (rs.next()) {
-                DetallesEmpleado detallesEmpleado = new DetallesEmpleado();
-                detallesEmpleado.setId(rs.getInt("id"));
-                detallesEmpleado.setEmpresaId(rs.getInt("empresa_id"));
-                detallesEmpleado.setFechaInicio(rs.getTimestamp("fecha_inicio"));
-                detallesEmpleado.setFechaContrato(rs.getTimestamp("fecha_contrato"));
-                detallesEmpleado.setCargoId(rs.getInt("cargo_id"));
-                detallesEmpleado.setSueldo(rs.getDouble("sueldo"));
-                detallesEmpleado.setQuincena(rs.getDouble("quincena"));
-                detallesEmpleado.setAcumulaDecimos(rs.getBoolean("acumula_decimos"));
-                detallesEmpleado.setNroCuenta(rs.getString("nro_cuenta"));
-                rol.getUsuario().setDetallesEmpleado(detallesEmpleado);
-            }
+                while (rs.next()) {
+                    DetallesEmpleado detallesEmpleado = new DetallesEmpleado();
+                    detallesEmpleado.setId(rs.getInt("id"));
+                    detallesEmpleado.setEmpresaId(rs.getInt("empresa_id"));
+                    detallesEmpleado.setFechaInicio(rs.getTimestamp("fecha_inicio"));
+                    detallesEmpleado.setFechaContrato(rs.getTimestamp("fecha_contrato"));
+                    detallesEmpleado.setCargoId(rs.getInt("cargo_id"));
+                    detallesEmpleado.setSueldo(rs.getDouble("sueldo"));
+                    detallesEmpleado.setQuincena(rs.getDouble("quincena"));
+                    detallesEmpleado.setAcumulaDecimos(rs.getBoolean("acumula_decimos"));
+                    detallesEmpleado.setNroCuenta(rs.getString("nro_cuenta"));
+                    rol.getUsuario().setDetallesEmpleado(detallesEmpleado);
+                }
 
-            q = "SELECT * FROM empresa WHERE id = "+rol.getUsuario().getDetallesEmpleado().getEmpresaId();
-            rs = stat.executeQuery(q);
+                q = "SELECT * FROM empresa WHERE id = " + rol.getUsuario().getDetallesEmpleado().getEmpresaId();
+                rs = stat.executeQuery(q);
 
-            while (rs.next()) {
-                Empresa empresa = new Empresa();
-                empresa.setId(rs.getInt("id"));
-                empresa.setNombre(rs.getString("nombre"));
-                empresa.setSiglas(rs.getString("siglas"));
-                empresa.setNumeracion(rs.getString("numeracion"));
-                rol.getUsuario().getDetallesEmpleado().setEmpresa(empresa);
-            }
+                while (rs.next()) {
+                    Empresa empresa = new Empresa();
+                    empresa.setId(rs.getInt("id"));
+                    empresa.setNombre(rs.getString("nombre"));
+                    empresa.setSiglas(rs.getString("siglas"));
+                    empresa.setNumeracion(rs.getString("numeracion"));
+                    rol.getUsuario().getDetallesEmpleado().setEmpresa(empresa);
+                }
 
-            q = "SELECT * FROM cargo WHERE id = "+rol.getUsuario().getDetallesEmpleado().getCargoId();
-            rs = stat.executeQuery(q);
+                q = "SELECT * FROM cargo WHERE id = " + rol.getUsuario().getDetallesEmpleado().getCargoId();
+                rs = stat.executeQuery(q);
 
-            while (rs.next()) {
-                Cargo cargo = new Cargo();
-                cargo.setId(rs.getInt("id"));
-                cargo.setNombre(rs.getString("nombre"));
-                cargo.setActivo(rs.getBoolean("activo"));
-                rol.getUsuario().getDetallesEmpleado().setCargo(cargo);
+                while (rs.next()) {
+                    Cargo cargo = new Cargo();
+                    cargo.setId(rs.getInt("id"));
+                    cargo.setNombre(rs.getString("nombre"));
+                    cargo.setActivo(rs.getBoolean("activo"));
+                    rol.getUsuario().getDetallesEmpleado().setCargo(cargo);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

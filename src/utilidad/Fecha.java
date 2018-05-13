@@ -12,7 +12,9 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.temporal.TemporalAdjusters;
+import java.util.Calendar;
 import java.util.Date;
+
 
 /**
  *
@@ -486,6 +488,34 @@ public class Fecha {
                 +" al "+ dayMax+" de "+fecha.getMonthName()+" "+fecha.getAno();
     }
 
+    public java.sql.Date getFromLastDayMonth() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date;
+
+        Fecha fecha = new Fecha(getFecha());
+        LocalDate now = LocalDate.of(fecha.getAnoInt(),fecha.getMesInt(),1);
+        Integer dayMax = now.with(TemporalAdjusters.lastDayOfMonth()).getDayOfMonth();
+        try {
+            date = sdf.parse(getAno()+"-"+getMes()+"-"+dayMax.toString());
+            return new java.sql.Date(date.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public java.sql.Date getFromFirstDayMonth() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date;
+        try {
+            date = sdf.parse(getAno()+"-"+getMes()+"-"+"01");
+            return new java.sql.Date(date.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static String getFechaCorta(String fecha) {
         return new Fecha(fecha).getMonthName()+" "+new Fecha(fecha).getAno();
     }
@@ -505,5 +535,59 @@ public class Fecha {
 
     public String getMonthSelect() {
         return ano+"-"+mes;
+    }
+
+    public java.sql.Date getDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date;
+        try {
+            date = sdf.parse(getAno()+"-"+getMes()+"-"+getDia());
+            return new java.sql.Date(date.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String getFechaConMes(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        Integer day = calendar.get(Calendar.DAY_OF_MONTH);
+        Integer month = calendar.get(Calendar.MONTH)+1;
+        Integer year = calendar.get(Calendar.YEAR);
+
+        String fecha = day + " de "
+                + getMonthName(month);
+        return fecha;
+    }
+
+    private static String getMonthName(int mes) {
+        switch (mes) {
+            case 1:
+                return "Enero";
+            case 2:
+                return "Febrero";
+            case 3:
+                return "Marzo";
+            case 4:
+                return "Abril";
+            case 5:
+                return "Mayo";
+            case 6:
+                return "Junio";
+            case 7:
+                return "Julio";
+            case 8:
+                return "Agosto";
+            case 9:
+                return "Septiembre";
+            case 10:
+                return "Octubre";
+            case 11:
+                return "Noviembre";
+            case 12:
+                return "Diciembre";
+        }
+        return null;
     }
 }

@@ -1,8 +1,6 @@
 package servlets;
 
-import dao.PagoMesDAO;
-import dao.RolClienteDAO;
-import dao.RolIndividualDAO;
+import dao.*;
 import models.*;
 import utilidad.Const;
 import utilidad.Fecha;
@@ -15,9 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+import static utilidad.Numeros.round;
 
 @WebServlet("/rol/cliente")
 public class RolClienteServlet extends HttpServlet {
@@ -27,13 +28,14 @@ public class RolClienteServlet extends HttpServlet {
     private PagoMesDAO pagoMesDAO = new PagoMesDAO();
     private HttpServletRequest req;
     private HttpServletResponse resp;
+    private Integer empleadoId;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.req = req;
         this.resp = resp;
         if (SessionUtility.isExpiry(req, resp)) return;
-
+        System.out.println("ROLCLIente SERVELl---------- GET");
         String searchId = req.getParameter(Const.ID);
         String rolClienteId = req.getParameter(Const.ROL_CLIENTE_ID);
         if (searchId != null) {
@@ -47,6 +49,7 @@ public class RolClienteServlet extends HttpServlet {
                 if (rolIndividual != null) {
                     PagoMes pagoMes = pagoMesDAO.findByRolIndividualId(rolIndividual.getId());
                     req.setAttribute(Const.PAGO_MES, pagoMes);
+                    req.setAttribute(Const.VACATION_DATE, getTextVacaciones(rolIndividual));
                 }
                 req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
                 req.setAttribute(Const.ROLES_CLIENTE, rolesClients);
@@ -85,6 +88,26 @@ public class RolClienteServlet extends HttpServlet {
         String previous = req.getParameter("previous");
         String search = req.getParameter("search");
         String monthSelect = req.getParameter("month");
+
+        String schedule = req.getParameter("schedule");
+        System.out.println("Entro POST RolIndividual horario ="+schedule);
+
+        if(schedule != null){
+            System.out.println("SCHEDULE pasoo");
+
+            RolIndividual rolIndividual = (RolIndividual) req.getSession().getAttribute(Const.PRINT_RI);
+            List<RolCliente> roles = (List) req.getSession().getAttribute(Const.PRINT_RL);
+
+            List<ControlExtras> controlExtras = new ControlExtraDAO().findAllByEmpleadoIdByDeterminateTime(
+                    rolIndividual.getUsuarioId(),
+                    new Fecha(rolIndividual.getInicio()).minusDays(7).getDate(),
+                    new Fecha(rolIndividual.getFinalizo()).minusDays(7).getDate());
+
+            req.setAttribute(Const.ROL_INDIVIDUAL, rolIndividual);
+            req.setAttribute(Const.CONTROL_EXTRA, controlExtras);
+            req.setAttribute(Const.ROL_CLIENTE, roles);
+            req.getRequestDispatcher("horario.jsp").forward(req, resp);
+        }
 
         if (next != null) {
 
@@ -176,5 +199,95 @@ public class RolClienteServlet extends HttpServlet {
             resp.sendRedirect("/login");
         }
         return rolesCliente;
+    }
+
+    private String getTextVacaciones(RolIndividual rolIndividual) {
+        Fecha inicioVac = new Fecha("01", "01", new Fecha(rolIndividual.getInicio()).getAno())
+                .minusYears(1);
+        PagoVacaciones pagoVacaciones = new PagoVacacionesDAO()
+                .findInDeterminateYearByUsuarioId(inicioVac.getAno(), rolIndividual.getUsuario().getId());
+
+        Integer dias = getVacacionesFromThisMonth(pagoVacaciones, new Fecha(rolIndividual.getInicio()));
+        if (dias > 0) {
+            String range = rangoVacaciones(pagoVacaciones, new Fecha(rolIndividual.getInicio()));
+            return dias+" dias de vacaciones. Del "+range;
+        } else {
+            return null;
+        }
+    }
+
+    private Integer getVacacionesFromThisMonth(PagoVacaciones pagoVacaciones, Fecha inicio) {
+
+        if (pagoVacaciones != null) {
+            Calendar calIni = Calendar.getInstance();
+            calIni.setTime(pagoVacaciones.getGoceInicio());
+
+            Calendar calFin = Calendar.getInstance();
+            calFin.setTime(pagoVacaciones.getGoceFin());
+
+            Integer mes1int = calIni.get(Calendar.MONTH)+1;
+            Integer mes2int = calFin.get(Calendar.MONTH)+1;
+            Integer dias1int = 0;
+            Integer dias2int = 0;
+            Double montoMes1Dou = 0d;
+            Double montoMes2Dou = 0d;
+            if (mes1int != mes2int) {
+                if (mes1int+1 == mes2int) {
+                    dias2int = calFin.get(Calendar.DAY_OF_MONTH);
+                    dias1int = pagoVacaciones.getDias() - dias2int;
+                    Double valorDia = pagoVacaciones.getValor()
+                            /pagoVacaciones.getDias().doubleValue();
+                    montoMes1Dou = round(valorDia*dias1int);
+                    montoMes2Dou = round(valorDia*dias2int);
+                }
+            } else {
+                if (inicio.getMesInt() == mes1int) {
+                    return pagoVacaciones.getDias();
+                }
+            }
+            if (inicio.getMesInt() == mes1int) {
+                return dias1int;
+            }
+            if (inicio.getMesInt() == mes2int) {
+                return dias2int;
+            }
+        }
+        return 0;
+    }
+
+    private String rangoVacaciones(PagoVacaciones pagoVacaciones, Fecha inicio) {
+        if (pagoVacaciones != null) {
+            Calendar calIni = Calendar.getInstance();
+            calIni.setTime(pagoVacaciones.getGoceInicio());
+
+            Calendar calFin = Calendar.getInstance();
+            calFin.setTime(pagoVacaciones.getGoceFin());
+
+            Integer mes1int = calIni.get(Calendar.MONTH)+1;
+            Integer mes2int = calFin.get(Calendar.MONTH)+1;
+
+            Integer day1int = calIni.get(Calendar.DAY_OF_MONTH);
+            Integer day2int = calFin.get(Calendar.DAY_OF_MONTH);
+
+            if (mes1int != mes2int) {
+                if (mes1int+1 == mes2int) {
+
+                }
+            } else {
+                if (inicio.getMesInt() == mes1int) {
+                    return Fecha.getFechaConMes(pagoVacaciones.getGoceInicio())+" al "+
+                            Fecha.getFechaConMes(pagoVacaciones.getGoceFin());
+                }
+            }
+            if (inicio.getMesInt() == mes1int) {
+                return Fecha.getFechaConMes(pagoVacaciones.getGoceInicio())+" al "+
+                        Fecha.getFechaConMes(inicio.getFromLastDayMonth());
+            }
+            if (inicio.getMesInt() == mes2int) {
+                return Fecha.getFechaConMes(inicio.getFromFirstDayMonth())+" al "+
+                        Fecha.getFechaConMes(pagoVacaciones.getGoceFin());
+            }
+        }
+        return "";
     }
 }
